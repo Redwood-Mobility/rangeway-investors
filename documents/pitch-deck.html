@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitch Deck | Rangeway Energy, Inc.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+    :root {
+      --charcoal: #2D2D2D;
+      --warm: #F4A855;
+      --sage: #4A5D52;
+      --cream: #FAF9F6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--charcoal);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-left img {
+      height: 32px;
+    }
+
+    .header-left span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .back-link {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Slideshow Container */
+    .slideshow-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .canvas-container {
+      max-width: 100%;
+      max-height: calc(100vh - 160px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+
+    #pdf-canvas {
+      max-width: 100%;
+      max-height: calc(100vh - 160px);
+      display: block;
+    }
+
+    /* Navigation */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-btn:hover {
+      background: var(--warm);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .nav-btn:disabled:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-prev {
+      left: 1rem;
+    }
+
+    .nav-next {
+      right: 1rem;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem 2rem;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .page-indicator {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .page-indicator span {
+      color: var(--warm);
+    }
+
+    .control-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .control-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .control-btn:hover {
+      background: var(--warm);
+    }
+
+    .download-btn {
+      background: var(--warm);
+      color: var(--charcoal);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .download-btn:hover {
+      background: #e09545;
+    }
+
+    /* Loading State */
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255,255,255,0.2);
+      border-top-color: var(--warm);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Keyboard hint */
+    .keyboard-hint {
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    /* Fullscreen */
+    .fullscreen-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .fullscreen-btn:hover {
+      opacity: 1;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .header {
+        padding: 0.75rem 1rem;
+      }
+
+      .header-left span {
+        display: none;
+      }
+
+      .nav-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+      }
+
+      .controls {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .keyboard-hint {
+        display: none;
+      }
+
+      .canvas-container {
+        max-height: calc(100vh - 180px);
+      }
+
+      #pdf-canvas {
+        max-height: calc(100vh - 180px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+
+      .nav-prev {
+        left: 0.5rem;
+      }
+
+      .nav-next {
+        right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <img src="../assets/images/rangeway-lockup-white.svg" alt="Rangeway">
+      <span>Pitch Deck</span>
+    </div>
+    <a href="../" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to Investor Hub
+    </a>
+  </header>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <div class="canvas-container" id="canvas-container">
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <span>Loading presentation...</span>
+      </div>
+      <canvas id="pdf-canvas"></canvas>
+    </div>
+
+    <button class="nav-btn nav-prev" id="prev-btn" disabled>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+
+    <button class="nav-btn nav-next" id="next-btn" disabled>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Toggle fullscreen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div class="page-indicator">
+      Slide <span id="current-page">1</span> of <span id="total-pages">-</span>
+    </div>
+    <div class="control-buttons">
+      <button class="control-btn" id="first-btn" title="First slide">First</button>
+      <button class="control-btn" id="last-btn" title="Last slide">Last</button>
+    </div>
+    <a href="rangeway-pitch-deck.pdf" class="control-btn download-btn" download>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+      </svg>
+      Download PDF
+    </a>
+    <span class="keyboard-hint">Use arrow keys or click to navigate</span>
+  </div>
+
+  <script>
+    // Set worker path
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const pdfUrl = 'rangeway-pitch-deck.pdf';
+    let pdfDoc = null;
+    let currentPage = 1;
+    let totalPages = 0;
+    let rendering = false;
+
+    const canvas = document.getElementById('pdf-canvas');
+    const ctx = canvas.getContext('2d');
+    const loading = document.getElementById('loading');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const firstBtn = document.getElementById('first-btn');
+    const lastBtn = document.getElementById('last-btn');
+    const currentPageEl = document.getElementById('current-page');
+    const totalPagesEl = document.getElementById('total-pages');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const canvasContainer = document.getElementById('canvas-container');
+
+    // Calculate optimal scale based on viewport
+    function getOptimalScale(page) {
+      const viewport = page.getViewport({ scale: 1 });
+      const containerWidth = canvasContainer.clientWidth - 20;
+      const containerHeight = canvasContainer.clientHeight - 20;
+
+      const scaleX = containerWidth / viewport.width;
+      const scaleY = containerHeight / viewport.height;
+
+      return Math.min(scaleX, scaleY, 2); // Cap at 2x for performance
+    }
+
+    // Render page
+    async function renderPage(num) {
+      if (rendering) return;
+      rendering = true;
+
+      try {
+        const page = await pdfDoc.getPage(num);
+        const scale = getOptimalScale(page);
+        const viewport = page.getViewport({ scale });
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        await page.render({
+          canvasContext: ctx,
+          viewport: viewport
+        }).promise;
+
+        currentPage = num;
+        currentPageEl.textContent = num;
+        updateButtons();
+      } catch (err) {
+        console.error('Error rendering page:', err);
+      }
+
+      rendering = false;
+    }
+
+    // Update button states
+    function updateButtons() {
+      prevBtn.disabled = currentPage <= 1;
+      nextBtn.disabled = currentPage >= totalPages;
+      firstBtn.disabled = currentPage <= 1;
+      lastBtn.disabled = currentPage >= totalPages;
+    }
+
+    // Navigation functions
+    function prevPage() {
+      if (currentPage > 1) renderPage(currentPage - 1);
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) renderPage(currentPage + 1);
+    }
+
+    function firstPage() {
+      renderPage(1);
+    }
+
+    function lastPage() {
+      renderPage(totalPages);
+    }
+
+    // Toggle fullscreen
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // Event listeners
+    prevBtn.addEventListener('click', prevPage);
+    nextBtn.addEventListener('click', nextPage);
+    firstBtn.addEventListener('click', firstPage);
+    lastBtn.addEventListener('click', lastPage);
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      switch(e.key) {
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          prevPage();
+          break;
+        case 'ArrowRight':
+        case 'ArrowDown':
+        case ' ':
+          nextPage();
+          e.preventDefault();
+          break;
+        case 'Home':
+          firstPage();
+          break;
+        case 'End':
+          lastPage();
+          break;
+        case 'f':
+        case 'F':
+          toggleFullscreen();
+          break;
+      }
+    });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    canvas.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    canvas.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextPage();
+        else prevPage();
+      }
+    }, { passive: true });
+
+    // Click to advance (on canvas)
+    canvas.addEventListener('click', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      if (x < rect.width / 3) prevPage();
+      else nextPage();
+    });
+
+    // Resize handler
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (pdfDoc) renderPage(currentPage);
+      }, 200);
+    });
+
+    // Load PDF
+    pdfjsLib.getDocument(pdfUrl).promise.then((pdf) => {
+      pdfDoc = pdf;
+      totalPages = pdf.numPages;
+      totalPagesEl.textContent = totalPages;
+      loading.style.display = 'none';
+      canvas.style.display = 'block';
+      renderPage(1);
+    }).catch((err) => {
+      console.error('Error loading PDF:', err);
+      loading.innerHTML = '<span>Error loading presentation. Please try downloading the PDF.</span>';
+    });
+  </script>
+</body>
+</html>
