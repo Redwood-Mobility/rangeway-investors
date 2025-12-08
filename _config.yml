@@ -1,0 +1,61 @@
+# Rangeway Investor Hub
+# Jekyll configuration for GitHub Pages
+
+# Site settings
+title: Rangeway Investor Hub
+description: "Investor resources and documentation for Rangeway Energy, Inc. Access our pitch deck, executive summary, and business plan."
+url: "https://investors.rangewayev.com"
+baseurl: ""
+
+# Organization info
+organization:
+  name: Rangeway Energy, Inc.
+  tagline: "Indoor Comfort. Every Stop."
+  main_site: "https://rangewayev.com"
+  newsroom_site: "https://newsroom.rangeway.energy"
+  email: investors@rangewayev.com
+  phone: "(650) 420-6300"
+  phone_raw: "6504206300"
+  address:
+    street: "2661 Market Street STE 85787"
+    city: "San Francisco"
+    state: "CA"
+    zip: "94114"
+
+# Social media
+social:
+  twitter: "https://x.com/rangewayev"
+  instagram: "https://instagram.com/rangewayev"
+  linkedin: "https://linkedin.com/company/rangewayenergy"
+  youtube: "https://youtube.com/@rangewayev"
+
+# Investment links
+investment:
+  wefunder: "https://wefunder.com/rangeway/join"
+  email: "investors@rangewayev.com"
+
+# Page metadata
+pages:
+  index:
+    title: "Investor Hub | Rangeway Energy"
+    description: "Access Rangeway investor resources including our pitch deck, executive summary, and business plan. Partner with us in building America's premier scenic-route EV charging network."
+    keywords: "Rangeway investment, EV charging investment, clean energy investment, sustainable infrastructure, pitch deck, business plan"
+    og_image: "/assets/images/og-investors.jpg"
+
+# Asset versioning
+asset_version: "1.0.0"
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .gitignore
+  - vendor
+  - .bundle

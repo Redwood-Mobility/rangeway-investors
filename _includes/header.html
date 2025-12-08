@@ -1,0 +1,56 @@
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="{{ '/' | relative_url }}" class="navbar-brand">
+      <!-- Brand Logo SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 34 34">
+        <defs>
+          <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F09060"/>
+            <stop offset="100%" stop-color="#FFB366"/>
+          </linearGradient>
+          <clipPath id="navLogoRounded">
+            <rect width="34" height="34" rx="10" ry="10" />
+          </clipPath>
+        </defs>
+        <rect width="34" height="34" rx="10" ry="10" fill="url(#navLogoGrad)" />
+        <g clip-path="url(#navLogoRounded)">
+          <path d="M 0 26 L 8 18 L 15 24 L 22 17 L 34 26 L 34 34 L 0 34 Z" fill="#2f2f2f" />
+        </g>
+        <circle cx="25" cy="7" r="4" fill="white" fill-opacity="0.6" />
+      </svg>
+      <span>RANGEWAY</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="navbar-nav" id="navMenu">
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <li><a href="#documents">Documents</a></li>
+      <li><a href="#investment">Investment</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="{{ site.organization.main_site }}" target="_blank" rel="noopener">Main Site</a></li>
+      <li><a href="{{ site.organization.newsroom_site }}" target="_blank" rel="noopener">Newsroom</a></li>
+      <li class="social-icons-nav">
+        <a href="{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+  </div>
+</nav>
