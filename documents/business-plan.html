@@ -509,6 +509,38 @@
         display: block;
       }
 
+      /* Fix metrics grid for tablet */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-left: 0;
+        border-spacing: 0;
+      }
+
+      .metric-box {
+        display: block;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .metric-box .value {
+        font-size: 28px;
+      }
+
+      /* Fix partner grid for tablet */
+      .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-left: 0;
+        border-spacing: 0;
+      }
+
+      .partner-box {
+        display: block;
+      }
+
       .cover .doc-type {
         font-size: 32px;
       }
@@ -597,6 +629,36 @@
 
       .funding-grid {
         grid-template-columns: 1fr;
+      }
+
+      /* Stack metrics on mobile */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-left: 0;
+      }
+
+      .metric-box {
+        display: block;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .metric-box .value {
+        font-size: 32px;
+      }
+
+      /* Stack partner grid on mobile */
+      .partner-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-left: 0;
+      }
+
+      .partner-box {
+        display: block;
       }
 
       .cover {
