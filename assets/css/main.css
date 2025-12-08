@@ -204,23 +204,37 @@ a:hover {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--text-heading);
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
-  .navbar-brand {
-    gap: 12px;
-    font-size: 18px;
-  }
+.navbar-brand .nav-logo {
+  height: 40px;
+  width: auto;
+}
 
-  .navbar-brand svg {
-    width: 32px;
+.navbar-brand .dark-logo {
+  display: none;
+}
+
+[data-theme="dark"] .navbar-brand .light-logo {
+  display: none;
+}
+
+[data-theme="dark"] .navbar-brand .dark-logo {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .navbar-brand .light-logo {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .navbar-brand .dark-logo {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand .nav-logo {
     height: 32px;
   }
 }

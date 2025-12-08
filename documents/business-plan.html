@@ -26,131 +26,133 @@
     
     body {
       font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
-      font-size: 10pt;
-      line-height: 1.5;
+      font-size: 18px;
+      line-height: 1.6;
       color: var(--charcoal);
       background: white;
     }
-    
+
     .container {
-      max-width: 7.5in;
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 0 2rem;
     }
     
     /* Cover Page */
     .cover {
-      height: 10in;
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 4rem 2rem;
       page-break-after: always;
     }
-    
+
     .cover .logo {
-      width: 280px;
-      margin-bottom: 30px;
+      width: 320px;
+      margin-bottom: 40px;
     }
-    
+
     .cover .tagline {
       font-family: 'Raleway', sans-serif;
-      font-size: 16pt;
+      font-size: 22px;
       font-style: italic;
       color: var(--sage);
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
-    
+
     .cover .doc-type {
       font-family: 'Raleway', sans-serif;
-      font-size: 24pt;
+      font-size: 42px;
       font-weight: 700;
       color: var(--charcoal);
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
-    
+
     .cover .date {
-      font-size: 14pt;
+      font-size: 20px;
       color: #666;
       margin-bottom: 60px;
     }
-    
+
     .cover .contact {
-      font-size: 11pt;
+      font-size: 18px;
       line-height: 1.8;
     }
     
     /* Section styling */
     .new-section {
       page-break-before: always;
-      padding: 0.4in 0;
+      padding: 3rem 0;
     }
-    
+
     .section-title {
       font-family: 'Raleway', sans-serif;
-      font-size: 18pt;
+      font-size: 36px;
       font-weight: 700;
       color: var(--charcoal);
       border-bottom: 3px solid var(--warm);
-      padding-bottom: 8px;
-      margin-bottom: 16px;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
     }
-    
+
     h2 {
       font-family: 'Raleway', sans-serif;
-      font-size: 12pt;
+      font-size: 26px;
       font-weight: 700;
       color: var(--sage);
-      margin-top: 18px;
-      margin-bottom: 8px;
+      margin-top: 32px;
+      margin-bottom: 16px;
       page-break-after: avoid;
     }
-    
+
     h3 {
       font-family: 'Raleway', sans-serif;
-      font-size: 10.5pt;
+      font-size: 22px;
       font-weight: 700;
       color: var(--charcoal);
-      margin-top: 14px;
-      margin-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
       page-break-after: avoid;
     }
-    
+
     h4 {
       font-family: 'Raleway', sans-serif;
-      font-size: 10pt;
+      font-size: 18px;
       font-weight: 700;
       color: var(--charcoal);
-      margin-top: 10px;
-      margin-bottom: 4px;
+      margin-top: 16px;
+      margin-bottom: 8px;
     }
     
     p {
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       text-align: left;
     }
-    
+
     ul, ol {
-      margin-left: 20px;
-      margin-bottom: 10px;
+      margin-left: 24px;
+      margin-bottom: 16px;
     }
-    
+
     li {
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
-    
+
     strong {
       font-weight: 600;
     }
-    
+
     /* Callout box */
     .callout {
       background: var(--cream);
       border-left: 4px solid var(--warm);
-      padding: 12px 16px;
-      margin: 14px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
       font-style: italic;
-      font-size: 10.5pt;
+      font-size: 18px;
       page-break-inside: avoid;
     }
     
@@ -174,21 +176,21 @@
     
     .format-box h4 {
       font-family: 'Raleway', sans-serif;
-      font-size: 10pt;
+      font-size: 18px;
       font-weight: 700;
       color: var(--charcoal);
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       margin-top: 0;
     }
-    
+
     .format-box ul {
       margin: 0;
-      padding-left: 16px;
+      padding-left: 20px;
     }
-    
+
     .format-box li {
-      margin-bottom: 3px;
-      font-size: 9pt;
+      margin-bottom: 6px;
+      font-size: 16px;
     }
     
     /* Partner/team boxes - table layout */
@@ -211,15 +213,15 @@
     
     .partner-box h4 {
       font-family: 'Raleway', sans-serif;
-      font-size: 9.5pt;
+      font-size: 18px;
       font-weight: 700;
       color: var(--charcoal);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
       margin-top: 0;
     }
-    
+
     .partner-box p {
-      font-size: 8.5pt;
+      font-size: 15px;
       margin: 0;
       text-align: left;
     }
@@ -227,82 +229,82 @@
     /* Bio box for founder */
     .bio-box {
       background: var(--cream);
-      padding: 14px;
-      border-radius: 5px;
-      margin: 12px 0;
+      padding: 24px;
+      border-radius: 8px;
+      margin: 20px 0;
     }
-    
+
     .bio-box h4 {
       font-family: 'Raleway', sans-serif;
-      font-size: 11pt;
+      font-size: 22px;
       font-weight: 700;
       color: var(--charcoal);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       margin-top: 0;
     }
-    
+
     .bio-box .role {
-      font-size: 9.5pt;
+      font-size: 16px;
       color: var(--sage);
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
-    
+
     .bio-box p {
-      font-size: 9pt;
-      margin-bottom: 6px;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
     
     /* Comparison table */
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 12px 0;
-      font-size: 8.5pt;
+      margin: 20px 0;
+      font-size: 15px;
       page-break-inside: avoid;
     }
-    
+
     .comparison-table th {
       background: var(--charcoal);
       color: white;
-      padding: 8px 6px;
+      padding: 12px 10px;
       text-align: left;
       font-weight: 600;
     }
-    
+
     .comparison-table td {
-      padding: 6px;
+      padding: 10px;
       border-bottom: 1px solid #ddd;
       vertical-align: top;
     }
-    
+
     .comparison-table tr:nth-child(even) {
       background: var(--cream);
     }
-    
+
     /* Tier table */
     .tier-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 12px 0;
-      font-size: 8.5pt;
+      margin: 20px 0;
+      font-size: 15px;
       page-break-inside: avoid;
     }
-    
+
     .tier-table th {
       background: var(--sage);
       color: white;
-      padding: 8px 6px;
+      padding: 12px 10px;
       text-align: left;
       font-weight: 600;
     }
-    
+
     .tier-table td {
-      padding: 6px;
+      padding: 10px;
       border-bottom: 1px solid #ddd;
       vertical-align: top;
     }
-    
+
     .tier-table tr:nth-child(even) {
       background: var(--cream);
     }
@@ -312,149 +314,149 @@
       background: var(--cream);
       border: 2px solid var(--warm);
       border-radius: 8px;
-      padding: 16px;
-      margin: 16px 0;
+      padding: 24px;
+      margin: 24px 0;
       page-break-inside: avoid;
     }
-    
+
     .funding-box h3 {
       font-family: 'Raleway', sans-serif;
-      font-size: 13pt;
+      font-size: 24px;
       font-weight: 700;
       color: var(--charcoal);
       text-align: center;
-      margin: 0 0 14px 0;
+      margin: 0 0 20px 0;
     }
-    
+
     .funding-grid {
       display: table;
       width: 100%;
-      border-spacing: 8px 0;
-      margin-left: -8px;
+      border-spacing: 12px 0;
+      margin-left: -12px;
     }
-    
+
     .funding-item {
       display: table-cell;
       text-align: center;
       width: 25%;
       vertical-align: top;
     }
-    
+
     .funding-item .pct {
       font-family: 'Raleway', sans-serif;
-      font-size: 20pt;
+      font-size: 36px;
       font-weight: 700;
       color: var(--sage);
     }
-    
+
     .funding-item .label {
-      font-size: 8.5pt;
+      font-size: 14px;
       color: var(--charcoal);
-      line-height: 1.3;
+      line-height: 1.4;
     }
-    
+
     .funding-note {
-      margin-top: 14px;
-      padding-top: 12px;
+      margin-top: 20px;
+      padding-top: 16px;
       border-top: 1px solid #ddd;
-      font-size: 9pt;
+      font-size: 16px;
       text-align: center;
     }
     
     /* Milestone section */
     .milestone-section {
       background: var(--cream);
-      padding: 12px;
-      border-radius: 5px;
-      margin: 10px 0;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 16px 0;
       page-break-inside: avoid;
     }
-    
+
     .milestone-section h3 {
       margin-top: 0;
       color: var(--sage);
     }
-    
+
     .milestone-section ul {
       margin-bottom: 0;
     }
-    
+
     /* Metrics grid */
     .metrics-grid {
       display: table;
       width: 100%;
-      margin: 12px 0;
-      border-spacing: 10px 0;
-      margin-left: -10px;
+      margin: 20px 0;
+      border-spacing: 16px 0;
+      margin-left: -16px;
     }
-    
+
     .metric-box {
       display: table-cell;
       background: var(--cream);
-      padding: 12px;
-      border-radius: 5px;
+      padding: 20px;
+      border-radius: 8px;
       width: 33.33%;
       vertical-align: top;
       text-align: center;
     }
-    
+
     .metric-box .value {
       font-family: 'Raleway', sans-serif;
-      font-size: 18pt;
+      font-size: 36px;
       font-weight: 700;
       color: var(--sage);
     }
-    
+
     .metric-box .label {
-      font-size: 8.5pt;
+      font-size: 14px;
       color: var(--charcoal);
     }
     
     /* TOC */
     .toc-page {
       page-break-after: always;
-      padding: 0.5in 0;
+      padding: 3rem 0;
     }
-    
+
     .toc-item {
       display: flex;
       justify-content: space-between;
-      padding: 6px 0;
+      padding: 10px 0;
       border-bottom: 1px dotted #ccc;
-      font-size: 10pt;
+      font-size: 18px;
     }
-    
+
     .toc-item span:first-child {
       font-weight: 600;
     }
-    
+
     /* Confidential header */
     .confidential {
-      font-size: 7pt;
+      font-size: 12px;
       color: #888;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
       font-style: italic;
     }
-    
+
     /* Stats highlight */
     .stat-highlight {
       background: var(--sage);
       color: white;
-      padding: 12px 16px;
-      border-radius: 5px;
-      margin: 12px 0;
+      padding: 20px 24px;
+      border-radius: 8px;
+      margin: 20px 0;
       text-align: center;
     }
-    
+
     .stat-highlight .number {
       font-family: 'Raleway', sans-serif;
-      font-size: 24pt;
+      font-size: 42px;
       font-weight: 700;
     }
-    
+
     .stat-highlight .desc {
-      font-size: 10pt;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -464,7 +466,7 @@
 
 <!-- Cover Page -->
 <div class="cover">
-  <img src="rangeway-lockup-charcoal.svg" alt="Rangeway" class="logo">
+  <img src="../assets/images/rangeway-lockup-charcoal.svg" alt="Rangeway" class="logo">
   <div class="tagline">Where EV charging becomes part of your journey</div>
   <div class="doc-type">Business Plan</div>
   <div class="date">December 2025</div>

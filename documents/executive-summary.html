@@ -24,18 +24,16 @@
       font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--charcoal);
       background: white;
-      font-size: 11.9px;
-      line-height: 1.43;
+      font-size: 18px;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
     }
-    
+
     .page {
-      width: 7.5in;
-      max-width: 7.5in;
-      min-height: 10in;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0.44in;
+      padding: 2rem;
       background: white;
       box-sizing: border-box;
     }
@@ -52,28 +50,28 @@
     
     .brand h1 {
       font-family: 'Raleway', sans-serif;
-      font-size: 42px;
+      font-size: 48px;
       font-weight: 700;
       color: var(--charcoal);
       letter-spacing: -1px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
-    
+
     .brand .tagline {
-      font-size: 13px;
+      font-size: 18px;
       color: var(--sage);
       font-style: italic;
     }
-    
+
     .header-right {
       text-align: right;
-      font-size: 12px;
+      font-size: 16px;
       color: #666;
     }
-    
+
     .header-right .conf {
       color: #999;
-      font-size: 11px;
+      font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -92,13 +90,13 @@
     
     .section h2 {
       font-family: 'Raleway', sans-serif;
-      font-size: 11.8px;
+      font-size: 20px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: var(--sage);
-      margin-bottom: 8px;
-      padding-bottom: 4px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
       border-bottom: 1px solid #e0e0e0;
     }
     
@@ -126,10 +124,10 @@
     
     .callout {
       background: var(--light-gray);
-      padding: 10px 12px;
+      padding: 16px 20px;
       border-left: 3px solid var(--warm);
-      margin: 10px 0;
-      font-size: 11.5px;
+      margin: 16px 0;
+      font-size: 17px;
     }
     
     .callout strong {
@@ -158,14 +156,14 @@
     
     .format-box h4 {
       font-family: 'Raleway', sans-serif;
-      font-size: 12px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--charcoal);
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
-    
+
     .format-box p {
-      font-size: 11px;
+      font-size: 16px;
       margin: 0;
       color: #555;
     }
@@ -182,9 +180,9 @@
     
     .funding-box h2 {
       font-family: 'Raleway', sans-serif;
-      font-size: 17px;
+      font-size: 28px;
       font-weight: 700;
-      margin-bottom: 11px;
+      margin-bottom: 16px;
       color: white;
     }
     
@@ -204,23 +202,23 @@
     }
     
     .funding-item .pct {
-      font-size: 22px;
+      font-size: 36px;
       font-weight: 700;
       color: var(--warm);
     }
-    
+
     .funding-item .label {
-      font-size: 10px;
+      font-size: 14px;
       opacity: 0.9;
-      line-height: 1.25;
+      line-height: 1.4;
     }
-    
+
     .funding-note {
-      font-size: 11px;
+      font-size: 16px;
       opacity: 0.9;
       border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 10px;
-      margin-top: 4px;
+      padding-top: 14px;
+      margin-top: 8px;
     }
     
     /* Team section */
@@ -236,36 +234,36 @@
     }
     
     .team-member p {
-      font-size: 12px;
+      font-size: 16px;
       color: #555;
       margin: 0;
     }
-    
+
     .advisors {
-      font-size: 12px;
+      font-size: 16px;
     }
-    
+
     .advisors h4 {
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    
+
     .advisor-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4px 16px;
-      font-size: 12px;
+      gap: 6px 20px;
+      font-size: 16px;
       color: #555;
     }
-    
+
     /* Footer */
     .footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 14px;
+      padding-top: 20px;
       border-top: 1px solid #e0e0e0;
-      font-size: 11.5px;
+      font-size: 16px;
       color: #666;
     }
     
@@ -274,16 +272,36 @@
       text-decoration: none;
     }
     
+    @media (max-width: 768px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+      .formats {
+        grid-template-columns: 1fr;
+      }
+      .funding-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-right {
+        text-align: center;
+        margin-top: 1rem;
+      }
+    }
+
     @media print {
       body { -webkit-print-color-adjust: exact; }
-      .page { 
+      .page {
         width: 100%;
         max-width: 100%;
         padding: 0.3in;
         margin: 0;
       }
     }
-    
+
     @page {
       size: letter;
       margin: 0.5in;
@@ -295,7 +313,7 @@
     <!-- Header -->
     <header class="header">
       <div class="brand">
-        <img src="rangeway-lockup-charcoal.svg" alt="Rangeway" style="height: 44px; margin-bottom: 5px;">
+        <img src="../assets/images/rangeway-lockup-charcoal.svg" alt="Rangeway" style="height: 56px; margin-bottom: 8px;">
         <div class="tagline">Where EV charging becomes part of your journey</div>
       </div>
       <div class="header-right">
