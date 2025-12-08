@@ -255,11 +255,19 @@
       margin-bottom: 10px;
     }
     
+    /* Table wrapper for responsive scrolling */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 20px 0;
+    }
+
     /* Comparison table */
     .comparison-table {
       width: 100%;
+      min-width: 600px;
       border-collapse: collapse;
-      margin: 20px 0;
       font-size: 15px;
       page-break-inside: avoid;
     }
@@ -270,6 +278,7 @@
       padding: 12px 10px;
       text-align: left;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .comparison-table td {
@@ -285,8 +294,8 @@
     /* Tier table */
     .tier-table {
       width: 100%;
+      min-width: 500px;
       border-collapse: collapse;
-      margin: 20px 0;
       font-size: 15px;
       page-break-inside: avoid;
     }
@@ -750,7 +759,8 @@
   <div class="callout">No one has solved for hospitality. Every existing option treats charging infrastructure as a utility deployment problem: place chargers, ensure they work, move on. None have reimagined charging locations as hospitality destinations where the experience matches the 20-40 minute reality of fast charging.</div>
   
   <h3>Competitive Comparison</h3>
-  
+
+  <div class="table-wrapper">
   <table class="comparison-table">
     <tr>
       <th>Feature</th>
@@ -802,7 +812,8 @@
       <td>Infrastructure</td>
     </tr>
   </table>
-  
+  </div>
+
   <h3>Our Competitive Advantages</h3>
   
   <h4>Industry-First Indoor Comfort Guarantee</h4>
@@ -961,7 +972,8 @@
   <p>Pathfinder Rewards is our hospitality-style loyalty program where status is earned through usage, not purchased. The program reinforces our premium positioning while driving repeat visits and customer advocacy.</p>
   
   <p><strong>Pricing Model:</strong> Everyone pays the same base rate ($0.50/kWh). Status unlocks credits back for future charging and experiential perks, not rate discounts.</p>
-  
+
+  <div class="table-wrapper">
   <table class="tier-table">
     <tr>
       <th>Tier</th>
@@ -994,7 +1006,8 @@
       <td>Relationship manager, exclusive experiences, founding member recognition</td>
     </tr>
   </table>
-  
+  </div>
+
   <h3>Sales Forecast Approach</h3>
   
   <p>Traffic projections for each location are based on:</p>
@@ -1342,7 +1355,8 @@
   </ul>
   
   <h3>Five-Year Financial Summary</h3>
-  
+
+  <div class="table-wrapper">
   <table class="tier-table">
     <tr>
       <th>Metric</th>
@@ -1377,7 +1391,8 @@
       <td>39%</td>
     </tr>
   </table>
-  
+  </div>
+
   <p><strong>Key metrics:</strong> $35 average session × 50+ daily sessions = $1.7M/site/year | 24-36 month payback | 94% revenue CAGR</p>
   
   <h3>Capital Efficiency</h3>
