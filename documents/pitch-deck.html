@@ -486,16 +486,31 @@
       renderPage(totalPages);
     }
 
-    // Toggle fullscreen
+    // Toggle fullscreen (cross-browser support)
     function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().then(() => {
-          setTimeout(() => renderPage(currentPage), 100);
-        });
+      const elem = document.documentElement;
+      const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement;
+
+      if (!isFullscreen) {
+        // Enter fullscreen
+        const requestFullscreen = elem.requestFullscreen || elem.webkitRequestFullscreen;
+        if (requestFullscreen) {
+          requestFullscreen.call(elem).then(() => {
+            setTimeout(() => renderPage(currentPage), 100);
+          }).catch((err) => {
+            console.log('Fullscreen request failed:', err);
+          });
+        }
       } else {
-        document.exitFullscreen().then(() => {
-          setTimeout(() => renderPage(currentPage), 100);
-        });
+        // Exit fullscreen
+        const exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen;
+        if (exitFullscreen) {
+          exitFullscreen.call(document).then(() => {
+            setTimeout(() => renderPage(currentPage), 100);
+          }).catch((err) => {
+            console.log('Exit fullscreen failed:', err);
+          });
+        }
       }
     }
 
