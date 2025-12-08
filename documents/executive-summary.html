@@ -8,19 +8,33 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
+  /* Document-specific colors that adapt to theme */
   :root {
-    --charcoal: #2D2D2D;
-    --warm: #F4A855;
-    --sage: #4A5D52;
-    --cream: #FAF9F6;
-    --light-gray: #F5F5F5;
+    --doc-warm: #F4A855;
+    --doc-sage: #4A5D52;
+    --doc-cream: #FAF9F6;
+    --doc-light-gray: #F5F5F5;
+  }
+
+  [data-theme="dark"] {
+    --doc-sage: #7a9485;
+    --doc-cream: #3a3a3a;
+    --doc-light-gray: #2a2a2a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --doc-sage: #7a9485;
+      --doc-cream: #3a3a3a;
+      --doc-light-gray: #2a2a2a;
+    }
   }
 
   .page {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    background: white;
+    background: var(--card-bg);
     box-sizing: border-box;
   }
 
@@ -31,32 +45,33 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
     align-items: flex-start;
     margin-bottom: 18px;
     padding-bottom: 13px;
-    border-bottom: 3px solid var(--warm);
+    border-bottom: 3px solid var(--doc-warm);
   }
 
   .brand h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 48px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     letter-spacing: -1px;
     margin-bottom: 6px;
   }
 
   .brand .tagline {
     font-size: 18px;
-    color: var(--sage);
+    color: var(--doc-sage);
     font-style: italic;
   }
 
   .doc-header-right {
     text-align: right;
     font-size: 16px;
-    color: #666;
+    color: var(--text-secondary);
   }
 
   .doc-header-right .conf {
-    color: #999;
+    color: var(--text-secondary);
+    opacity: 0.7;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -80,19 +95,21 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--sage);
+    color: var(--doc-sage);
     margin-bottom: 12px;
     padding-bottom: 6px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .section p {
     margin-bottom: 8px;
+    color: var(--text-primary);
   }
 
   .section ul {
     margin: 0;
     padding-left: 17px;
+    color: var(--text-primary);
   }
 
   .section li {
@@ -100,25 +117,27 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
   }
 
   .section li strong {
-    color: var(--charcoal);
+    color: var(--text-heading);
   }
 
   .highlight {
     font-weight: 600;
-    color: var(--charcoal);
+    color: var(--text-heading);
   }
 
   .callout {
-    background: var(--light-gray);
+    background: var(--doc-light-gray);
     padding: 16px 20px;
-    border-left: 3px solid var(--warm);
+    border-left: 3px solid var(--doc-warm);
     margin: 16px 0;
     font-size: 17px;
+    color: var(--text-primary);
   }
 
   .callout strong {
     display: block;
     margin-bottom: 4px;
+    color: var(--text-heading);
   }
 
   /* Two formats box */
@@ -131,7 +150,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
   }
 
   .format-box {
-    background: var(--cream);
+    background: var(--doc-cream);
     padding: 10px 12px;
     border-radius: 4px;
     display: flex;
@@ -144,19 +163,19 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     margin-bottom: 8px;
   }
 
   .format-box p {
     font-size: 16px;
     margin: 0;
-    color: #555;
+    color: var(--text-secondary);
   }
 
-  /* Funding box */
+  /* Funding box - stays dark in both modes */
   .funding-box {
-    background: linear-gradient(135deg, var(--charcoal) 0%, #3d3d3d 100%);
+    background: linear-gradient(135deg, #2D2D2D 0%, #3d3d3d 100%);
     color: white;
     padding: 17px 21px;
     border-radius: 6px;
@@ -177,7 +196,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
   }
 
   .funding-box h2 span {
-    color: var(--warm);
+    color: var(--doc-warm);
   }
 
   .funding-grid {
@@ -194,7 +213,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
   .funding-item .pct {
     font-size: 36px;
     font-weight: 700;
-    color: var(--warm);
+    color: var(--doc-warm);
   }
 
   .funding-item .label {
@@ -217,14 +236,40 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-color);
     font-size: 16px;
-    color: #666;
+    color: var(--text-secondary);
   }
 
   .doc-footer a {
-    color: var(--sage);
+    color: var(--doc-sage);
     text-decoration: none;
+  }
+
+  .doc-footer strong {
+    color: var(--text-heading);
+  }
+
+  /* Logo switching for dark mode */
+  .brand .dark-logo {
+    display: none;
+  }
+
+  [data-theme="dark"] .brand .light-logo {
+    display: none;
+  }
+
+  [data-theme="dark"] .brand .dark-logo {
+    display: block;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .brand .light-logo {
+      display: none;
+    }
+    :root:not([data-theme="light"]) .brand .dark-logo {
+      display: block;
+    }
   }
 
   /* Tablet */
@@ -315,7 +360,8 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
   <!-- Document Header -->
   <header class="doc-header">
     <div class="brand">
-      <img src="../assets/images/rangeway-lockup-charcoal.svg" alt="Rangeway" style="height: 56px; margin-bottom: 8px;">
+      <img src="../assets/images/rangeway-lockup-charcoal.svg" alt="Rangeway" class="light-logo" style="height: 56px; margin-bottom: 8px;">
+      <img src="../assets/images/rangeway-lockup-white.svg" alt="Rangeway" class="dark-logo" style="height: 56px; margin-bottom: 8px;">
       <div class="tagline">Where EV charging becomes part of your journey</div>
     </div>
     <div class="doc-header-right">

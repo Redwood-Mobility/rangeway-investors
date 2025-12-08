@@ -28,6 +28,53 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
   <meta name="theme-color" content="#F09060">
 
   <style>
+    /* Light Mode (Default) */
+    :root {
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #FAFAFA;
+      --text-primary: #2C3E50;
+      --text-secondary: #666666;
+      --text-heading: #4A4A4A;
+      --card-bg: #FFFFFF;
+      --border-color: #E6E6E6;
+      --shadow-light: rgba(0,0,0,0.08);
+      --shadow-medium: rgba(0,0,0,0.12);
+      --accent-color: #F09060;
+      --accent-hover: #e07a48;
+    }
+
+    /* Dark Mode */
+    [data-theme="dark"] {
+      --bg-primary: #1a1a1a;
+      --bg-secondary: #2a2a2a;
+      --text-primary: #e0e0e0;
+      --text-secondary: #b0b0b0;
+      --text-heading: #f5f5f5;
+      --card-bg: #2a2a2a;
+      --border-color: #444;
+      --shadow-light: rgba(0,0,0,0.3);
+      --shadow-medium: rgba(0,0,0,0.4);
+      --accent-color: #F09060;
+      --accent-hover: #FFB366;
+    }
+
+    /* Auto dark mode based on system preference */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg-primary: #1a1a1a;
+        --bg-secondary: #2a2a2a;
+        --text-primary: #e0e0e0;
+        --text-secondary: #b0b0b0;
+        --text-heading: #f5f5f5;
+        --card-bg: #2a2a2a;
+        --border-color: #444;
+        --shadow-light: rgba(0,0,0,0.3);
+        --shadow-medium: rgba(0,0,0,0.4);
+        --accent-color: #F09060;
+        --accent-hover: #FFB366;
+      }
+    }
+
     .login-page {
       min-height: 100vh;
       display: flex;

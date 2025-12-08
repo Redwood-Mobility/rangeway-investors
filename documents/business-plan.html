@@ -5,17 +5,26 @@ description: "Rangeway is building America's first hospitality-driven premium EV
 keywords: "EV charging, electric vehicle infrastructure, hospitality, business plan, Rangeway"
 ---
 
-<!-- Auth Check -->
-<script src="../assets/js/auth.js"></script>
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
+  /* Document-specific colors that adapt to theme */
   :root {
-    --charcoal: #2D2D2D;
-    --warm: #F4A855;
-    --sage: #4A5D52;
-    --cream: #FAF8F5;
+    --doc-warm: #F4A855;
+    --doc-sage: #4A5D52;
+    --doc-cream: #FAF8F5;
+  }
+
+  [data-theme="dark"] {
+    --doc-sage: #7a9485;
+    --doc-cream: #3a3a3a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --doc-sage: #7a9485;
+      --doc-cream: #3a3a3a;
+    }
   }
 
   @page {
@@ -33,8 +42,8 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     line-height: 1.6;
-    color: var(--charcoal);
-    background: white;
+    color: var(--text-primary);
+    background: var(--bg-primary);
   }
 
   .container {
@@ -60,11 +69,33 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     margin-bottom: 40px;
   }
 
+  /* Logo switching for dark mode */
+  .cover .dark-logo {
+    display: none;
+  }
+
+  [data-theme="dark"] .cover .light-logo {
+    display: none;
+  }
+
+  [data-theme="dark"] .cover .dark-logo {
+    display: block;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .cover .light-logo {
+      display: none;
+    }
+    :root:not([data-theme="light"]) .cover .dark-logo {
+      display: block;
+    }
+  }
+
   .cover .tagline {
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
     font-style: italic;
-    color: var(--sage);
+    color: var(--doc-sage);
     margin-bottom: 60px;
   }
 
@@ -72,19 +103,20 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 42px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     margin-bottom: 16px;
   }
 
   .cover .date {
     font-size: 20px;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 60px;
   }
 
   .cover .contact {
     font-size: 18px;
     line-height: 1.8;
+    color: var(--text-primary);
   }
 
   /* Section styling */
@@ -97,8 +129,8 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 36px;
     font-weight: 700;
-    color: var(--charcoal);
-    border-bottom: 3px solid var(--warm);
+    color: var(--text-heading);
+    border-bottom: 3px solid var(--doc-warm);
     padding-bottom: 12px;
     margin-bottom: 24px;
   }
@@ -107,7 +139,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 26px;
     font-weight: 700;
-    color: var(--sage);
+    color: var(--doc-sage);
     margin-top: 32px;
     margin-bottom: 16px;
     page-break-after: avoid;
@@ -117,7 +149,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     margin-top: 24px;
     margin-bottom: 12px;
     page-break-after: avoid;
@@ -127,7 +159,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     margin-top: 16px;
     margin-bottom: 8px;
   }
@@ -152,8 +184,8 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   /* Callout box */
   .callout {
-    background: var(--cream);
-    border-left: 4px solid var(--warm);
+    background: var(--doc-cream);
+    border-left: 4px solid var(--doc-warm);
     padding: 20px 24px;
     margin: 24px 0;
     font-style: italic;
@@ -172,7 +204,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   .format-box {
     display: table-cell;
-    background: var(--cream);
+    background: var(--doc-cream);
     padding: 12px;
     border-radius: 5px;
     width: 50%;
@@ -183,7 +215,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     margin-bottom: 10px;
     margin-top: 0;
   }
@@ -209,7 +241,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   .partner-box {
     display: table-cell;
-    background: var(--cream);
+    background: var(--doc-cream);
     padding: 10px;
     border-radius: 5px;
     width: 50%;
@@ -220,7 +252,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     margin-bottom: 8px;
     margin-top: 0;
   }
@@ -233,7 +265,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   /* Bio box for founder */
   .bio-box {
-    background: var(--cream);
+    background: var(--doc-cream);
     padding: 24px;
     border-radius: 8px;
     margin: 20px 0;
@@ -243,14 +275,14 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     margin-bottom: 6px;
     margin-top: 0;
   }
 
   .bio-box .role {
     font-size: 16px;
-    color: var(--sage);
+    color: var(--doc-sage);
     font-weight: 600;
     margin-bottom: 12px;
   }
@@ -278,7 +310,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   }
 
   .comparison-table th {
-    background: var(--charcoal);
+    background: var(--text-heading);
     color: white;
     padding: 12px 10px;
     text-align: left;
@@ -288,12 +320,12 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   .comparison-table td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
     vertical-align: top;
   }
 
   .comparison-table tr:nth-child(even) {
-    background: var(--cream);
+    background: var(--doc-cream);
   }
 
   /* Tier table */
@@ -306,7 +338,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   }
 
   .tier-table th {
-    background: var(--sage);
+    background: var(--doc-sage);
     color: white;
     padding: 12px 10px;
     text-align: left;
@@ -315,18 +347,18 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   .tier-table td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
     vertical-align: top;
   }
 
   .tier-table tr:nth-child(even) {
-    background: var(--cream);
+    background: var(--doc-cream);
   }
 
   /* Funding box */
   .funding-box {
-    background: var(--cream);
-    border: 2px solid var(--warm);
+    background: var(--doc-cream);
+    border: 2px solid var(--doc-warm);
     border-radius: 8px;
     padding: 24px;
     margin: 24px 0;
@@ -337,7 +369,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: var(--charcoal);
+    color: var(--text-heading);
     text-align: center;
     margin: 0 0 20px 0;
   }
@@ -360,26 +392,26 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 36px;
     font-weight: 700;
-    color: var(--sage);
+    color: var(--doc-sage);
   }
 
   .funding-item .label {
     font-size: 14px;
-    color: var(--charcoal);
+    color: var(--text-heading);
     line-height: 1.4;
   }
 
   .funding-note {
     margin-top: 20px;
     padding-top: 16px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-color);
     font-size: 16px;
     text-align: center;
   }
 
   /* Milestone section */
   .milestone-section {
-    background: var(--cream);
+    background: var(--doc-cream);
     padding: 20px;
     border-radius: 8px;
     margin: 16px 0;
@@ -388,7 +420,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   .milestone-section h3 {
     margin-top: 0;
-    color: var(--sage);
+    color: var(--doc-sage);
   }
 
   .milestone-section ul {
@@ -406,7 +438,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   .metric-box {
     display: table-cell;
-    background: var(--cream);
+    background: var(--doc-cream);
     padding: 20px;
     border-radius: 8px;
     width: 33.33%;
@@ -418,12 +450,12 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     font-family: 'Raleway', sans-serif;
     font-size: 36px;
     font-weight: 700;
-    color: var(--sage);
+    color: var(--doc-sage);
   }
 
   .metric-box .label {
     font-size: 14px;
-    color: var(--charcoal);
+    color: var(--text-heading);
   }
 
   /* TOC */
@@ -455,7 +487,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   /* Stats highlight */
   .stat-highlight {
-    background: var(--sage);
+    background: var(--doc-sage);
     color: white;
     padding: 20px 24px;
     border-radius: 8px;
@@ -577,7 +609,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     .comparison-table tr,
     .tier-table tr {
       display: block;
-      background: var(--cream);
+      background: var(--doc-cream);
       border-radius: 8px;
       padding: 16px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -585,14 +617,14 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
     .comparison-table tr:nth-child(even),
     .tier-table tr:nth-child(even) {
-      background: var(--cream);
+      background: var(--doc-cream);
     }
 
     .comparison-table td,
     .tier-table td {
       display: block;
       padding: 8px 0;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid var(--border-color);
       text-align: left;
     }
 
@@ -607,7 +639,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
       display: block;
       font-weight: 600;
       font-size: 12px;
-      color: var(--sage);
+      color: var(--doc-sage);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 4px;
@@ -617,8 +649,8 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     .tier-table td:first-child {
       font-size: 18px;
       font-weight: 700;
-      color: var(--charcoal);
-      border-bottom: 2px solid var(--warm);
+      color: var(--text-heading);
+      border-bottom: 2px solid var(--doc-warm);
       padding-bottom: 12px;
       margin-bottom: 8px;
     }
@@ -701,7 +733,8 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Cover Page -->
 <div class="cover">
-  <img src="../assets/images/rangeway-lockup-charcoal.svg" alt="Rangeway" class="logo">
+  <img src="../assets/images/rangeway-lockup-charcoal.svg" alt="Rangeway" class="logo light-logo">
+  <img src="../assets/images/rangeway-lockup-white.svg" alt="Rangeway" class="logo dark-logo">
   <div class="tagline">Where EV charging becomes part of your journey</div>
   <div class="doc-type">Business Plan</div>
   <div class="date">December 2025</div>
@@ -1792,9 +1825,9 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     <li><strong>Open Territory:</strong> Prime scenic locations available now. Once competitors realize the opportunity, these sites are gone.</li>
   </ul>
 
-  <p style="font-size: 12pt; font-weight: 600; color: var(--sage); margin-top: 30px;">We invite you to join us in building the future of EV travel.</p>
+  <p style="font-size: 12pt; font-weight: 600; color: var(--doc-sage); margin-top: 30px;">We invite you to join us in building the future of EV travel.</p>
 
-  <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--warm);">
+  <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--doc-warm);">
     <h2 style="margin-top: 0;">Contact</h2>
     <p style="font-size: 11pt; line-height: 1.8;">
       <strong>Zak Winnick</strong>, Founder &amp; CEO<br>
