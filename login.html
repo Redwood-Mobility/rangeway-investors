@@ -1,0 +1,427 @@
+---
+layout: null
+title: "Investor Hub Access | Rangeway Energy, Inc."
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Investor Hub Access | Rangeway Energy, Inc.</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.asset_version }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/rangeway-favicon.svg' | relative_url }}">
+
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#F09060">
+
+  <!-- Analytics -->
+  <script src="https://tinylytics.app/embed/vP5GhqSmpXFEymnT_z-c.js" defer></script>
+
+  <style>
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      background: var(--bg-primary);
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    .login-logo {
+      margin-bottom: 2rem;
+    }
+
+    .login-logo img {
+      height: 48px;
+    }
+
+    .login-logo .dark-logo {
+      display: none;
+    }
+
+    [data-theme="dark"] .login-logo .light-logo {
+      display: none;
+    }
+
+    [data-theme="dark"] .login-logo .dark-logo {
+      display: inline;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .login-logo .light-logo {
+        display: none;
+      }
+      :root:not([data-theme="light"]) .login-logo .dark-logo {
+        display: inline;
+      }
+    }
+
+    .login-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 4px 20px var(--shadow-light);
+    }
+
+    .login-card h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-heading);
+    }
+
+    .login-card .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .divider span {
+      padding: 0 1rem;
+    }
+
+    .request-access {
+      margin-bottom: 2rem;
+    }
+
+    .request-access p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .request-access a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    .request-access a:hover {
+      color: var(--accent-hover);
+    }
+
+    .login-form {
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-heading);
+      font-size: 0.875rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(240, 144, 96, 0.15);
+    }
+
+    .form-group input::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .login-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--shadow-medium);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .error-message {
+      background: #fee2e2;
+      color: #dc2626;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      display: none;
+    }
+
+    [data-theme="dark"] .error-message {
+      background: #450a0a;
+      color: #fca5a5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .error-message {
+        background: #450a0a;
+        color: #fca5a5;
+      }
+    }
+
+    .login-footer {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .login-footer a {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+    .login-footer a:hover {
+      color: var(--accent-color);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-primary);
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .theme-toggle .fa-moon {
+      display: none;
+    }
+
+    [data-theme="dark"] .theme-toggle .fa-sun {
+      display: none;
+    }
+
+    [data-theme="dark"] .theme-toggle .fa-moon {
+      display: block;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .theme-toggle .fa-sun {
+        display: none;
+      }
+      :root:not([data-theme="light"]) .theme-toggle .fa-moon {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .login-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .login-card h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <i class="fa-solid fa-sun"></i>
+    <i class="fa-solid fa-moon"></i>
+  </button>
+
+  <div class="login-page">
+    <div class="login-container">
+      <div class="login-logo">
+        <img src="{{ '/assets/images/rangeway-lockup-charcoal.svg' | relative_url }}" alt="Rangeway" class="light-logo">
+        <img src="{{ '/assets/images/rangeway-lockup-white.svg' | relative_url }}" alt="Rangeway" class="dark-logo">
+      </div>
+
+      <div class="login-card">
+        <h1>Investor Hub</h1>
+        <p class="subtitle">Access to investor materials requires authorization.</p>
+
+        <div class="request-access">
+          <p>To request access to our investor materials, please contact:</p>
+          <a href="mailto:{{ site.investment.email }}">
+            <i class="fa-solid fa-envelope"></i>
+            {{ site.investment.email }}
+          </a>
+        </div>
+
+        <div class="divider">
+          <span>Already have access?</span>
+        </div>
+
+        <form class="login-form" id="loginForm">
+          <div class="error-message" id="errorMessage">
+            Incorrect password. Please try again.
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+          </div>
+
+          <button type="submit" class="login-btn" id="loginBtn">
+            Access Investor Hub
+          </button>
+        </form>
+
+        <div class="login-footer">
+          <a href="{{ site.organization.main_site }}" target="_blank" rel="noopener">
+            Visit rangewayev.com <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme handling
+    const themeToggle = document.getElementById('themeToggle');
+
+    function getSystemTheme() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('rangeway-theme', theme);
+    }
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('rangeway-theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // Password authentication
+    // SHA-256 hash of the password - change this to your password's hash
+    // To generate: echo -n "YourPassword" | shasum -a 256
+    const PASSWORD_HASH = '5e884898da28047d9169e1809a62bd85e1e3dd91a5e76a6baa6c1b5e3c2e0f1a'; // Default: "password"
+
+    async function hashPassword(password) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(password);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const loginBtn = document.getElementById('loginBtn');
+    const passwordInput = document.getElementById('password');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      loginBtn.disabled = true;
+      loginBtn.textContent = 'Verifying...';
+      errorMessage.style.display = 'none';
+
+      const password = passwordInput.value;
+      const hash = await hashPassword(password);
+
+      // Small delay to prevent brute force
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      if (hash === PASSWORD_HASH) {
+        // Set authentication
+        sessionStorage.setItem('rangeway-investor-auth', hash);
+
+        // Redirect to main page
+        window.location.href = '{{ "/" | relative_url }}';
+      } else {
+        errorMessage.style.display = 'block';
+        passwordInput.value = '';
+        passwordInput.focus();
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Access Investor Hub';
+      }
+    });
+
+    // Check if already authenticated
+    const auth = sessionStorage.getItem('rangeway-investor-auth');
+    if (auth === PASSWORD_HASH) {
+      window.location.href = '{{ "/" | relative_url }}';
+    }
+  </script>
+</body>
+</html>
