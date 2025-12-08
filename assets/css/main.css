@@ -447,15 +447,16 @@ a:hover {
 }
 
 .btn-secondary {
-  background: transparent;
+  background: var(--accent-color);
   border-color: var(--accent-color);
-  color: var(--accent-color);
+  color: white;
 }
 
 .btn-secondary:hover {
-  background: var(--accent-color);
+  background: var(--accent-hover);
   color: white;
   transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--shadow-medium);
 }
 
 .btn-large {
@@ -823,14 +824,14 @@ section {
 }
 
 .cta .btn-secondary {
-  background: transparent !important;
+  background: white !important;
   border-color: white !important;
-  color: white !important;
+  color: var(--sunset-coral) !important;
 }
 
 .cta .btn-secondary:hover {
-  background: white !important;
-  color: #2C3E50 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: var(--accent-hover) !important;
   transform: translateY(-2px);
 }
 
