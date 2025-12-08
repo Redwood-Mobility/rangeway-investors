@@ -1,702 +1,701 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rangeway Business Plan - December 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+---
+layout: default
+title: "Business Plan | Rangeway Energy, Inc."
+description: "Rangeway is building America's first hospitality-driven premium EV charging network, transforming the 20-30 minute charging window into a moment worth savoring."
+keywords: "EV charging, electric vehicle infrastructure, hospitality, business plan, Rangeway"
+---
 
-  <!-- Auth Check -->
-  <script src="../assets/js/auth.js"></script>
+<!-- Auth Check -->
+<script src="../assets/js/auth.js"></script>
 
-  <style>
-    :root {
-      --charcoal: #2D2D2D;
-      --warm: #F4A855;
-      --sage: #4A5D52;
-      --cream: #FAF8F5;
-    }
-    
-    @page {
-      size: letter;
-      margin: 0.5in 0.6in;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-      color: var(--charcoal);
-      background: white;
-    }
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
+  :root {
+    --charcoal: #2D2D2D;
+    --warm: #F4A855;
+    --sage: #4A5D52;
+    --cream: #FAF8F5;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.5in 0.6in;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: white;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Cover Page */
+  .cover {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    page-break-after: always;
+  }
+
+  .cover .logo {
+    width: 320px;
+    margin-bottom: 40px;
+  }
+
+  .cover .tagline {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--sage);
+    margin-bottom: 60px;
+  }
+
+  .cover .doc-type {
+    font-family: 'Raleway', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+
+  .cover .date {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 60px;
+  }
+
+  .cover .contact {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  /* Section styling */
+  .new-section {
+    page-break-before: always;
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--charcoal);
+    border-bottom: 3px solid var(--warm);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--sage);
+    margin-top: 32px;
+    margin-bottom: 16px;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 24px;
+    margin-bottom: 12px;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  ul, ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  /* Callout box */
+  .callout {
+    background: var(--cream);
+    border-left: 4px solid var(--warm);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-style: italic;
+    font-size: 18px;
+    page-break-inside: avoid;
+  }
+
+  /* Format boxes - table layout */
+  .format-grid {
+    display: table;
+    width: 100%;
+    margin: 12px 0;
+    border-spacing: 10px 0;
+    margin-left: -10px;
+  }
+
+  .format-box {
+    display: table-cell;
+    background: var(--cream);
+    padding: 12px;
+    border-radius: 5px;
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .format-box h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .format-box ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .format-box li {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
+  /* Partner/team boxes - table layout */
+  .partner-grid {
+    display: table;
+    width: 100%;
+    margin: 10px 0;
+    border-spacing: 10px 0;
+    margin-left: -10px;
+  }
+
+  .partner-box {
+    display: table-cell;
+    background: var(--cream);
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .partner-box h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .partner-box p {
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Bio box for founder */
+  .bio-box {
+    background: var(--cream);
+    padding: 24px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+
+  .bio-box h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+    margin-top: 0;
+  }
+
+  .bio-box .role {
+    font-size: 16px;
+    color: var(--sage);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .bio-box p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  /* Table wrapper for responsive scrolling */
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+  }
+
+  /* Comparison table */
+  .comparison-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 15px;
+    page-break-inside: avoid;
+  }
+
+  .comparison-table th {
+    background: var(--charcoal);
+    color: white;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .comparison-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: var(--cream);
+  }
+
+  /* Tier table */
+  .tier-table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    font-size: 15px;
+    page-break-inside: avoid;
+  }
+
+  .tier-table th {
+    background: var(--sage);
+    color: white;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .tier-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+
+  .tier-table tr:nth-child(even) {
+    background: var(--cream);
+  }
+
+  /* Funding box */
+  .funding-box {
+    background: var(--cream);
+    border: 2px solid var(--warm);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+    page-break-inside: avoid;
+  }
+
+  .funding-box h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--charcoal);
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  .funding-grid {
+    display: table;
+    width: 100%;
+    border-spacing: 12px 0;
+    margin-left: -12px;
+  }
+
+  .funding-item {
+    display: table-cell;
+    text-align: center;
+    width: 25%;
+    vertical-align: top;
+  }
+
+  .funding-item .pct {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--sage);
+  }
+
+  .funding-item .label {
+    font-size: 14px;
+    color: var(--charcoal);
+    line-height: 1.4;
+  }
+
+  .funding-note {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* Milestone section */
+  .milestone-section {
+    background: var(--cream);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .milestone-section h3 {
+    margin-top: 0;
+    color: var(--sage);
+  }
+
+  .milestone-section ul {
+    margin-bottom: 0;
+  }
+
+  /* Metrics grid */
+  .metrics-grid {
+    display: table;
+    width: 100%;
+    margin: 20px 0;
+    border-spacing: 16px 0;
+    margin-left: -16px;
+  }
+
+  .metric-box {
+    display: table-cell;
+    background: var(--cream);
+    padding: 20px;
+    border-radius: 8px;
+    width: 33.33%;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  .metric-box .value {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--sage);
+  }
+
+  .metric-box .label {
+    font-size: 14px;
+    color: var(--charcoal);
+  }
+
+  /* TOC */
+  .toc-page {
+    page-break-after: always;
+    padding: 3rem 0;
+  }
+
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 18px;
+  }
+
+  .toc-item span:first-child {
+    font-weight: 600;
+  }
+
+  /* Confidential header */
+  .confidential {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  /* Stats highlight */
+  .stat-highlight {
+    background: var(--sage);
+    color: white;
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .stat-highlight .number {
+    font-family: 'Raleway', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+  }
+
+  .stat-highlight .desc {
+    font-size: 18px;
+  }
+
+  /* Tablet - smaller tables, allow scroll */
+  @media (max-width: 968px) {
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    /* Cover Page */
-    .cover {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-      page-break-after: always;
+      padding: 0 1.5rem;
     }
 
-    .cover .logo {
-      width: 320px;
-      margin-bottom: 40px;
-    }
-
-    .cover .tagline {
-      font-family: 'Raleway', sans-serif;
-      font-size: 22px;
-      font-style: italic;
-      color: var(--sage);
-      margin-bottom: 60px;
-    }
-
-    .cover .doc-type {
-      font-family: 'Raleway', sans-serif;
-      font-size: 42px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-bottom: 16px;
-    }
-
-    .cover .date {
-      font-size: 20px;
-      color: #666;
-      margin-bottom: 60px;
-    }
-
-    .cover .contact {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-    
-    /* Section styling */
-    .new-section {
-      page-break-before: always;
-      padding: 3rem 0;
-    }
-
-    .section-title {
-      font-family: 'Raleway', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--charcoal);
-      border-bottom: 3px solid var(--warm);
-      padding-bottom: 12px;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--sage);
-      margin-top: 32px;
-      margin-bottom: 16px;
-      page-break-after: avoid;
-    }
-
-    h3 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-top: 24px;
-      margin-bottom: 12px;
-      page-break-after: avoid;
-    }
-
-    h4 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-top: 16px;
-      margin-bottom: 8px;
-    }
-    
-    p {
-      margin-bottom: 12px;
-      text-align: left;
-    }
-
-    ul, ol {
-      margin-left: 24px;
-      margin-bottom: 16px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    strong {
-      font-weight: 600;
-    }
-
-    /* Callout box */
-    .callout {
-      background: var(--cream);
-      border-left: 4px solid var(--warm);
-      padding: 20px 24px;
-      margin: 24px 0;
-      font-style: italic;
-      font-size: 18px;
-      page-break-inside: avoid;
-    }
-    
-    /* Format boxes - table layout */
-    .format-grid {
-      display: table;
-      width: 100%;
-      margin: 12px 0;
-      border-spacing: 10px 0;
-      margin-left: -10px;
-    }
-    
-    .format-box {
-      display: table-cell;
-      background: var(--cream);
-      padding: 12px;
-      border-radius: 5px;
-      width: 50%;
-      vertical-align: top;
-    }
-    
-    .format-box h4 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-bottom: 10px;
-      margin-top: 0;
-    }
-
-    .format-box ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .format-box li {
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-    
-    /* Partner/team boxes - table layout */
-    .partner-grid {
-      display: table;
-      width: 100%;
-      margin: 10px 0;
-      border-spacing: 10px 0;
-      margin-left: -10px;
-    }
-    
-    .partner-box {
-      display: table-cell;
-      background: var(--cream);
-      padding: 10px;
-      border-radius: 5px;
-      width: 50%;
-      vertical-align: top;
-    }
-    
-    .partner-box h4 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-bottom: 8px;
-      margin-top: 0;
-    }
-
-    .partner-box p {
-      font-size: 15px;
-      margin: 0;
-      text-align: left;
-    }
-    
-    /* Bio box for founder */
-    .bio-box {
-      background: var(--cream);
-      padding: 24px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-
-    .bio-box h4 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--charcoal);
-      margin-bottom: 6px;
-      margin-top: 0;
-    }
-
-    .bio-box .role {
-      font-size: 16px;
-      color: var(--sage);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .bio-box p {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    
-    /* Table wrapper for responsive scrolling */
-    .table-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      margin: 20px 0;
-    }
-
-    /* Comparison table */
-    .comparison-table {
-      width: 100%;
-      min-width: 600px;
-      border-collapse: collapse;
-      font-size: 15px;
-      page-break-inside: avoid;
-    }
-
-    .comparison-table th {
-      background: var(--charcoal);
-      color: white;
-      padding: 12px 10px;
-      text-align: left;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .comparison-table td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      vertical-align: top;
-    }
-
-    .comparison-table tr:nth-child(even) {
-      background: var(--cream);
-    }
-
-    /* Tier table */
+    .comparison-table,
     .tier-table {
-      width: 100%;
-      min-width: 500px;
-      border-collapse: collapse;
-      font-size: 15px;
-      page-break-inside: avoid;
+      font-size: 14px;
     }
 
+    .comparison-table th,
     .tier-table th {
-      background: var(--sage);
-      color: white;
-      padding: 12px 10px;
-      text-align: left;
-      font-weight: 600;
+      padding: 10px 8px;
     }
 
+    .comparison-table td,
     .tier-table td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      vertical-align: top;
+      padding: 8px;
     }
 
-    .tier-table tr:nth-child(even) {
-      background: var(--cream);
-    }
-    
-    /* Funding box */
-    .funding-box {
-      background: var(--cream);
-      border: 2px solid var(--warm);
-      border-radius: 8px;
-      padding: 24px;
-      margin: 24px 0;
-      page-break-inside: avoid;
+    .format-grid {
+      display: block;
     }
 
-    .funding-box h3 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--charcoal);
-      text-align: center;
-      margin: 0 0 20px 0;
+    .format-box {
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
     }
 
     .funding-grid {
-      display: table;
-      width: 100%;
-      border-spacing: 12px 0;
-      margin-left: -12px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
     .funding-item {
-      display: table-cell;
-      text-align: center;
-      width: 25%;
-      vertical-align: top;
+      display: block;
     }
 
-    .funding-item .pct {
-      font-family: 'Raleway', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--sage);
-    }
-
-    .funding-item .label {
-      font-size: 14px;
-      color: var(--charcoal);
-      line-height: 1.4;
-    }
-
-    .funding-note {
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top: 1px solid #ddd;
-      font-size: 16px;
-      text-align: center;
-    }
-    
-    /* Milestone section */
-    .milestone-section {
-      background: var(--cream);
-      padding: 20px;
-      border-radius: 8px;
-      margin: 16px 0;
-      page-break-inside: avoid;
-    }
-
-    .milestone-section h3 {
-      margin-top: 0;
-      color: var(--sage);
-    }
-
-    .milestone-section ul {
-      margin-bottom: 0;
-    }
-
-    /* Metrics grid */
+    /* Fix metrics grid for tablet */
     .metrics-grid {
-      display: table;
-      width: 100%;
-      margin: 20px 0;
-      border-spacing: 16px 0;
-      margin-left: -16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-left: 0;
+      border-spacing: 0;
     }
 
     .metric-box {
-      display: table-cell;
-      background: var(--cream);
-      padding: 20px;
-      border-radius: 8px;
-      width: 33.33%;
-      vertical-align: top;
+      display: block;
+      padding: 16px;
       text-align: center;
     }
 
     .metric-box .value {
-      font-family: 'Raleway', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--sage);
+      font-size: 28px;
     }
 
-    .metric-box .label {
-      font-size: 14px;
-      color: var(--charcoal);
-    }
-    
-    /* TOC */
-    .toc-page {
-      page-break-after: always;
-      padding: 3rem 0;
+    /* Fix partner grid for tablet */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-left: 0;
+      border-spacing: 0;
     }
 
-    .toc-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px dotted #ccc;
-      font-size: 18px;
+    .partner-box {
+      display: block;
     }
 
-    .toc-item span:first-child {
-      font-weight: 600;
+    .cover .doc-type {
+      font-size: 32px;
+    }
+  }
+
+  /* Mobile - stack tables as cards */
+  @media (max-width: 600px) {
+    .container {
+      padding: 0 1rem;
     }
 
-    /* Confidential header */
-    .confidential {
-      font-size: 12px;
-      color: #888;
-      text-align: center;
-      margin-bottom: 16px;
-      font-style: italic;
+    .comparison-table,
+    .tier-table {
+      min-width: unset;
     }
 
-    /* Stats highlight */
-    .stat-highlight {
-      background: var(--sage);
-      color: white;
-      padding: 20px 24px;
+    .comparison-table thead,
+    .tier-table thead {
+      display: none;
+    }
+
+    .comparison-table tbody,
+    .tier-table tbody {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .comparison-table tr,
+    .tier-table tr {
+      display: block;
+      background: var(--cream);
       border-radius: 8px;
-      margin: 20px 0;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .comparison-table tr:nth-child(even),
+    .tier-table tr:nth-child(even) {
+      background: var(--cream);
+    }
+
+    .comparison-table td,
+    .tier-table td {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: left;
+    }
+
+    .comparison-table td:last-child,
+    .tier-table td:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-table td::before,
+    .tier-table td::before {
+      content: attr(data-label);
+      display: block;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .comparison-table td:first-child,
+    .tier-table td:first-child {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      border-bottom: 2px solid var(--warm);
+      padding-bottom: 12px;
+      margin-bottom: 8px;
+    }
+
+    .comparison-table td:first-child::before,
+    .tier-table td:first-child::before {
+      display: none;
+    }
+
+    .table-wrapper {
+      overflow-x: visible;
+    }
+
+    .funding-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Stack metrics on mobile */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-left: 0;
+    }
+
+    .metric-box {
+      display: block;
+      padding: 16px;
       text-align: center;
     }
 
-    .stat-highlight .number {
-      font-family: 'Raleway', sans-serif;
-      font-size: 42px;
-      font-weight: 700;
+    .metric-box .value {
+      font-size: 32px;
     }
 
-    .stat-highlight .desc {
+    /* Stack partner grid on mobile */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-left: 0;
+    }
+
+    .partner-box {
+      display: block;
+    }
+
+    .cover {
+      min-height: 60vh;
+      padding: 2rem 1rem;
+    }
+
+    .cover .logo {
+      width: 200px;
+    }
+
+    .cover .doc-type {
+      font-size: 28px;
+    }
+
+    .section-title {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
       font-size: 18px;
     }
 
-    /* Tablet - smaller tables, allow scroll */
-    @media (max-width: 968px) {
-      .container {
-        padding: 0 1.5rem;
-      }
-
-      .comparison-table,
-      .tier-table {
-        font-size: 14px;
-      }
-
-      .comparison-table th,
-      .tier-table th {
-        padding: 10px 8px;
-      }
-
-      .comparison-table td,
-      .tier-table td {
-        padding: 8px;
-      }
-
-      .format-grid {
-        display: block;
-      }
-
-      .format-box {
-        display: block;
-        width: 100%;
-        margin-bottom: 12px;
-      }
-
-      .funding-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .funding-item {
-        display: block;
-      }
-
-      /* Fix metrics grid for tablet */
-      .metrics-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-left: 0;
-        border-spacing: 0;
-      }
-
-      .metric-box {
-        display: block;
-        padding: 16px;
-        text-align: center;
-      }
-
-      .metric-box .value {
-        font-size: 28px;
-      }
-
-      /* Fix partner grid for tablet */
-      .partner-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin-left: 0;
-        border-spacing: 0;
-      }
-
-      .partner-box {
-        display: block;
-      }
-
-      .cover .doc-type {
-        font-size: 32px;
-      }
+    body {
+      font-size: 16px;
     }
-
-    /* Mobile - stack tables as cards */
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 1rem;
-      }
-
-      .comparison-table,
-      .tier-table {
-        min-width: unset;
-      }
-
-      .comparison-table thead,
-      .tier-table thead {
-        display: none;
-      }
-
-      .comparison-table tbody,
-      .tier-table tbody {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .comparison-table tr,
-      .tier-table tr {
-        display: block;
-        background: var(--cream);
-        border-radius: 8px;
-        padding: 16px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-
-      .comparison-table tr:nth-child(even),
-      .tier-table tr:nth-child(even) {
-        background: var(--cream);
-      }
-
-      .comparison-table td,
-      .tier-table td {
-        display: block;
-        padding: 8px 0;
-        border-bottom: 1px solid #e0e0e0;
-        text-align: left;
-      }
-
-      .comparison-table td:last-child,
-      .tier-table td:last-child {
-        border-bottom: none;
-      }
-
-      .comparison-table td::before,
-      .tier-table td::before {
-        content: attr(data-label);
-        display: block;
-        font-weight: 600;
-        font-size: 12px;
-        color: var(--sage);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 4px;
-      }
-
-      .comparison-table td:first-child,
-      .tier-table td:first-child {
-        font-size: 18px;
-        font-weight: 700;
-        color: var(--charcoal);
-        border-bottom: 2px solid var(--warm);
-        padding-bottom: 12px;
-        margin-bottom: 8px;
-      }
-
-      .comparison-table td:first-child::before,
-      .tier-table td:first-child::before {
-        display: none;
-      }
-
-      .table-wrapper {
-        overflow-x: visible;
-      }
-
-      .funding-grid {
-        grid-template-columns: 1fr;
-      }
-
-      /* Stack metrics on mobile */
-      .metrics-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin-left: 0;
-      }
-
-      .metric-box {
-        display: block;
-        padding: 16px;
-        text-align: center;
-      }
-
-      .metric-box .value {
-        font-size: 32px;
-      }
-
-      /* Stack partner grid on mobile */
-      .partner-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin-left: 0;
-      }
-
-      .partner-box {
-        display: block;
-      }
-
-      .cover {
-        min-height: 60vh;
-        padding: 2rem 1rem;
-      }
-
-      .cover .logo {
-        width: 200px;
-      }
-
-      .cover .doc-type {
-        font-size: 28px;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      h3 {
-        font-size: 18px;
-      }
-
-      body {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
-<body>
+  }
+</style>
 
 <div class="container">
 
@@ -716,7 +715,7 @@
 <!-- Table of Contents -->
 <div class="toc-page">
   <h1 class="section-title">Table of Contents</h1>
-  
+
   <div class="toc-item"><span>Executive Summary</span><span>3</span></div>
   <div class="toc-item"><span>Opportunity</span><span>5</span></div>
   <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Problem &amp; Solution</span><span>5</span></div>
@@ -740,28 +739,28 @@
 <!-- Executive Summary -->
 <div class="new-section">
   <p class="confidential">CONFIDENTIAL - DO NOT DISSEMINATE. This business plan contains confidential, trade-secret information and is shared only with the understanding that you will not share its contents or ideas with third parties without the express written consent of the plan author.</p>
-  
+
   <h1 class="section-title">Executive Summary</h1>
-  
+
   <p>Rangeway is building America's first hospitality-driven premium EV charging network. We're transforming the 20 to 30 minute charging window from an inconvenience into a moment worth savoring, creating destination experiences that make travelers want to stop rather than rush through.</p>
-  
+
   <p>While existing networks place chargers in parking lots exposed to weather, Rangeway creates hospitality-grade spaces with indoor comfort at every location. This isn't incremental improvement. It's a fundamentally different approach to serving premium EV travelers.</p>
-  
+
   <div class="callout">"We think like hotel operators, not utility companies."</div>
-  
+
   <p>This fundamental difference shapes everything we build:</p>
-  
+
   <ul>
     <li><strong>Indoor Comfort Guarantee:</strong> Climate-controlled Driver's Lounge at every location. No parking lot charging. This is our industry-first differentiator.</li>
     <li><strong>Hospitality DNA:</strong> Creating experiences competitors cannot replicate with commodity infrastructure.</li>
     <li><strong>Build Right the First Time:</strong> Every site includes indoor space, canopy, and premium amenities from day one.</li>
     <li><strong>Pathfinder Rewards:</strong> Hospitality-style loyalty program where status is earned, not purchased.</li>
   </ul>
-  
+
   <h2>Two Formats, One Standard</h2>
-  
+
   <p>Rangeway operates two location formats, both delivering the same indoor comfort guarantee:</p>
-  
+
   <div class="format-grid">
     <div class="format-box">
       <h4>Basecamp (Full-Service Destination)</h4>
@@ -786,32 +785,32 @@
       </ul>
     </div>
   </div>
-  
+
   <h2>The Market Opportunity</h2>
-  
+
   <p>The premium EV charging segment is growing faster than the overall EV market. California led the nation with approximately 25% of new vehicle sales electric in 2024, up from just 8% in 2020. More than 55% of EV owners report range anxiety when planning long-distance trips, citing poor infrastructure quality and experience. A 2025 J.D. Power study found that 73% of EV drivers rate current charging experiences as "poor" or "very poor."</p>
-  
+
   <p>Premium drivers don't just need more chargers. They need better charging experiences. Rangeway captures the intersection of premium hospitality, reliable infrastructure, and sustainable travel.</p>
-  
+
   <h2>The Funding Opportunity</h2>
-  
+
   <p>We are seeking $1.5 million in pre-seed funding to advance our first site to construction-ready status, secure USDA financing, and build the foundation for regional expansion. USDA rural commercial financing programs offer 90% loan-to-value ratios with 25-year amortization, dramatically reducing equity requirements for construction.</p>
 </div>
 
 <!-- Opportunity: Problem & Solution -->
 <div class="new-section">
   <h1 class="section-title">Opportunity</h1>
-  
+
   <h2>Problem &amp; Solution</h2>
-  
+
   <h3>Problem Worth Solving</h3>
-  
+
   <p>The EV charging industry has treated charging as a utility problem when it's actually a hospitality problem.</p>
-  
+
   <p>While billions have been invested in charger deployment, virtually no one has solved for the human experience of spending 20-40 minutes at a charging location. The result is an industry-wide experience failure that undermines EV adoption and punishes drivers who make the switch.</p>
-  
+
   <h4>The Experience Gap</h4>
-  
+
   <ul>
     <li>A 2025 J.D. Power study found that 73% of EV drivers rate current charging experiences as "poor" or "very poor," with lack of amenities (67%) and no weather protection (54%) as top complaints.</li>
     <li>Drivers are forced to wait in their vehicles or stand exposed to weather (summer heat, winter cold, rain, wind) with nowhere comfortable to go.</li>
@@ -819,93 +818,93 @@
     <li>The charging experience offers no consistency. Every stop is a gamble on what amenities (if any) might be available.</li>
     <li>Reliability remains poor across the industry, with chargers frequently down and no service standards drivers can depend on.</li>
   </ul>
-  
+
   <h4>The Adoption Barrier</h4>
-  
+
   <ul>
     <li>California led the nation in EV adoption with approximately 25% of new vehicle sales electric in 2024, up from just 8% in 2020.</li>
     <li>Despite this growth, only 16% of U.S. adults say they're likely to purchase an EV as their next car, reflecting persistent infrastructure hesitation.</li>
     <li>A 2025 survey found 57% of American drivers cite long-distance travel concerns, such as charging availability and experience quality, as a barrier to EV adoption.</li>
     <li>More than 50% of EV drivers report anxiety for trips outside metro areas, where charging infrastructure quality drops even further.</li>
   </ul>
-  
+
   <h4>The Premium Traveler Problem</h4>
-  
+
   <p>Premium drivers, those who expect elevated experiences in hotels, restaurants, and retail, face a jarring disconnect when they charge their vehicles. They've invested in luxury EVs but must endure third-rate charging experiences that fall far below the standards they expect everywhere else.</p>
-  
+
   <p>This experience gap is particularly acute beyond urban cores. Scenic corridors like the Pacific Coast Highway, Blue Ridge Parkway, and Route 66 attract millions of premium travelers annually, yet charging infrastructure along these routes ranges from barely adequate to non-functional, with zero hospitality consideration.</p>
-  
+
   <div class="callout">Rangeway exists to close this gap. We're building charging locations where hospitality comes first, delivering the climate-controlled comfort, premium amenities, and service reliability that premium travelers expect and that all EV drivers deserve.</div>
-  
+
   <h3>Our Solution</h3>
-  
+
   <p>Rangeway is building charging locations where hospitality defines the experience. Every location, from our full-service Basecamps to our streamlined Waystations, features:</p>
-  
+
   <ul>
     <li><strong>Climate-Controlled Driver's Lounge:</strong> Indoor comfort regardless of weather. No more waiting in your car or standing exposed to the elements.</li>
     <li><strong>Premium Restrooms:</strong> Hospitality-grade facilities including family and accessible rooms, not gas station bathrooms.</li>
     <li><strong>Reliable Ultra-Fast Charging:</strong> 98-99% uptime commitment backed by proactive maintenance and quality infrastructure.</li>
     <li><strong>Thoughtful Amenities:</strong> High-speed Wi-Fi, comfortable seating, quality refreshments, and regional character that makes each stop memorable.</li>
   </ul>
-  
+
   <h4>Build Right the First Time</h4>
-  
+
   <p>Unlike competitors who bolt chargers onto existing properties, Rangeway designs and builds purpose-built charging destinations. Every site includes:</p>
-  
+
   <ul>
     <li>Indoor lounge space from day one (not "coming soon")</li>
     <li>Solar canopy providing shade and renewable energy</li>
     <li>Battery storage for grid resilience and demand management</li>
     <li>Premium amenities that match premium EV brands</li>
   </ul>
-  
+
   <p>This approach costs more upfront but creates defensible competitive advantage. You cannot retrofit hospitality into a parking lot.</p>
 </div>
 
 <!-- Target Market -->
 <div class="new-section">
   <h2>Target Market</h2>
-  
+
   <p>Rangeway is built to serve the fastest-growing segment of the EV ecosystem: affluent electric vehicle drivers who travel for leisure. We focus specifically on EV tourism and lifestyle travel, targeting high-traffic scenic routes across America where demand for reliable, premium charging is high but current infrastructure is sparse or inconsistent.</p>
-  
+
   <h3>Primary Customer Segments</h3>
-  
+
   <h4>Premium EV Owners</h4>
   <ul>
     <li>Tesla, Rivian, Lucid, Mercedes EQ, BMW i-series, and other luxury EV drivers who expect infrastructure quality to match their vehicle investment</li>
     <li>Early adopters who prioritize experience and reliability over price alone</li>
     <li>Drivers accustomed to premium service across hotels, dining, and retail who demand the same from charging infrastructure</li>
   </ul>
-  
+
   <h4>Leisure &amp; Road Trip Travelers</h4>
   <ul>
     <li>Couples, families, and groups planning weekend getaways and longer road trips</li>
     <li>Tourists exploring regions like the Pacific Coast, Southwest national parks, Blue Ridge Parkway, Route 66, and beyond</li>
     <li>Travelers who view the journey as part of the experience and seek stops that enhance rather than interrupt their trip</li>
   </ul>
-  
+
   <h4>Remote Workers &amp; Digital Nomads</h4>
   <ul>
     <li>Professionals who combine travel with work and need reliable Wi-Fi, comfortable workspaces, and quality amenities during charging stops</li>
     <li>Extended travelers seeking productive environments between destinations</li>
   </ul>
-  
+
   <h4>Eco-Conscious &amp; Sustainability-Focused Drivers</h4>
   <ul>
     <li>Individuals who prioritize businesses powered by renewable energy and committed to environmental responsibility</li>
     <li>Drivers who view their EV purchase as part of a broader lifestyle choice</li>
   </ul>
-  
+
   <h4>Time-Conscious Daily Drivers</h4>
   <ul>
     <li>Local EV owners seeking reliable, fast charging with amenities that make the wait worthwhile</li>
     <li>Commuters who need quick, dependable top-ups with quality restroom facilities and comfortable waiting areas</li>
   </ul>
-  
+
   <h3>Market Opportunity</h3>
-  
+
   <p>The premium EV charging segment is growing faster than the overall EV market:</p>
-  
+
   <ul>
     <li>More than 55% of EV owners report range anxiety or hesitation when planning long-distance trips, citing poor infrastructure quality and experience</li>
     <li>California led the nation with approximately 25% of new vehicle sales electric in 2024, up from just 8% in 2020, with premium segments over-indexing on EV adoption</li>
@@ -913,7 +912,7 @@
     <li>268 million annual visitors to California scenic routes alone</li>
     <li>EV tourism is projected to grow 25-30% annually as infrastructure expands</li>
   </ul>
-  
+
   <div class="metrics-grid">
     <div class="metric-box">
       <div class="value">$19B</div>
@@ -928,23 +927,23 @@
       <div class="label">Year 5 Target (SOM)</div>
     </div>
   </div>
-  
+
   <p>The key insight: Premium drivers don't just need more chargers. They need better charging experiences. Rangeway captures the intersection of premium hospitality, reliable infrastructure, and sustainable travel, creating a new category where quality matters more than ubiquity.</p>
 </div>
 
 <!-- Competition -->
 <div class="new-section">
   <h2>Competition</h2>
-  
+
   <h3>Current Alternatives</h3>
-  
+
   <p>While EV adoption accelerates, today's public charging infrastructure treats charging as a utility problem, deploying chargers without considering the human experience of spending 20-40 minutes at a location. Current options fall into three main categories, all of which fail to solve for hospitality:</p>
-  
+
   <h4>Mainstream Charging Networks</h4>
   <p><em>Examples: Tesla Supercharger, Electrify America, EVgo, ChargePoint, IONNA, bp Pulse</em></p>
-  
+
   <p>These networks offer fast charging at a growing number of locations and prioritize convenience and coverage over experience. Most sites place chargers in grocery store parking lots, gas stations, or municipal lots with minimal signage, shade, or seating.</p>
-  
+
   <p><strong>The Experience Gap:</strong></p>
   <ul>
     <li>No guaranteed indoor comfort. Drivers wait in their vehicles or stand exposed to weather.</li>
@@ -953,12 +952,12 @@
     <li>Each location is a gamble on what facilities might be available.</li>
     <li>Sites are transactional and forgettable, offering no reason to choose one network over another beyond charger availability.</li>
   </ul>
-  
+
   <h4>Parking Lot Installations with Nearby Amenities</h4>
   <p><em>Examples: Level 2 stations at retail centers, hotel properties, municipal parking</em></p>
-  
+
   <p>Some chargers are co-located near restaurants or shops, which can improve the experience if those businesses are open and welcoming. However, these installations are rarely designed with EV travelers in mind.</p>
-  
+
   <p><strong>The Experience Gap:</strong></p>
   <ul>
     <li>Usually Level 2 stations with slow charging speeds inadequate for travel</li>
@@ -967,12 +966,12 @@
     <li>Drivers must leave their vehicles to seek shelter in businesses that may or may not welcome non-customers</li>
     <li>Zero consistency. Every location offers a completely different experience.</li>
   </ul>
-  
+
   <h4>Independent and Niche Charging Projects</h4>
   <p><em>Examples: Rivian Adventure Network, boutique solar installations, campground chargers</em></p>
-  
+
   <p>These efforts demonstrate that EV charging can exist in unique locations and that some brands recognize experience matters. However, coverage is extremely limited, often brand-specific, and inconsistently executed.</p>
-  
+
   <p><strong>The Experience Gap:</strong></p>
   <ul>
     <li>Very limited locations, not viable for sustained travel</li>
@@ -980,11 +979,11 @@
     <li>Inconsistent amenity standards even within the same network</li>
     <li>No guarantee of indoor comfort or premium facilities</li>
   </ul>
-  
+
   <h3>The Core Problem Across All Alternatives</h3>
-  
+
   <div class="callout">No one has solved for hospitality. Every existing option treats charging infrastructure as a utility deployment problem: place chargers, ensure they work, move on. None have reimagined charging locations as hospitality destinations where the experience matches the 20-40 minute reality of fast charging.</div>
-  
+
   <h3>Competitive Comparison</h3>
 
   <div class="table-wrapper">
@@ -1046,10 +1045,10 @@
   </div>
 
   <h3>Our Competitive Advantages</h3>
-  
+
   <h4>Industry-First Indoor Comfort Guarantee</h4>
   <p>Rangeway is the only charging network guaranteeing climate-controlled indoor spaces at every location. While competitors place chargers in parking lots and expect drivers to wait exposed to weather, we provide premium Driver's Lounges whether it's foggy on the coast, scorching in the desert, or freezing in winter. This isn't just a feature. It's a fundamental re-imagining of what charging infrastructure should be.</p>
-  
+
   <h4>Hospitality-First Positioning</h4>
   <p>Rangeway is the only charging network purpose-built around hospitality rather than utility deployment. This positioning creates multiple advantages:</p>
   <ul>
@@ -1058,10 +1057,10 @@
     <li><strong>Customer loyalty:</strong> Once drivers experience true indoor comfort and premium amenities, they actively seek out Rangeway locations</li>
     <li><strong>Partnerships:</strong> Hospitality-first positioning opens doors to tourism boards, luxury brands, and regional partnerships that commodity networks cannot access</li>
   </ul>
-  
+
   <h4>Experience Consistency Through Real Estate Control</h4>
   <p>Unlike networks that rely on third-party site hosts with minimal investment, Rangeway takes a real estate ownership or long-term lease approach. This gives us complete control over site design, amenity quality, operational standards, and long-term value creation.</p>
-  
+
   <h4>Reliability as a Competitive Moat</h4>
   <p>Rangeway commits to 98-99% uptime guarantees across all locations, significantly above industry norms. For premium travelers, reliability isn't optional. It's table stakes. Our uptime guarantees give customers confidence to choose Rangeway and plan trips around our network.</p>
 </div>
@@ -1069,28 +1068,28 @@
 <!-- Company -->
 <div class="new-section">
   <h1 class="section-title">Company</h1>
-  
+
   <h2>Overview</h2>
-  
+
   <p>Rangeway Energy, Inc. is a privately held company founded and solely owned by Zak Winnick, who serves as CEO. Zak brings a multidisciplinary background spanning IT operations, hospitality management, and EV infrastructure development, experience that informs Rangeway's unique positioning at the intersection of premium hospitality and reliable charging infrastructure.</p>
-  
+
   <h3>Corporate Structure</h3>
-  
+
   <p>Rangeway Energy, Inc. is incorporated as a Delaware C-corporation, providing:</p>
-  
+
   <ul>
     <li>Strong legal protections and governance frameworks recognized nationwide</li>
     <li>Familiar structure for institutional investors with established venture capital precedent</li>
     <li>Flexibility to issue multiple classes of stock enabling sophisticated capital structures</li>
     <li>Scalable foundation that supports growth from pre-seed through Series A and beyond without requiring restructuring</li>
   </ul>
-  
+
   <p>This structure positions Rangeway for phased expansion, from site development and initial operations to strategic partnerships and eventual network scale, while enabling investor participation through equity offerings and other growth-focused financing mechanisms.</p>
-  
+
   <h3>Strategic Differentiation</h3>
-  
+
   <p>Rangeway's competitive advantage rests on three foundational pillars:</p>
-  
+
   <ol>
     <li><strong>Hospitality-First Philosophy:</strong> We think like hotel operators, not utility companies, designing every touchpoint for comfort, reliability, and memorable experiences.</li>
     <li><strong>Indoor Comfort Guarantee:</strong> Climate-controlled Driver's Lounge at every location, an industry first that competitors cannot match without fundamental business model changes.</li>
@@ -1101,9 +1100,9 @@
 <!-- Team -->
 <div class="new-section">
   <h2>Team</h2>
-  
+
   <h3>Management Team</h3>
-  
+
   <div class="bio-box">
     <h4>Zak Winnick</h4>
     <div class="role">Founder &amp; CEO</div>
@@ -1111,9 +1110,9 @@
     <p>As Community Director of the Bay Area Rivian Club and Technical Advisor for Rivian Clubs of America, Zak maintains direct insight into the evolving needs of EV drivers and the realities of charging infrastructure. He co-founded NorCal EVs, a multi-brand enthusiast community bringing together owners from Tesla, Rivian, Lucid, and other platforms across Northern California, giving him ground-level perspective on charging pain points and driver expectations.</p>
     <p>Zak's professional experience includes IT leadership roles at Curai Health, Octane, and multiple hospitality companies including Wynn Las Vegas, Cosmopolitan of Las Vegas, Grand Hyatt Nashville, and Sensei wellness retreats. He architected enterprise systems, managed security frameworks, and optimized operations. This systems-thinking approach, combined with his passion for electric mobility and sustainable design, drives Rangeway's mission to transform EV charging from a logistics burden into an integral, enjoyable part of the journey.</p>
   </div>
-  
+
   <h3>Advisory Team</h3>
-  
+
   <div class="partner-grid">
     <div class="partner-box">
       <h4>Theo Reichgelt, CMO (Fractional)</h4>
@@ -1124,7 +1123,7 @@
       <p>30+ years in corporate development and business analytics. Managing Partner at CapitalWorks. Expert in infrastructure project financing and capital strategy. Provides Rangeway with financial modeling, capital structure guidance, and investor relations strategy.</p>
     </div>
   </div>
-  
+
   <div class="partner-grid">
     <div class="partner-box">
       <h4>Raul Dominguez, Technical Advisor</h4>
@@ -1135,7 +1134,7 @@
       <p>15+ years in zero-emission vehicle infrastructure. Founder of Open Energy Alliance, Senior Consultant at STX Group. Specializes in LCFS credit monetization, grant procurement, and regulatory strategy. Guides Rangeway's non-dilutive funding strategy and carbon credit optimization.</p>
     </div>
   </div>
-  
+
   <div class="partner-grid">
     <div class="partner-box">
       <h4>Stephanie Burdette, Hospitality Advisor</h4>
@@ -1151,13 +1150,13 @@
 <!-- Execution: Marketing & Sales -->
 <div class="new-section">
   <h1 class="section-title">Execution</h1>
-  
+
   <h2>Marketing &amp; Sales</h2>
-  
+
   <h3>Target Audience</h3>
-  
+
   <p>Rangeway is designed for a discerning segment of EV drivers: those who prioritize experience, quality, and reliability. Our core customers include:</p>
-  
+
   <ul>
     <li><strong>Premium EV owners</strong> who expect infrastructure quality to match their vehicle investment (Tesla, Rivian, Lucid, Mercedes EQ, BMW, and other luxury EV drivers)</li>
     <li><strong>Leisure travelers</strong> seeking elevated experiences throughout their journeys, not just at their destinations</li>
@@ -1166,42 +1165,42 @@
     <li><strong>Sustainable travelers</strong> who value clean energy and responsible business practices</li>
     <li><strong>Early adopters and influencers</strong> within the EV and outdoor adventure communities</li>
   </ul>
-  
+
   <h3>Brand Positioning</h3>
-  
+
   <p>Rangeway isn't just another charging network. We're a premium hospitality brand that happens to serve EV drivers.</p>
-  
+
   <p>Our brand identity blends American adventure spirit with sustainable innovation. We emphasize thoughtful design, natural materials, and hospitality-level service, delivering a sense of place and purpose at every site.</p>
-  
+
   <p><strong>Primary Tagline:</strong> "Where charging becomes part of your journey"</p>
-  
+
   <h3>Go-to-Market Strategy</h3>
-  
+
   <h4>Discovery Channels</h4>
   <ul>
     <li>Present in every charging app and vehicle navigation system</li>
     <li>Featured on tourism websites and scenic route planning platforms</li>
     <li>Integrated into EV community resources and travel guides</li>
   </ul>
-  
+
   <h4>Partnership Channels</h4>
   <ul>
     <li>Tourism boards promoting scenic corridors and sustainable travel</li>
     <li>Hospitality partners (hotels, local attractions) cross-promoting</li>
     <li>EV communities sharing reliable charging locations</li>
   </ul>
-  
+
   <h4>Retention Channels</h4>
   <ul>
     <li>Pathfinder Rewards loyalty program creates stickiness and referrals</li>
     <li>Reliability becomes reputation. Travelers choose us when it matters.</li>
     <li>Each new site strengthens the entire corridor experience</li>
   </ul>
-  
+
   <h3>Pathfinder Rewards</h3>
-  
+
   <p>Pathfinder Rewards is our hospitality-style loyalty program where status is earned through usage, not purchased. The program reinforces our premium positioning while driving repeat visits and customer advocacy.</p>
-  
+
   <p><strong>Pricing Model:</strong> Everyone pays the same base rate ($0.50/kWh). Status unlocks credits back for future charging and experiential perks, not rate discounts.</p>
 
   <div class="table-wrapper">
@@ -1244,7 +1243,7 @@
   </div>
 
   <h3>Sales Forecast Approach</h3>
-  
+
   <p>Traffic projections for each location are based on:</p>
   <ul>
     <li>EV adoption data within 100-mile radius of each site</li>
@@ -1258,11 +1257,11 @@
 <!-- Operations -->
 <div class="new-section">
   <h2>Operations</h2>
-  
+
   <h3>Site Design Philosophy</h3>
-  
+
   <p>Every Rangeway location is designed around five core principles:</p>
-  
+
   <ul>
     <li><strong>Hospitality First:</strong> Every facility choice, from restroom fixtures to lounge furniture to lighting, meets hospitality-grade standards, not utility infrastructure standards.</li>
     <li><strong>Regional Character:</strong> Design elements, materials, and retail selections reflect each location's region, creating sense of place rather than generic uniformity.</li>
@@ -1270,11 +1269,11 @@
     <li><strong>Sustainable Operations:</strong> Solar generation and battery storage reduce grid dependency, lower operating costs, and demonstrate our environmental commitment.</li>
     <li><strong>Accessible Excellence:</strong> Universal design principles ensure all customers can comfortably access facilities regardless of mobility needs.</li>
   </ul>
-  
+
   <h3>Site Development Process</h3>
-  
+
   <p>Each location follows a rigorous development process:</p>
-  
+
   <ol>
     <li><strong>Site identification and preliminary feasibility:</strong> Location analysis, traffic projections, utility assessment</li>
     <li><strong>Due diligence:</strong> Environmental studies, surveys, title review</li>
@@ -1284,9 +1283,9 @@
     <li><strong>Construction:</strong> 6-9 months typical timeline</li>
     <li><strong>Launch and ramp-up:</strong> Grand opening, marketing activation, operational optimization</li>
   </ol>
-  
+
   <h3>Operational Model by Format</h3>
-  
+
   <h4>Basecamps</h4>
   <ul>
     <li>Staffed operations during extended hours</li>
@@ -1296,7 +1295,7 @@
     <li>Parts inventory for rapid repairs</li>
     <li>Labor costs: $400-600K annually per location at full operation</li>
   </ul>
-  
+
   <h4>Waystations</h4>
   <ul>
     <li>Zero on-site staff during normal operations</li>
@@ -1305,18 +1304,18 @@
     <li>Periodic maintenance visits for cleaning, restocking, and preventive service</li>
     <li>Labor costs: $50-75K annually per location for contracted services</li>
   </ul>
-  
+
   <h3>Uptime Commitment</h3>
-  
+
   <p>Rangeway commits to 98-99% uptime across all locations through:</p>
-  
+
   <ul>
     <li><strong>Predictive maintenance:</strong> WattsUp AI platform identifies issues before they cause downtime</li>
     <li><strong>Proactive monitoring:</strong> 24/7 Network Operations Center oversight</li>
     <li><strong>Rapid response:</strong> Mobile service vehicles with 2-hour response time</li>
     <li><strong>Redundant systems:</strong> Distributed charger architecture avoiding single points of failure</li>
   </ul>
-  
+
   <p>We hold ourselves accountable through public reporting:</p>
   <ul>
     <li>Monthly uptime reporting by location</li>
@@ -1329,13 +1328,13 @@
 <!-- Technology -->
 <div class="new-section">
   <h2>Technology</h2>
-  
+
   <p>Rangeway's technology strategy is built around four principles: performance, resilience, seamless experience, and reliability. Our charging infrastructure and backend systems are carefully selected to deliver the premium, hassle-free charging experience that defines our brand.</p>
-  
+
   <h3>Charging Hardware</h3>
-  
+
   <p>Each site features industry-leading DC fast charging infrastructure designed for reliability and performance. We've specified a distributed architecture featuring modular power units and satellite-style charging dispensers that avoid single points of failure.</p>
-  
+
   <p>Key specifications:</p>
   <ul>
     <li>Up to 400kW per charging point through dynamic power management</li>
@@ -1344,11 +1343,11 @@
     <li>Support for both CCS1 and NACS (J3400) connectors on every charging point</li>
     <li>Native Plug &amp; Charge protocols for frictionless payment and session management</li>
   </ul>
-  
+
   <h3>Solar and Battery Storage</h3>
-  
+
   <p>Every Rangeway location incorporates canopy-mounted solar arrays paired with lithium iron phosphate (LFP) battery storage systems sized at 200-250 kWh per location.</p>
-  
+
   <p><strong>Benefits:</strong></p>
   <ul>
     <li>Lower operating costs through on-site renewable generation (40-60% of consumption)</li>
@@ -1357,15 +1356,15 @@
     <li>Environmental leadership demonstrating our commitment to clean energy</li>
     <li>Energy cost stability as hedge against electricity price volatility</li>
   </ul>
-  
+
   <h3>Hybrid Power Integration</h3>
-  
+
   <p>Through our partnership with HyWatts, select locations deploy modular Power-Plant-in-a-Box™ systems that combine solar, advanced batteries, and hydrogen-ready generation modules. This technology is particularly valuable for locations with limited grid capacity, ensuring consistent ultra-fast charging regardless of local utility infrastructure.</p>
-  
+
   <h3>Software &amp; Monitoring</h3>
-  
+
   <p>Rangeway uses an OCPP 2.0.1-compliant charging management platform for real-time monitoring, predictive maintenance, remote diagnostics, and dynamic pricing control. Redundant connectivity ensures consistent uptime even in rural deployments.</p>
-  
+
   <p>Key capabilities:</p>
   <ul>
     <li>Real-time charger status across all locations</li>
@@ -1374,9 +1373,9 @@
     <li>Predictive alerts from WattsUp maintenance platform</li>
     <li>Dynamic pricing and load balancing</li>
   </ul>
-  
+
   <h3>Equipment Summary</h3>
-  
+
   <div class="format-grid">
     <div class="format-box">
       <h4>Basecamps Include:</h4>
@@ -1410,9 +1409,9 @@
 <!-- Strategic Partnerships -->
 <div class="new-section">
   <h2>Strategic Partnerships</h2>
-  
+
   <p>Rangeway has assembled a network of strategic partners to deliver reliable infrastructure and premium guest experiences.</p>
-  
+
   <div class="partner-grid">
     <div class="partner-box">
       <h4>HyWatts</h4>
@@ -1423,7 +1422,7 @@
       <p>Solar-powered, fast-install charging canopies and site structures with integrated wiring and lighting. Reduces construction timelines and delivers consistent visual identity across all locations.</p>
     </div>
   </div>
-  
+
   <div class="partner-grid">
     <div class="partner-box">
       <h4>WattsUp</h4>
@@ -1434,7 +1433,7 @@
       <p>24/7 AI driver support with 87-93% problem resolution without human escalation. Ensures drivers receive immediate assistance at any hour, critical for automated Waystation locations.</p>
     </div>
   </div>
-  
+
   <div class="partner-grid">
     <div class="partner-box">
       <h4>National Car Charging</h4>
@@ -1445,11 +1444,11 @@
       <p>Plug-and-go charging technology enabling seamless payment and session initiation across all major EV platforms. Reduces friction for drivers and improves session conversion.</p>
     </div>
   </div>
-  
+
   <h3>Tourism &amp; Hospitality Partnerships</h3>
-  
+
   <p>Beyond technology, Rangeway actively pursues partnerships that enhance the travel experience:</p>
-  
+
   <ul>
     <li><strong>Regional Tourism Boards:</strong> Co-branded scenic route guides, featured in road trip itineraries, joint promotional campaigns</li>
     <li><strong>Hospitality Partners:</strong> Hotels, restaurants, and attractions offering Pathfinder member benefits</li>
@@ -1461,29 +1460,29 @@
 <!-- Milestones & Metrics -->
 <div class="new-section">
   <h2>Milestones &amp; Metrics</h2>
-  
+
   <h3>Key Performance Indicators</h3>
-  
+
   <h4>Charger Utilization Rates</h4>
   <p>Measured as percentage of time in use per day, this is the most critical indicator of site performance:</p>
   <ul>
     <li><strong>Basecamps:</strong> 10-15% utilization in Year 1, scaling to 25-30% by Year 5</li>
     <li><strong>Waystations:</strong> 15-20% utilization in Year 1, scaling to 30-35% by Year 5</li>
   </ul>
-  
+
   <h4>Revenue per Site</h4>
   <ul>
     <li><strong>Basecamp:</strong> $90K/month at maturity (charging + hospitality + digital advertising)</li>
     <li><strong>Waystation:</strong> $50K/month at maturity (charging + automated retail + digital advertising)</li>
   </ul>
-  
+
   <h4>Customer Experience</h4>
   <ul>
     <li><strong>Net Promoter Score (NPS):</strong> Target 80+ by end of Year 1</li>
     <li><strong>Uptime:</strong> 98-99% across all locations</li>
     <li><strong>Pathfinder member satisfaction:</strong> Track by tier with quarterly surveys</li>
   </ul>
-  
+
   <h4>Pathfinder Rewards</h4>
   <ul>
     <li>Total members enrolled and growth rate</li>
@@ -1491,9 +1490,9 @@
     <li>Member revenue as % of total (target: 80%+ by Year 2)</li>
     <li>Partner perk redemption rates</li>
   </ul>
-  
+
   <h3>Key Performance Milestones</h3>
-  
+
   <div class="milestone-section">
     <h3>Year 1 Goals</h3>
     <ul>
@@ -1505,7 +1504,7 @@
       <li>5,000+ Pathfinder Rewards members enrolled</li>
     </ul>
   </div>
-  
+
   <div class="milestone-section">
     <h3>Year 2 Goals</h3>
     <ul>
@@ -1518,7 +1517,7 @@
       <li>First Basecamp in development</li>
     </ul>
   </div>
-  
+
   <div class="milestone-section">
     <h3>Year 3 Goals</h3>
     <ul>
@@ -1531,56 +1530,56 @@
       <li>Series A closed for regional expansion</li>
     </ul>
   </div>
-  
+
   <h3>Long-Term Vision</h3>
-  
+
   <p><strong>Years 4-7:</strong> Regional expansion to 15-20 locations across major western corridors.</p>
-  
+
   <p><strong>Years 8-10:</strong> National footprint with 50+ locations, strong free cash flow, and platform business model opportunities.</p>
 </div>
 
 <!-- Financial Plan: Forecast -->
 <div class="new-section">
   <h1 class="section-title">Financial Plan</h1>
-  
+
   <h2>Forecast</h2>
-  
+
   <p>Rangeway's financial projections are grounded in a conservative yet realistic model based on current market dynamics, regional EV adoption trends, and real-world session data from comparable fast-charging networks operating in the premium segment.</p>
-  
+
   <h3>Site Mix and Timeline</h3>
-  
+
   <p><strong>Phase 1 Deployment:</strong></p>
   <ul>
     <li>3 locations: 1 Basecamp + 2 Waystations</li>
     <li>Permitting and construction begin within 6-9 months of funding</li>
     <li>All Phase 1 sites operational by end of Year 2</li>
   </ul>
-  
+
   <p><strong>Phase 2-3 Expansion:</strong></p>
   <ul>
     <li>Additional locations across strategic regions</li>
     <li>Mix of Basecamps and Waystations based on market needs</li>
     <li>Geographic expansion to 2-3 states by Year 3</li>
   </ul>
-  
+
   <h3>Session Volume and Growth</h3>
-  
+
   <p><strong>Basecamps:</strong></p>
   <ul>
     <li>Ramp to 60-80 DCFC sessions per day by Year 3</li>
     <li>Higher dwell times (35-55 minutes) support retail and café revenue</li>
     <li>Digital advertising premium due to affluent audience and extended exposure</li>
   </ul>
-  
+
   <p><strong>Waystations:</strong></p>
   <ul>
     <li>Ramp to 40-50 DCFC sessions per day by Year 3</li>
     <li>Efficient throughput with 20-30 minute average sessions</li>
     <li>Lower operating costs enable faster payback</li>
   </ul>
-  
+
   <h3>Revenue Streams</h3>
-  
+
   <ul>
     <li><strong>Charging Fees (Primary):</strong> Per-kWh fees at $0.50/kWh base rate, with Pathfinder credits earned back by status tier</li>
     <li><strong>Retail and Café Sales:</strong> Full café service at Basecamps, automated vending at Waystations (40% attachment at Basecamps, 25% at Waystations)</li>
@@ -1588,7 +1587,7 @@
     <li><strong>LCFS Credits:</strong> California Low Carbon Fuel Standard credits monetized through established partners</li>
     <li><strong>Partner Revenue:</strong> Pathfinder partner placements, events, and affiliate commissions</li>
   </ul>
-  
+
   <h3>Five-Year Financial Summary</h3>
 
   <div class="table-wrapper">
@@ -1633,11 +1632,11 @@
   </div>
 
   <p><strong>Key metrics:</strong> $35 average session × 50+ daily sessions = $1.7M/site/year | 24-36 month payback | 94% revenue CAGR</p>
-  
+
   <h3>Capital Efficiency</h3>
-  
+
   <p><strong>Total Site Development Costs:</strong></p>
-  
+
   <div class="format-grid">
     <div class="format-box">
       <h4>Basecamp: $5-7M per site</h4>
@@ -1664,9 +1663,9 @@
       </ul>
     </div>
   </div>
-  
+
   <h3>Model Assumptions</h3>
-  
+
   <ul>
     <li><strong>Utilization:</strong> Conservative 15% average baseline (sensitivity-tested at 10%, 15%, 20%, 25%)</li>
     <li><strong>Ramp:</strong> Session volumes ramp over 18-24 months post-opening</li>
@@ -1679,33 +1678,33 @@
 <!-- Financing -->
 <div class="new-section">
   <h2>Financing</h2>
-  
+
   <h3>Sources of Funds</h3>
-  
+
   <p>Rangeway will be financed through a staged approach combining founder capital, strategic equity investment, and non-dilutive funding opportunities.</p>
-  
+
   <h4>Founder Capital</h4>
   <p>To date, Rangeway has been supported by personal investment from founder Zak Winnick, covering brand development, market research, preliminary site evaluation, financial modeling, strategic partner engagement, and legal formation. This investment demonstrates long-term founder commitment and ensures complete alignment with future investors.</p>
-  
+
   <h4>Public &amp; Private Grants (Non-Dilutive)</h4>
   <p>Rangeway is actively pursuing non-dilutive funding from federal and state programs designed to accelerate EV infrastructure deployment:</p>
-  
+
   <p><strong>Federal Programs:</strong></p>
   <ul>
     <li><strong>National Electric Vehicle Infrastructure (NEVI) Formula Program:</strong> Up to $150K per charging port; covers up to 80% of eligible project costs</li>
     <li><strong>USDA Rural Energy for America Program (REAP):</strong> 25% grant funding for eligible rural sites; 50% loan guarantee options</li>
     <li><strong>Investment Tax Credit (ITC):</strong> 30% federal tax credit on solar and battery storage investments</li>
   </ul>
-  
+
   <p><strong>State Programs:</strong></p>
   <ul>
     <li>California Energy Commission grants</li>
     <li>CALeVIP and other state-specific incentives</li>
     <li>Regional economic development programs</li>
   </ul>
-  
+
   <p>If secured, these programs could reduce net CapEx by 30-40% while validating the strategic importance of scenic corridor infrastructure.</p>
-  
+
   <h4>USDA Rural Commercial Financing</h4>
   <p>Rangeway has identified USDA rural commercial financing as a transformative capital source. These programs treat EV charging sites like gas stations, offering:</p>
   <ul>
@@ -1714,11 +1713,11 @@
     <li>Competitive interest rates</li>
     <li>Dramatically reduced equity requirements</li>
   </ul>
-  
+
   <p>This financing pathway reduces equity needs from $5M to potentially $500K-$1.5M for the first site, fundamentally changing the capital efficiency of our expansion.</p>
-  
+
   <h3>Pre-Seed Raise: $1.5 Million</h3>
-  
+
   <div class="funding-box">
     <h3>Use of Funds</h3>
     <div class="funding-grid">
@@ -1743,18 +1742,18 @@
       <strong>USDA Financing:</strong> 90% loan-to-value, 25-year amortization. Dramatically reduces equity requirements for construction.
     </div>
   </div>
-  
+
   <h4>Detailed Allocation</h4>
-  
+
   <ul>
     <li><strong>Site Development (40%, $600K):</strong> Site control, permitting, environmental reviews, engineering and design, utility coordination</li>
     <li><strong>Infrastructure Planning (25%, $375K):</strong> Equipment deposits, construction drawings, interconnection studies, procurement planning</li>
     <li><strong>Team Expansion (25%, $375K):</strong> Key hires including VP of Construction &amp; Operations, Site Development Manager, Marketing lead</li>
     <li><strong>Go-to-Market (10%, $150K):</strong> Brand launch, digital platform development, partnership development, community engagement</li>
   </ul>
-  
+
   <h3>Exit Opportunities</h3>
-  
+
   <p><strong>Strategic Buyers:</strong></p>
   <ul>
     <li>REITs seeking sustainable infrastructure assets</li>
@@ -1762,7 +1761,7 @@
     <li>Major CPOs seeking premium network acquisition</li>
     <li>Infrastructure funds attracted to predictable cash flows</li>
   </ul>
-  
+
   <p><strong>Valuation Drivers:</strong></p>
   <ul>
     <li>Revenue multiples: 10-15x revenue typical for premium charging networks with strong real estate positions</li>
@@ -1775,26 +1774,26 @@
 <!-- Closing -->
 <div class="new-section">
   <h1 class="section-title">The Opportunity</h1>
-  
+
   <p>Rangeway represents a rare opportunity to build a premium brand in an emerging category. The EV charging industry is growing rapidly, but no network has successfully established a premium hospitality-focused position.</p>
-  
+
   <div class="callout">
     Well-funded competitors are moving fast, but they're building experience inconsistency into their networks. Their flagship sites promise lounges and amenities. Their workhorse sites deliver parking lots with canopies. Rangeway's indoor comfort guarantee at every location is a categorical differentiator they cannot match without rebuilding their networks.
   </div>
-  
+
   <p>With EV adoption accelerating, premium travelers increasingly seeking elevated experiences, and no competitor owning the hospitality-focused position, the opportunity for Rangeway is clear.</p>
-  
+
   <h3>Why Now</h3>
-  
+
   <ul>
     <li><strong>Market Demand:</strong> 1.9M EVs in California alone; 25% of new sales electric; 55% of EV drivers avoid scenic routes due to charging anxiety</li>
     <li><strong>Technology Ready:</strong> 350kW+ fast charging standard; solar + storage economics viable; satellite connectivity solved rural operations</li>
     <li><strong>Policy Support:</strong> $5B NEVI funding prioritizing corridors; state programs supporting sustainable tourism infrastructure</li>
     <li><strong>Open Territory:</strong> Prime scenic locations available now. Once competitors realize the opportunity, these sites are gone.</li>
   </ul>
-  
+
   <p style="font-size: 12pt; font-weight: 600; color: var(--sage); margin-top: 30px;">We invite you to join us in building the future of EV travel.</p>
-  
+
   <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--warm);">
     <h2 style="margin-top: 0;">Contact</h2>
     <p style="font-size: 11pt; line-height: 1.8;">
@@ -1806,6 +1805,3 @@
 </div>
 
 </div>
-
-</body>
-</html>
