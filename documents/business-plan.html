@@ -467,6 +467,78 @@
     .stat-highlight .desc {
       font-size: 18px;
     }
+
+    /* Responsive tables - stack on mobile */
+    @media (max-width: 768px) {
+      .comparison-table,
+      .tier-table {
+        min-width: unset;
+      }
+
+      .comparison-table thead,
+      .tier-table thead {
+        display: none;
+      }
+
+      .comparison-table tr,
+      .tier-table tr {
+        display: block;
+        margin-bottom: 20px;
+        background: var(--cream);
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .comparison-table tr:nth-child(even),
+      .tier-table tr:nth-child(even) {
+        background: var(--cream);
+      }
+
+      .comparison-table td,
+      .tier-table td {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+      }
+
+      .comparison-table td:last-child,
+      .tier-table td:last-child {
+        border-bottom: none;
+      }
+
+      .comparison-table td::before,
+      .tier-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: 600;
+        font-size: 13px;
+        color: var(--sage);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+      }
+
+      .comparison-table td:first-child,
+      .tier-table td:first-child {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--charcoal);
+        border-bottom: 2px solid var(--warm);
+        padding-bottom: 12px;
+        margin-bottom: 8px;
+      }
+
+      .comparison-table td:first-child::before,
+      .tier-table td:first-child::before {
+        display: none;
+      }
+
+      .table-wrapper {
+        overflow-x: visible;
+      }
+    }
   </style>
 </head>
 <body>
@@ -762,55 +834,59 @@
 
   <div class="table-wrapper">
   <table class="comparison-table">
-    <tr>
-      <th>Feature</th>
-      <th>Rangeway</th>
-      <th>Tesla Supercharger</th>
-      <th>Electrify America</th>
-      <th>IONNA</th>
-    </tr>
-    <tr>
-      <td><strong>Indoor Comfort Guarantee</strong></td>
-      <td>Yes, every location</td>
-      <td>No</td>
-      <td>Select locations only</td>
-      <td>Planned, not guaranteed</td>
-    </tr>
-    <tr>
-      <td><strong>Premium Restrooms</strong></td>
-      <td>Hospitality-grade</td>
-      <td>None (use nearby)</td>
-      <td>Partner facilities</td>
-      <td>Planned</td>
-    </tr>
-    <tr>
-      <td><strong>Climate Control</strong></td>
-      <td>Full HVAC</td>
-      <td>None</td>
-      <td>Select lounges</td>
-      <td>Planned</td>
-    </tr>
-    <tr>
-      <td><strong>Uptime Guarantee</strong></td>
-      <td>98-99%</td>
-      <td>~95%</td>
-      <td>~80-85%</td>
-      <td>TBD</td>
-    </tr>
-    <tr>
-      <td><strong>Loyalty Program</strong></td>
-      <td>Pathfinder Rewards</td>
-      <td>None</td>
-      <td>Pass+</td>
-      <td>OEM-linked</td>
-    </tr>
-    <tr>
-      <td><strong>Experience Focus</strong></td>
-      <td>Hospitality-first</td>
-      <td>Convenience</td>
-      <td>Infrastructure</td>
-      <td>Infrastructure</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Rangeway</th>
+        <th>Tesla Supercharger</th>
+        <th>Electrify America</th>
+        <th>IONNA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Indoor Comfort Guarantee</td>
+        <td data-label="Rangeway">Yes, every location</td>
+        <td data-label="Tesla">No</td>
+        <td data-label="Electrify America">Select locations only</td>
+        <td data-label="IONNA">Planned, not guaranteed</td>
+      </tr>
+      <tr>
+        <td>Premium Restrooms</td>
+        <td data-label="Rangeway">Hospitality-grade</td>
+        <td data-label="Tesla">None (use nearby)</td>
+        <td data-label="Electrify America">Partner facilities</td>
+        <td data-label="IONNA">Planned</td>
+      </tr>
+      <tr>
+        <td>Climate Control</td>
+        <td data-label="Rangeway">Full HVAC</td>
+        <td data-label="Tesla">None</td>
+        <td data-label="Electrify America">Select lounges</td>
+        <td data-label="IONNA">Planned</td>
+      </tr>
+      <tr>
+        <td>Uptime Guarantee</td>
+        <td data-label="Rangeway">98-99%</td>
+        <td data-label="Tesla">~95%</td>
+        <td data-label="Electrify America">~80-85%</td>
+        <td data-label="IONNA">TBD</td>
+      </tr>
+      <tr>
+        <td>Loyalty Program</td>
+        <td data-label="Rangeway">Pathfinder Rewards</td>
+        <td data-label="Tesla">None</td>
+        <td data-label="Electrify America">Pass+</td>
+        <td data-label="IONNA">OEM-linked</td>
+      </tr>
+      <tr>
+        <td>Experience Focus</td>
+        <td data-label="Rangeway">Hospitality-first</td>
+        <td data-label="Tesla">Convenience</td>
+        <td data-label="Electrify America">Infrastructure</td>
+        <td data-label="IONNA">Infrastructure</td>
+      </tr>
+    </tbody>
   </table>
   </div>
 
@@ -975,36 +1051,40 @@
 
   <div class="table-wrapper">
   <table class="tier-table">
-    <tr>
-      <th>Tier</th>
-      <th>Qualification</th>
-      <th>Credit Back</th>
-      <th>Key Perks</th>
-    </tr>
-    <tr>
-      <td><strong>Explorer</strong></td>
-      <td>Free, automatic</td>
-      <td>None</td>
-      <td>Base experience, session history, app access</td>
-    </tr>
-    <tr>
-      <td><strong>Voyager</strong></td>
-      <td>10-24 sessions OR 3,000+ kWh/year</td>
-      <td>5%</td>
-      <td>Preferred parking, complimentary beverage at Basecamps, partner discounts</td>
-    </tr>
-    <tr>
-      <td><strong>Pioneer</strong></td>
-      <td>25-49 sessions OR 7,500+ kWh/year</td>
-      <td>10% + $100 annual credit</td>
-      <td>Lounge upgrades, guest passes, member events, priority support</td>
-    </tr>
-    <tr>
-      <td><strong>Trailblazer</strong></td>
-      <td>Invite-only</td>
-      <td>15% + $500 annual credit</td>
-      <td>Relationship manager, exclusive experiences, founding member recognition</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Qualification</th>
+        <th>Credit Back</th>
+        <th>Key Perks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Explorer</td>
+        <td data-label="Qualification">Free, automatic</td>
+        <td data-label="Credit Back">None</td>
+        <td data-label="Key Perks">Base experience, session history, app access</td>
+      </tr>
+      <tr>
+        <td>Voyager</td>
+        <td data-label="Qualification">10-24 sessions OR 3,000+ kWh/year</td>
+        <td data-label="Credit Back">5%</td>
+        <td data-label="Key Perks">Preferred parking, complimentary beverage at Basecamps, partner discounts</td>
+      </tr>
+      <tr>
+        <td>Pioneer</td>
+        <td data-label="Qualification">25-49 sessions OR 7,500+ kWh/year</td>
+        <td data-label="Credit Back">10% + $100 annual credit</td>
+        <td data-label="Key Perks">Lounge upgrades, guest passes, member events, priority support</td>
+      </tr>
+      <tr>
+        <td>Trailblazer</td>
+        <td data-label="Qualification">Invite-only</td>
+        <td data-label="Credit Back">15% + $500 annual credit</td>
+        <td data-label="Key Perks">Relationship manager, exclusive experiences, founding member recognition</td>
+      </tr>
+    </tbody>
   </table>
   </div>
 
@@ -1358,38 +1438,42 @@
 
   <div class="table-wrapper">
   <table class="tier-table">
-    <tr>
-      <th>Metric</th>
-      <th>Year 1</th>
-      <th>Year 2</th>
-      <th>Year 3</th>
-      <th>Year 4</th>
-      <th>Year 5</th>
-    </tr>
-    <tr>
-      <td><strong>Locations</strong></td>
-      <td>3</td>
-      <td>6</td>
-      <td>12</td>
-      <td>18</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <td><strong>Revenue</strong></td>
-      <td>$3.7M</td>
-      <td>$11.4M</td>
-      <td>$22.7M</td>
-      <td>$35.2M</td>
-      <td>$52.2M</td>
-    </tr>
-    <tr>
-      <td><strong>EBITDA Margin</strong></td>
-      <td>-24%</td>
-      <td>18%</td>
-      <td>31%</td>
-      <td>35%</td>
-      <td>39%</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Year 1</th>
+        <th>Year 2</th>
+        <th>Year 3</th>
+        <th>Year 4</th>
+        <th>Year 5</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Locations</td>
+        <td data-label="Year 1">3</td>
+        <td data-label="Year 2">6</td>
+        <td data-label="Year 3">12</td>
+        <td data-label="Year 4">18</td>
+        <td data-label="Year 5">30</td>
+      </tr>
+      <tr>
+        <td>Revenue</td>
+        <td data-label="Year 1">$3.7M</td>
+        <td data-label="Year 2">$11.4M</td>
+        <td data-label="Year 3">$22.7M</td>
+        <td data-label="Year 4">$35.2M</td>
+        <td data-label="Year 5">$52.2M</td>
+      </tr>
+      <tr>
+        <td>EBITDA Margin</td>
+        <td data-label="Year 1">-24%</td>
+        <td data-label="Year 2">18%</td>
+        <td data-label="Year 3">31%</td>
+        <td data-label="Year 4">35%</td>
+        <td data-label="Year 5">39%</td>
+      </tr>
+    </tbody>
   </table>
   </div>
 
