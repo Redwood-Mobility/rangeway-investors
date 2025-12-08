@@ -576,6 +576,9 @@ section {
 .document-card {
   text-align: center;
   padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .document-card .card-icon {
@@ -592,6 +595,7 @@ section {
 
 .document-card p {
   margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
 
 .document-placeholder {
