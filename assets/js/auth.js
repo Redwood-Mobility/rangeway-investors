@@ -8,7 +8,7 @@
 
   // SHA-256 hash of the password - must match login.html
   // To generate: echo -n "YourPassword" | shasum -a 256
-  const PASSWORD_HASH = '5e884898da28047d9169e1809a62bd85e1e3dd91a5e76a6baa6c1b5e3c2e0f1a';
+  const PASSWORD_HASH = '8fbc475b6d8587c9c4d96bb479145144beb1e012084d1b701217f96d883d019a';
 
   // Check authentication on page load
   function checkAuth() {
