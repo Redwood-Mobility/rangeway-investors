@@ -468,8 +468,58 @@
       font-size: 18px;
     }
 
-    /* Responsive tables - stack on mobile */
-    @media (max-width: 768px) {
+    /* Tablet - smaller tables, allow scroll */
+    @media (max-width: 968px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .comparison-table,
+      .tier-table {
+        font-size: 14px;
+      }
+
+      .comparison-table th,
+      .tier-table th {
+        padding: 10px 8px;
+      }
+
+      .comparison-table td,
+      .tier-table td {
+        padding: 8px;
+      }
+
+      .format-grid {
+        display: block;
+      }
+
+      .format-box {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+      }
+
+      .funding-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .funding-item {
+        display: block;
+      }
+
+      .cover .doc-type {
+        font-size: 32px;
+      }
+    }
+
+    /* Mobile - stack tables as cards */
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 1rem;
+      }
+
       .comparison-table,
       .tier-table {
         min-width: unset;
@@ -480,10 +530,16 @@
         display: none;
       }
 
+      .comparison-table tbody,
+      .tier-table tbody {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
       .comparison-table tr,
       .tier-table tr {
         display: block;
-        margin-bottom: 20px;
         background: var(--cream);
         border-radius: 8px;
         padding: 16px;
@@ -513,7 +569,7 @@
         content: attr(data-label);
         display: block;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 12px;
         color: var(--sage);
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -537,6 +593,39 @@
 
       .table-wrapper {
         overflow-x: visible;
+      }
+
+      .funding-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cover {
+        min-height: 60vh;
+        padding: 2rem 1rem;
+      }
+
+      .cover .logo {
+        width: 200px;
+      }
+
+      .cover .doc-type {
+        font-size: 28px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      body {
+        font-size: 16px;
       }
     }
   </style>

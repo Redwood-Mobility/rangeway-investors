@@ -485,7 +485,8 @@ a:hover {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+/* Mobile - stack buttons */
+@media (max-width: 600px) {
   .btn-group {
     flex-direction: column;
     align-items: center;
@@ -504,7 +505,8 @@ section {
   position: relative;
 }
 
-@media (max-width: 768px) {
+/* Mobile */
+@media (max-width: 600px) {
   section {
     padding: 3rem 0;
   }
@@ -543,7 +545,15 @@ section {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Tablet - 2 columns for 3-column grids */
 @media (max-width: 968px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile - single column */
+@media (max-width: 600px) {
   .grid-2, .grid-3 {
     grid-template-columns: 1fr;
   }
@@ -667,10 +677,27 @@ section {
   margin-bottom: 0;
 }
 
+/* Tablet */
 @media (max-width: 968px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-item h3 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
   }
 }
 
@@ -694,7 +721,16 @@ section {
   gap: 2rem;
 }
 
+/* Tablet - keep 2 columns */
 @media (max-width: 968px) {
+  .thesis-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile - single column */
+@media (max-width: 600px) {
   .thesis-grid {
     grid-template-columns: 1fr;
   }
@@ -767,7 +803,22 @@ section {
   font-size: 1rem;
 }
 
-@media (max-width: 768px) {
+/* Tablet - smaller timeline elements */
+@media (max-width: 968px) {
+  .timeline-marker {
+    width: 50px;
+    height: 50px;
+    font-size: 0.85rem;
+  }
+
+  .timeline-content {
+    padding-left: 1.5rem;
+    margin-left: -25px;
+  }
+}
+
+/* Mobile - stack timeline */
+@media (max-width: 600px) {
   .timeline-item {
     flex-direction: column;
     gap: 1rem;
@@ -849,10 +900,20 @@ section {
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 968px) {
+  .cta {
+    margin: 3rem 1.5rem;
+    padding: 5rem 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
   .cta {
     margin: 2rem 1rem;
     padding: 4rem 1.5rem;
+    border-radius: 20px;
   }
 }
 
@@ -937,10 +998,19 @@ footer {
   margin-bottom: 0;
 }
 
+/* Tablet - 2x2 grid */
 @media (max-width: 968px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+}
+
+/* Mobile - single column */
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 

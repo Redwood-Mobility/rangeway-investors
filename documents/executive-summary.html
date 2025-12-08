@@ -272,23 +272,75 @@
       text-decoration: none;
     }
     
-    @media (max-width: 768px) {
+    /* Tablet */
+    @media (max-width: 968px) {
+      .page {
+        padding: 1.5rem;
+      }
+
+      .brand h1 {
+        font-size: 36px;
+      }
+
+      .funding-box h2 {
+        font-size: 24px;
+      }
+
+      .funding-item .pct {
+        font-size: 28px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .page {
+        padding: 1rem;
+      }
+
       .content {
         grid-template-columns: 1fr;
       }
+
       .formats {
         grid-template-columns: 1fr;
       }
+
       .funding-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .header {
         flex-direction: column;
         text-align: center;
       }
+
       .header-right {
         text-align: center;
         margin-top: 1rem;
+      }
+
+      .brand h1 {
+        font-size: 32px;
+      }
+
+      .section h2 {
+        font-size: 18px;
+      }
+
+      .funding-box h2 {
+        font-size: 20px;
+      }
+
+      .funding-item .pct {
+        font-size: 24px;
+      }
+
+      .funding-item .label {
+        font-size: 12px;
+      }
+
+      body {
+        font-size: 16px;
       }
     }
 
