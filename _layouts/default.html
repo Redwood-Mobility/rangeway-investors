@@ -86,6 +86,9 @@
 
   <!-- Analytics -->
   <script src="https://tinylytics.app/embed/vP5GhqSmpXFEymnT_z-c.js" defer></script>
+
+  <!-- Auth check (early load to prevent flash of content) -->
+  <script src="{{ '/assets/js/auth.js' | relative_url }}?v={{ site.asset_version }}"></script>
 </head>
 <body>
   {% include header.html %}
@@ -97,7 +100,6 @@
   {% include footer.html %}
 
   <!-- Scripts -->
-  <script src="{{ '/assets/js/auth.js' | relative_url }}?v={{ site.asset_version }}"></script>
   <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.asset_version }}"></script>
 </body>
 </html>
