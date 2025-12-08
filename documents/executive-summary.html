@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rangeway Executive Summary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --charcoal: #2D2D2D;
+      --warm: #F4A855;
+      --sage: #4A5D52;
+      --cream: #FAF9F6;
+      --light-gray: #F5F5F5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--charcoal);
+      background: white;
+      font-size: 11.9px;
+      line-height: 1.43;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .page {
+      width: 7.5in;
+      max-width: 7.5in;
+      min-height: 10in;
+      margin: 0 auto;
+      padding: 0.44in;
+      background: white;
+      box-sizing: border-box;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      padding-bottom: 13px;
+      border-bottom: 3px solid var(--warm);
+    }
+    
+    .brand h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+    
+    .brand .tagline {
+      font-size: 13px;
+      color: var(--sage);
+      font-style: italic;
+    }
+    
+    .header-right {
+      text-align: right;
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .header-right .conf {
+      color: #999;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Main content grid */
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+    
+    .section {
+      margin-bottom: 14px;
+    }
+    
+    .section h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11.8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--sage);
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .section p {
+      margin-bottom: 8px;
+    }
+    
+    .section ul {
+      margin: 0;
+      padding-left: 17px;
+    }
+    
+    .section li {
+      margin-bottom: 4px;
+    }
+    
+    .section li strong {
+      color: var(--charcoal);
+    }
+    
+    .highlight {
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    
+    .callout {
+      background: var(--light-gray);
+      padding: 10px 12px;
+      border-left: 3px solid var(--warm);
+      margin: 10px 0;
+      font-size: 11.5px;
+    }
+    
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    /* Two formats box */
+    .formats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 10px 0;
+      align-items: start;
+    }
+    
+    .format-box {
+      background: var(--cream);
+      padding: 10px 12px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    
+    .format-box h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 5px;
+    }
+    
+    .format-box p {
+      font-size: 11px;
+      margin: 0;
+      color: #555;
+    }
+    
+    /* Funding box */
+    .funding-box {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #3d3d3d 100%);
+      color: white;
+      padding: 17px 21px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      page-break-inside: avoid;
+    }
+    
+    .funding-box h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 11px;
+      color: white;
+    }
+    
+    .funding-box h2 span {
+      color: var(--warm);
+    }
+    
+    .funding-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    
+    .funding-item {
+      text-align: center;
+    }
+    
+    .funding-item .pct {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--warm);
+    }
+    
+    .funding-item .label {
+      font-size: 10px;
+      opacity: 0.9;
+      line-height: 1.25;
+    }
+    
+    .funding-note {
+      font-size: 11px;
+      opacity: 0.9;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+    
+    /* Team section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    
+    .team-member h4 {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .team-member p {
+      font-size: 12px;
+      color: #555;
+      margin: 0;
+    }
+    
+    .advisors {
+      font-size: 12px;
+    }
+    
+    .advisors h4 {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    
+    .advisor-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 16px;
+      font-size: 12px;
+      color: #555;
+    }
+    
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 11.5px;
+      color: #666;
+    }
+    
+    .footer a {
+      color: var(--sage);
+      text-decoration: none;
+    }
+    
+    @media print {
+      body { -webkit-print-color-adjust: exact; }
+      .page { 
+        width: 100%;
+        max-width: 100%;
+        padding: 0.3in;
+        margin: 0;
+      }
+    }
+    
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="rangeway-lockup-charcoal.svg" alt="Rangeway" style="height: 44px; margin-bottom: 5px;">
+        <div class="tagline">Where EV charging becomes part of your journey</div>
+      </div>
+      <div class="header-right">
+        <div>December 2025</div>
+        <div class="conf">Confidential</div>
+      </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Left Column -->
+      <div class="left-column">
+        <div class="section">
+          <h2>The Opportunity</h2>
+          <p><span class="highlight">Rangeway is building America's first hospitality-driven premium EV charging network.</span> We guarantee climate-controlled indoor comfort at every location, an industry first.</p>
+          <div class="callout">
+            <strong>We think like hotel operators, not utility companies.</strong>
+            Hospitality isn't something you bolt on. It's foundational to how we design every touchpoint.
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>The Problem</h2>
+          <ul>
+            <li>Drivers wait in vehicles during extreme weather</li>
+            <li>70-80% industry uptime leaves drivers stranded</li>
+            <li>No quality restrooms or comfortable waiting areas</li>
+            <li>Wildly inconsistent experiences across networks</li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <h2>Our Solution</h2>
+          <p><strong>Two formats, one standard:</strong></p>
+          <div class="formats">
+            <div class="format-box">
+              <h4>Basecamp</h4>
+              <p>10-12 chargers, 2,500+ sq ft lounge, staffed café, premium restrooms</p>
+            </div>
+            <div class="format-box">
+              <h4>Waystation</h4>
+              <p>8-10 chargers, 800-1,000 sq ft lounge, automated retail, same comfort guarantee</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div class="right-column">
+        <div class="section">
+          <h2>Competitive Advantage</h2>
+          <ul>
+            <li><strong>Indoor Comfort Guarantee:</strong> Climate-controlled Driver's Lounge at every location. Categorical differentiator competitors cannot match.</li>
+            <li><strong>Experience Consistency:</strong> Same standard at all sites. Competitors vary between parking lots and flagship lounges.</li>
+            <li><strong>Pathfinder Rewards:</strong> Hospitality loyalty program. Free to join, status earned, credits back on future charging.</li>
+            <li><strong>Build Right First Time:</strong> Complete from day one. No retrofit technical debt.</li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <h2>Business Model</h2>
+          <ul>
+            <li><strong>Charging fees</strong> at $0.50/kWh base rate</li>
+            <li><strong>Café and retail</strong> sales at Basecamps</li>
+            <li><strong>Digital advertising</strong> from tourism and brand partners</li>
+            <li><strong>LCFS credits</strong> in California</li>
+            <li><strong>Pathfinder partner</strong> revenue and affiliates</li>
+          </ul>
+        </div>
+        
+        <div class="section">
+          <h2>Team</h2>
+          <p><strong>Zak Winnick, Founder & CEO:</strong> 15+ years hospitality operations at Wynn, Cosmopolitan, Grand Hyatt, Sensei. Community Director, Bay Area Rivian Club.</p>
+          <p style="margin-top: 8px;"><strong>Advisors:</strong> Jim Regan (Finance), Theo Reichgelt (Marketing), Raul Dominguez (Technical), Stephanie McGreevy (Grants/LCFS)</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Funding Box -->
+    <div class="funding-box">
+      <h2>The Ask: <span>$1.5M Pre-Seed</span></h2>
+      <div class="funding-grid">
+        <div class="funding-item">
+          <div class="pct">40%</div>
+          <div class="label">Site Development<br>& Permitting</div>
+        </div>
+        <div class="funding-item">
+          <div class="pct">25%</div>
+          <div class="label">Infrastructure<br>Planning</div>
+        </div>
+        <div class="funding-item">
+          <div class="pct">25%</div>
+          <div class="label">Team<br>Building</div>
+        </div>
+        <div class="funding-item">
+          <div class="pct">10%</div>
+          <div class="label">Go-to-Market<br>& Brand</div>
+        </div>
+      </div>
+      <div class="funding-note">
+        <strong>Capital Efficiency:</strong> USDA rural commercial financing offers 90% loan-to-value with 25-year amortization, dramatically reducing construction equity requirements.
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div>
+        <strong>Rangeway</strong> &nbsp;|&nbsp; 
+        <a href="mailto:investors@rangewayev.com">investors@rangewayev.com</a>
+      </div>
+      <div>
+        <a href="https://rangewayev.com">rangewayev.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
