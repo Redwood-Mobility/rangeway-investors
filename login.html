@@ -210,9 +210,19 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
       display: none;
     }
 
+    .error-message.lockout {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
     [data-theme="dark"] .error-message {
       background: #450a0a;
       color: #fca5a5;
+    }
+
+    [data-theme="dark"] .error-message.lockout {
+      background: #451a03;
+      color: #fcd34d;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -220,6 +230,38 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
         background: #450a0a;
         color: #fca5a5;
       }
+      :root:not([data-theme="light"]) .error-message.lockout {
+        background: #451a03;
+        color: #fcd34d;
+      }
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .remember-me input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent-color);
+      cursor: pointer;
+    }
+
+    .remember-me label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .attempts-warning {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-top: 1rem;
     }
 
     .login-footer {
@@ -330,6 +372,11 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
             <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
           </div>
 
+          <div class="remember-me">
+            <input type="checkbox" id="rememberMe" name="rememberMe">
+            <label for="rememberMe">Remember me on this device</label>
+          </div>
+
           <button type="submit" class="login-btn" id="loginBtn">
             Access Investor Hub
           </button>
@@ -373,6 +420,10 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
     // To generate: echo -n "YourPassword" | shasum -a 256
     const PASSWORD_HASH = '8fbc475b6d8587c9c4d96bb479145144beb1e012084d1b701217f96d883d019a';
 
+    // Lockout settings
+    const MAX_ATTEMPTS = 5;
+    const LOCKOUT_DURATION = 15 * 60 * 1000; // 15 minutes in milliseconds
+
     async function hashPassword(password) {
       const encoder = new TextEncoder();
       const data = encoder.encode(password);
@@ -385,9 +436,96 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
     const errorMessage = document.getElementById('errorMessage');
     const loginBtn = document.getElementById('loginBtn');
     const passwordInput = document.getElementById('password');
+    const rememberMeCheckbox = document.getElementById('rememberMe');
+
+    // Get lockout data from localStorage
+    function getLockoutData() {
+      const data = localStorage.getItem('rangeway-lockout');
+      if (data) {
+        return JSON.parse(data);
+      }
+      return { attempts: 0, lockoutUntil: null };
+    }
+
+    // Save lockout data to localStorage
+    function saveLockoutData(data) {
+      localStorage.setItem('rangeway-lockout', JSON.stringify(data));
+    }
+
+    // Clear lockout data
+    function clearLockoutData() {
+      localStorage.removeItem('rangeway-lockout');
+    }
+
+    // Check if currently locked out
+    function isLockedOut() {
+      const data = getLockoutData();
+      if (data.lockoutUntil && Date.now() < data.lockoutUntil) {
+        return true;
+      }
+      // If lockout has expired, reset attempts
+      if (data.lockoutUntil && Date.now() >= data.lockoutUntil) {
+        clearLockoutData();
+      }
+      return false;
+    }
+
+    // Get remaining lockout time in minutes
+    function getRemainingLockoutTime() {
+      const data = getLockoutData();
+      if (data.lockoutUntil) {
+        const remaining = Math.ceil((data.lockoutUntil - Date.now()) / 60000);
+        return Math.max(0, remaining);
+      }
+      return 0;
+    }
+
+    // Update UI for lockout state
+    function updateLockoutUI() {
+      if (isLockedOut()) {
+        const minutes = getRemainingLockoutTime();
+        errorMessage.textContent = `Too many failed attempts. Please try again in ${minutes} minute${minutes !== 1 ? 's' : ''}.`;
+        errorMessage.classList.add('lockout');
+        errorMessage.style.display = 'block';
+        loginBtn.disabled = true;
+        passwordInput.disabled = true;
+
+        // Update every minute
+        setTimeout(updateLockoutUI, 60000);
+      } else {
+        errorMessage.classList.remove('lockout');
+        loginBtn.disabled = false;
+        passwordInput.disabled = false;
+      }
+    }
+
+    // Record a failed attempt
+    function recordFailedAttempt() {
+      const data = getLockoutData();
+      data.attempts++;
+
+      if (data.attempts >= MAX_ATTEMPTS) {
+        data.lockoutUntil = Date.now() + LOCKOUT_DURATION;
+      }
+
+      saveLockoutData(data);
+      return data.attempts;
+    }
+
+    // Get remaining attempts
+    function getRemainingAttempts() {
+      const data = getLockoutData();
+      return Math.max(0, MAX_ATTEMPTS - data.attempts);
+    }
 
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Check lockout first
+      if (isLockedOut()) {
+        updateLockoutUI();
+        return;
+      }
 
       loginBtn.disabled = true;
       loginBtn.textContent = 'Verifying...';
@@ -400,13 +538,29 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
       await new Promise(resolve => setTimeout(resolve, 500));
 
       if (hash === PASSWORD_HASH) {
-        // Set authentication
-        sessionStorage.setItem('rangeway-investor-auth', hash);
+        // Clear any lockout data on successful login
+        clearLockoutData();
+
+        // Set authentication based on Remember Me checkbox
+        if (rememberMeCheckbox.checked) {
+          localStorage.setItem('rangeway-investor-auth', hash);
+        } else {
+          sessionStorage.setItem('rangeway-investor-auth', hash);
+        }
 
         // Redirect to main page
         window.location.href = '{{ "/" | relative_url }}';
       } else {
-        errorMessage.style.display = 'block';
+        const attempts = recordFailedAttempt();
+        const remaining = getRemainingAttempts();
+
+        if (remaining === 0) {
+          updateLockoutUI();
+        } else {
+          errorMessage.textContent = `Incorrect password. ${remaining} attempt${remaining !== 1 ? 's' : ''} remaining.`;
+          errorMessage.style.display = 'block';
+        }
+
         passwordInput.value = '';
         passwordInput.focus();
         loginBtn.disabled = false;
@@ -414,11 +568,16 @@ title: "Investor Hub Access | Rangeway Energy, Inc."
       }
     });
 
-    // Check if already authenticated
-    const auth = sessionStorage.getItem('rangeway-investor-auth');
-    if (auth === PASSWORD_HASH) {
+    // Check if already authenticated (check both storage types)
+    const sessionAuth = sessionStorage.getItem('rangeway-investor-auth');
+    const localAuth = localStorage.getItem('rangeway-investor-auth');
+
+    if (sessionAuth === PASSWORD_HASH || localAuth === PASSWORD_HASH) {
       window.location.href = '{{ "/" | relative_url }}';
     }
+
+    // Initialize lockout UI state
+    updateLockoutUI();
   </script>
 </body>
 </html>
