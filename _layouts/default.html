@@ -102,12 +102,20 @@
   <!-- Scripts -->
   <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.asset_version }}"></script>
 
-  <!-- Slack Visit Notifications -->
+  <!-- LogSnag Visit Notifications -->
   <script>
-    fetch('https://hooks.slack.com/services/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', {
+    fetch('https://api.logsnag.com/v1/log', {
       method: 'POST',
+      headers: {
+        'Authorization': 'Bearer caa9987096d6c01cbed8cad6c8c57675',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
-        text: '👁️ Page View: ' + window.location.pathname
+        project: 'rangeway-investors',
+        channel: 'visits',
+        event: 'Page View',
+        description: window.location.pathname,
+        icon: '👁️'
       })
     }).catch(() => {});
   </script>
