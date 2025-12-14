@@ -8,7 +8,7 @@ The Rangeway Investor Hub provides potential investors with access to key compan
 - Pitch deck presentation
 - Executive summary
 - Business plan
-- Investment pathways (Wefunder + Institutional)
+- Investment inquiries contact
 - Password-protected access
 
 **Live URL:** https://investors.rangewayev.com
@@ -74,15 +74,9 @@ rangeway-investors/
 - **Executive Summary** - One-page company overview
 - **Business Plan** - Detailed financial projections and strategy
 
-## Investment Pathways
+## Investment Inquiries
 
-### Community Investment
-- Wefunder crowdfunding campaign
-- Open to accredited and non-accredited investors
-- Link: https://wefunder.com/rangeway/join
-
-### Institutional Partners
-- For qualified institutional investors
+For accredited investors and institutional partners:
 - Contact: investors@rangewayev.com
 
 ## Local Development
