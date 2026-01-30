@@ -8,7 +8,7 @@
 
   // SHA-256 hash of the password - must match login.html
   // To generate: echo -n "YourPassword" | shasum -a 256
-  const PASSWORD_HASH = '8fbc475b6d8587c9c4d96bb479145144beb1e012084d1b701217f96d883d019a';
+  const PASSWORD_HASH = '16f67eebf5ddf17322cfc185a65f94a5ec6823828bd81525605f59d577d241a7';
 
   // Check authentication on page load
   // Supports both sessionStorage (temporary) and localStorage (Remember Me)
