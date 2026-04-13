@@ -465,10 +465,27 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     padding: 10px 0;
     border-bottom: 1px dotted #ccc;
     font-size: 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  a.toc-item:hover {
+    background: var(--doc-cream);
+    color: var(--doc-sage);
   }
 
   .toc-item span:first-child {
     font-weight: 600;
+  }
+
+  /* Smooth scroll and offset for fixed header when jumping via TOC */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .doc-content [id] {
+    scroll-margin-top: 100px;
   }
 
   /* Confidential header */
@@ -745,31 +762,31 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 <div class="toc-page">
   <h1 class="section-title">Table of Contents</h1>
 
-  <div class="toc-item"><span>Executive Summary</span><span>3</span></div>
-  <div class="toc-item"><span>Opportunity</span><span>5</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Problem &amp; Solution</span><span>5</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Target Market</span><span>8</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Competition</span><span>10</span></div>
-  <div class="toc-item"><span>Company</span><span>14</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Overview</span><span>14</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Team</span><span>15</span></div>
-  <div class="toc-item"><span>Execution</span><span>19</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Marketing &amp; Sales</span><span>19</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Operations</span><span>23</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Technology</span><span>27</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Strategic Partnerships</span><span>30</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Milestones &amp; Metrics</span><span>32</span></div>
-  <div class="toc-item"><span>Financial Plan</span><span>35</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Forecast</span><span>35</span></div>
-  <div class="toc-item"><span>&nbsp;&nbsp;&nbsp;Financing</span><span>39</span></div>
-  <div class="toc-item"><span>The Opportunity</span><span>42</span></div>
+  <a class="toc-item" href="#executive-summary"><span>Executive Summary</span><span>3</span></a>
+  <a class="toc-item" href="#opportunity"><span>Opportunity</span><span>5</span></a>
+  <a class="toc-item" href="#problem-solution"><span>&nbsp;&nbsp;&nbsp;Problem &amp; Solution</span><span>5</span></a>
+  <a class="toc-item" href="#target-market"><span>&nbsp;&nbsp;&nbsp;Target Market</span><span>8</span></a>
+  <a class="toc-item" href="#competition"><span>&nbsp;&nbsp;&nbsp;Competition</span><span>10</span></a>
+  <a class="toc-item" href="#company"><span>Company</span><span>14</span></a>
+  <a class="toc-item" href="#overview"><span>&nbsp;&nbsp;&nbsp;Overview</span><span>14</span></a>
+  <a class="toc-item" href="#team"><span>&nbsp;&nbsp;&nbsp;Team</span><span>15</span></a>
+  <a class="toc-item" href="#execution"><span>Execution</span><span>19</span></a>
+  <a class="toc-item" href="#marketing-sales"><span>&nbsp;&nbsp;&nbsp;Marketing &amp; Sales</span><span>19</span></a>
+  <a class="toc-item" href="#operations"><span>&nbsp;&nbsp;&nbsp;Operations</span><span>23</span></a>
+  <a class="toc-item" href="#technology"><span>&nbsp;&nbsp;&nbsp;Technology</span><span>27</span></a>
+  <a class="toc-item" href="#strategic-partnerships"><span>&nbsp;&nbsp;&nbsp;Strategic Partnerships</span><span>30</span></a>
+  <a class="toc-item" href="#milestones-metrics"><span>&nbsp;&nbsp;&nbsp;Milestones &amp; Metrics</span><span>32</span></a>
+  <a class="toc-item" href="#financial-plan"><span>Financial Plan</span><span>35</span></a>
+  <a class="toc-item" href="#forecast"><span>&nbsp;&nbsp;&nbsp;Forecast</span><span>35</span></a>
+  <a class="toc-item" href="#financing"><span>&nbsp;&nbsp;&nbsp;Financing</span><span>39</span></a>
+  <a class="toc-item" href="#the-opportunity"><span>The Opportunity</span><span>42</span></a>
 </div>
 
 <!-- Executive Summary -->
 <div class="new-section">
   <p class="confidential">CONFIDENTIAL - DO NOT DISSEMINATE. This business plan contains confidential, trade-secret information and is shared only with the understanding that you will not share its contents or ideas with third parties without the express written consent of the plan author.</p>
 
-  <h1 class="section-title">Executive Summary</h1>
+  <h1 class="section-title" id="executive-summary">Executive Summary</h1>
 
   <p>Rangeway is building America's first hospitality-driven premium EV charging network. We're transforming the 20 to 30 minute charging window from an inconvenience into a moment worth savoring, creating destination experiences that make travelers want to stop rather than rush through.</p>
 
@@ -850,9 +867,9 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Opportunity: Problem & Solution -->
 <div class="new-section">
-  <h1 class="section-title">Opportunity</h1>
+  <h1 class="section-title" id="opportunity">Opportunity</h1>
 
-  <h2>Problem &amp; Solution</h2>
+  <h2 id="problem-solution">Problem &amp; Solution</h2>
 
   <h3>Problem Worth Solving</h3>
 
@@ -914,7 +931,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Target Market -->
 <div class="new-section">
-  <h2>Target Market</h2>
+  <h2 id="target-market">Target Market</h2>
 
   <p>Rangeway is built to serve the fastest-growing segment of the EV ecosystem: affluent electric vehicle drivers who travel for leisure. We focus on EV tourism and lifestyle travel, targeting high-traffic corridors across America where demand for reliable, premium charging is high but current infrastructure is sparse or inconsistent.</p>
 
@@ -985,7 +1002,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Competition -->
 <div class="new-section">
-  <h2>Competition</h2>
+  <h2 id="competition">Competition</h2>
 
   <h3>Current Alternatives</h3>
 
@@ -1121,9 +1138,9 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Company -->
 <div class="new-section">
-  <h1 class="section-title">Company</h1>
+  <h1 class="section-title" id="company">Company</h1>
 
-  <h2>Overview</h2>
+  <h2 id="overview">Overview</h2>
 
   <p>Rangeway Energy, Inc. is a privately held company founded and solely owned by Zak Winnick, who serves as CEO. Zak brings a multidisciplinary background spanning IT operations, hospitality management, and EV infrastructure development, experience that informs Rangeway's unique positioning at the intersection of premium hospitality and reliable charging infrastructure.</p>
 
@@ -1153,7 +1170,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Team -->
 <div class="new-section">
-  <h2>Team</h2>
+  <h2 id="team">Team</h2>
 
   <h3>Management Team</h3>
 
@@ -1188,9 +1205,9 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Execution: Marketing & Sales -->
 <div class="new-section">
-  <h1 class="section-title">Execution</h1>
+  <h1 class="section-title" id="execution">Execution</h1>
 
-  <h2>Marketing &amp; Sales</h2>
+  <h2 id="marketing-sales">Marketing &amp; Sales</h2>
 
   <h3>Target Audience</h3>
 
@@ -1295,7 +1312,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Operations -->
 <div class="new-section">
-  <h2>Operations</h2>
+  <h2 id="operations">Operations</h2>
 
   <h3>Site Design Philosophy</h3>
 
@@ -1383,7 +1400,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Technology -->
 <div class="new-section">
-  <h2>Technology</h2>
+  <h2 id="technology">Technology</h2>
 
   <p>Rangeway's technology strategy is built around four principles: performance, resilience, seamless experience, and reliability. Our charging infrastructure and backend systems are carefully selected to deliver the premium, hassle-free charging experience that defines our brand.</p>
 
@@ -1494,7 +1511,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Strategic Partnerships -->
 <div class="new-section">
-  <h2>Strategic Partnerships</h2>
+  <h2 id="strategic-partnerships">Strategic Partnerships</h2>
 
   <p>Rangeway has assembled a network of strategic partners to deliver reliable infrastructure and premium guest experiences.</p>
 
@@ -1556,7 +1573,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Milestones & Metrics -->
 <div class="new-section">
-  <h2>Milestones &amp; Metrics</h2>
+  <h2 id="milestones-metrics">Milestones &amp; Metrics</h2>
 
   <h3>Key Performance Indicators</h3>
 
@@ -1651,9 +1668,9 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Financial Plan: Forecast -->
 <div class="new-section">
-  <h1 class="section-title">Financial Plan</h1>
+  <h1 class="section-title" id="financial-plan">Financial Plan</h1>
 
-  <h2>Forecast</h2>
+  <h2 id="forecast">Forecast</h2>
 
   <p>Rangeway's financial projections are grounded in a conservative yet realistic model based on current market dynamics, regional EV adoption trends, and real-world session data from comparable fast-charging networks operating in the premium segment.</p>
 
@@ -1790,7 +1807,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Financing -->
 <div class="new-section">
-  <h2>Financing</h2>
+  <h2 id="financing">Financing</h2>
 
   <h3>Sources of Funds</h3>
 
@@ -1878,7 +1895,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
 <!-- Closing -->
 <div class="new-section">
-  <h1 class="section-title">The Opportunity</h1>
+  <h1 class="section-title" id="the-opportunity">The Opportunity</h1>
 
   <p>Rangeway represents a rare opportunity to build a premium brand in an emerging category. The EV charging industry is growing rapidly, but no network has successfully established a premium hospitality-focused position.</p>
 

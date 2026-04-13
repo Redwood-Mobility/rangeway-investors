@@ -766,18 +766,22 @@ section {
 }
 
 .timeline-marker {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   background: linear-gradient(135deg, var(--sunset-coral), var(--golden-highway));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   color: white;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   flex-shrink: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.1;
+  padding: 4px;
+  box-sizing: border-box;
 }
 
 .timeline-content {
@@ -785,7 +789,7 @@ section {
   padding-bottom: 2rem;
   border-left: 2px solid var(--border-color);
   padding-left: 2rem;
-  margin-left: -31px;
+  margin-left: -37px;
 }
 
 .timeline-item:last-child .timeline-content {
@@ -806,14 +810,14 @@ section {
 /* Tablet - smaller timeline elements */
 @media (max-width: 968px) {
   .timeline-marker {
-    width: 50px;
-    height: 50px;
-    font-size: 0.85rem;
+    width: 64px;
+    height: 64px;
+    font-size: 0.8rem;
   }
 
   .timeline-content {
     padding-left: 1.5rem;
-    margin-left: -25px;
+    margin-left: -33px;
   }
 }
 
