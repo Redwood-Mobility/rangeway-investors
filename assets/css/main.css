@@ -793,7 +793,7 @@ section {
 }
 
 .timeline-item:last-child .timeline-content {
-  border-left: none;
+  padding-bottom: 0;
 }
 
 .timeline-content h4 {
