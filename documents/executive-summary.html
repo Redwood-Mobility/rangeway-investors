@@ -141,12 +141,17 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
     color: var(--text-heading);
   }
 
-  /* Two formats box */
+  /* Full-width solution section */
+  .section-full-width {
+    margin-bottom: 18px;
+  }
+
+  /* Formats grid */
   .formats {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 10px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 10px 0 0;
     align-items: stretch;
   }
 
@@ -297,6 +302,13 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
     }
   }
 
+  /* Tablet formats */
+  @media (max-width: 968px) {
+    .formats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   /* Mobile */
   @media (max-width: 600px) {
     .page {
@@ -401,26 +413,15 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
       </div>
 
       <div class="section">
-        <h2>Our Solution</h2>
-        <p><strong>Four formats, one brand:</strong></p>
-        <div class="formats">
-          <div class="format-box">
-            <h4>Trailhead</h4>
-            <p>2-4 ports, covered canopy, Wi-Fi, clean restrooms nearby. Where the journey begins, stubbed for expansion.</p>
-          </div>
-          <div class="format-box">
-            <h4>Waystation</h4>
-            <p>8-10 ports, 1,000-1,200 sq ft climate-controlled Driver's Lounge, automated retail.</p>
-          </div>
-          <div class="format-box">
-            <h4>Basecamp</h4>
-            <p>10-12 ports, 2,500+ sq ft Driver's Lounge, staffed cafe with Red Canyon Roasting Company, Trailkeepers on site.</p>
-          </div>
-          <div class="format-box">
-            <h4>Summit</h4>
-            <p>Hospitality-first destination with modular Lookout guest units, clubhouse, 100% off-grid solar and battery storage.</p>
-          </div>
-        </div>
+        <h2>Business Model</h2>
+        <ul>
+          <li><strong>Charging fees</strong> at $0.50/kWh base rate</li>
+          <li><strong>Cafe and retail</strong> sales at Basecamps, automated retail at Waystations</li>
+          <li><strong>Digital advertising</strong> from tourism boards and brand partners</li>
+          <li><strong>LCFS credits</strong> at California locations</li>
+          <li><strong>Pathfinder partner</strong> revenue, tourism partnerships, and affiliates</li>
+          <li><strong>Lodging revenue</strong> at Summit locations</li>
+        </ul>
       </div>
     </div>
 
@@ -437,21 +438,32 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
       </div>
 
       <div class="section">
-        <h2>Business Model</h2>
-        <ul>
-          <li><strong>Charging fees</strong> at $0.50/kWh base rate</li>
-          <li><strong>Cafe and retail</strong> sales at Basecamps, automated retail at Waystations</li>
-          <li><strong>Digital advertising</strong> from tourism boards and brand partners</li>
-          <li><strong>LCFS credits</strong> at California locations</li>
-          <li><strong>Pathfinder partner</strong> revenue, tourism partnerships, and affiliates</li>
-          <li><strong>Lodging revenue</strong> at Summit locations</li>
-        </ul>
-      </div>
-
-      <div class="section">
         <h2>Team</h2>
         <p><strong>Zak Winnick, Founder & CEO:</strong> 15+ years hospitality operations at Wynn Las Vegas, Cosmopolitan of Las Vegas, Grand Hyatt Nashville, and Sensei. Community Director, Bay Area Rivian Club. Co-founder, NorCal EVs.</p>
         <p style="margin-top: 8px;"><strong>Advisors:</strong> Jim Regan (Finance), Theo Reichgelt (Marketing), Stephanie McGreevy (Grants/LCFS)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Solution - Full Width -->
+  <div class="section section-full-width">
+    <h2>Our Solution: Four Formats, One Brand</h2>
+    <div class="formats">
+      <div class="format-box">
+        <h4>Trailhead</h4>
+        <p>2-4 ports, covered canopy, Wi-Fi, clean restrooms nearby. Where the journey begins, stubbed for expansion.</p>
+      </div>
+      <div class="format-box">
+        <h4>Waystation</h4>
+        <p>8-10 ports, 1,000-1,200 sq ft climate-controlled Driver's Lounge, automated retail.</p>
+      </div>
+      <div class="format-box">
+        <h4>Basecamp</h4>
+        <p>10-12 ports, 2,500+ sq ft Driver's Lounge, staffed cafe with Red Canyon Roasting Company, Trailkeepers on site.</p>
+      </div>
+      <div class="format-box">
+        <h4>Summit</h4>
+        <p>Hospitality-first destination with modular Lookout guest units, clubhouse, 100% off-grid solar and battery storage.</p>
       </div>
     </div>
   </div>
