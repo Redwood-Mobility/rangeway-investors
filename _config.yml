@@ -42,7 +42,7 @@ pages:
     og_image: "/assets/images/og-investors.jpg"
 
 # Asset versioning
-asset_version: "1.0.0"
+asset_version: "2.0.0"
 
 # Build settings
 markdown: kramdown
