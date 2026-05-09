@@ -738,6 +738,186 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     body {
       font-size: 16px;
     }
+
+    /* Tighten document-level mobile spacing */
+    .doc-content {
+      font-size: 16px;
+      padding-top: 64px;
+      line-height: 1.55;
+    }
+
+    .new-section {
+      padding: 2rem 0;
+    }
+
+    .cover {
+      min-height: auto;
+      padding: 2rem 0.5rem 1rem;
+    }
+
+    .cover .logo {
+      width: 180px;
+      margin-bottom: 24px;
+    }
+
+    .cover .tagline {
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .cover .doc-type {
+      font-size: 28px;
+    }
+
+    .cover .date {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .cover .contact {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .toc-item {
+      font-size: 15px;
+      padding: 8px 0;
+    }
+
+    .callout {
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .bio-box {
+      padding: 18px;
+    }
+
+    .bio-box h4 {
+      font-size: 19px;
+    }
+
+    .bio-box p {
+      font-size: 15px;
+    }
+
+    .milestone-section {
+      padding: 16px;
+      margin: 12px 0;
+    }
+
+    .milestone-section h3 {
+      font-size: 17px;
+    }
+
+    .funding-box {
+      padding: 18px;
+    }
+
+    .funding-box h3 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .funding-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px;
+      margin-left: 0;
+      border-spacing: 0;
+    }
+
+    .funding-item {
+      display: block !important;
+      width: auto !important;
+      padding: 12px;
+      background: rgba(244, 168, 85, 0.08);
+      border-radius: 8px;
+    }
+
+    .funding-item .pct {
+      font-size: 28px;
+    }
+
+    .funding-item .label {
+      font-size: 13px;
+    }
+
+    .funding-note {
+      font-size: 14px;
+      margin-top: 16px;
+      padding-top: 12px;
+    }
+
+    .format-box {
+      padding: 14px;
+    }
+
+    .format-box h4 {
+      font-size: 17px;
+    }
+
+    .format-box li {
+      font-size: 15px;
+    }
+
+    .partner-box {
+      padding: 14px;
+    }
+
+    .partner-box h4 {
+      font-size: 17px;
+    }
+
+    .partner-box p {
+      font-size: 14px;
+    }
+
+    .stat-highlight {
+      padding: 16px 18px;
+    }
+
+    .stat-highlight .number {
+      font-size: 32px;
+    }
+
+    .stat-highlight .desc {
+      font-size: 16px;
+    }
+
+    .confidential {
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* Tables already become cards on mobile — tighten the cards */
+    .comparison-table tr,
+    .tier-table tr {
+      padding: 14px;
+    }
+
+    .comparison-table td,
+    .tier-table td {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .container {
+      padding: 0 0.75rem;
+    }
+
+    .funding-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .cover .logo {
+      width: 150px;
+    }
+
+    .cover .doc-type {
+      font-size: 24px;
+    }
   }
 </style>
 
@@ -809,7 +989,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   <div class="format-grid">
     <div class="format-box">
-      <h4>Trailhead (Where the Journey Begins)</h4>
+      <h4>Trailhead</h4>
       <ul>
         <li>2-4 ultra-fast ports, expandable to 10</li>
         <li>Covered canopy, clean restrooms nearby, Wi-Fi</li>
@@ -819,7 +999,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
       </ul>
     </div>
     <div class="format-box">
-      <h4>Waystation (Comfort on the Road)</h4>
+      <h4>Waystation</h4>
       <ul>
         <li>8-10 ultra-fast ports</li>
         <li>1,200 sq ft climate-controlled driver's lounge</li>
@@ -832,7 +1012,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   <div class="format-grid">
     <div class="format-box">
-      <h4>Basecamp (A Destination in Itself)</h4>
+      <h4>Basecamp</h4>
       <ul>
         <li>10-12 ultra-fast ports</li>
         <li>2,500+ sq ft climate-controlled driver's lounge</li>
@@ -843,7 +1023,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
       </ul>
     </div>
     <div class="format-box">
-      <h4>Summit (Hospitality-First Destination)</h4>
+      <h4>Summit</h4>
       <ul>
         <li>Modular Lookout guest units and a central clubhouse</li>
         <li>100% off-grid solar, solar field, and battery storage</li>
@@ -880,20 +1060,20 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   <h4>The Experience Gap</h4>
 
   <ul>
-    <li>A 2025 J.D. Power study found that 73% of EV drivers rate current charging experiences as "poor" or "very poor," with lack of amenities (67%) and no weather protection (54%) as top complaints.</li>
+    <li>73% of EV drivers rate current charging experiences as "poor" or "very poor," with lack of amenities (67%) and no weather protection (54%) as top complaints (J.D. Power 2025 U.S. Electric Vehicle Experience Public Charging Study).</li>
+    <li>Nearly 1 in 3 public charging attempts still fail to deliver a successful session (ChargerHelp 2025 Reliability Report).</li>
     <li>Drivers are forced to wait in their vehicles or stand exposed to weather (summer heat, winter cold, rain, wind) with nowhere comfortable to go.</li>
     <li>Premium restroom facilities are virtually nonexistent at charging locations, forcing drivers to choose between subpar gas station bathrooms or nothing at all.</li>
     <li>The charging experience offers no consistency. Every stop is a gamble on what amenities (if any) might be available.</li>
-    <li>Reliability remains poor across the industry, with chargers frequently down and no service standards drivers can depend on.</li>
   </ul>
 
   <h4>The Adoption Barrier</h4>
 
   <ul>
-    <li>California led the nation in EV adoption with approximately 25% of new vehicle sales electric in 2024, up from just 8% in 2020.</li>
-    <li>Despite this growth, only 16% of U.S. adults say they're likely to purchase an EV as their next car, reflecting persistent infrastructure hesitation.</li>
-    <li>A 2025 survey found 57% of American drivers cite long-distance travel concerns, such as charging availability and experience quality, as a barrier to EV adoption.</li>
-    <li>More than 50% of EV drivers report anxiety for trips outside metro areas, where charging infrastructure quality drops even further.</li>
+    <li>California led the nation in EV adoption with approximately 25% of new vehicle sales electric in 2024, up from just 8% in 2020 (California Energy Commission ZEV sales data, 2024).</li>
+    <li>Despite this growth, only about 1 in 6 U.S. adults say they're likely to purchase an EV as their next car, reflecting persistent infrastructure hesitation (Pew Research Center, 2024).</li>
+    <li>57% of American drivers cite long-distance travel concerns, such as charging availability and experience quality, as a barrier to EV adoption (AAA 2024 EV Consumer Sentiment Survey).</li>
+    <li>More than half of EV drivers report range anxiety for trips outside metro areas, where charging infrastructure quality drops further (J.D. Power 2025 U.S. Electric Vehicle Experience Public Charging Study).</li>
   </ul>
 
   <h4>The Premium Traveler Problem</h4>
@@ -911,7 +1091,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   <ul>
     <li><strong>Climate-Controlled driver's lounge:</strong> Indoor comfort regardless of weather. No more waiting in your car or standing exposed to the elements.</li>
     <li><strong>Premium Restrooms:</strong> Hospitality-grade facilities including family and accessible rooms, not gas station bathrooms.</li>
-    <li><strong>Reliable Ultra-Fast Charging:</strong> 98-99% uptime commitment backed by proactive maintenance and quality infrastructure.</li>
+    <li><strong>Reliable Ultra-Fast Charging:</strong> Reliability backed by proactive maintenance, quality infrastructure, and predictive monitoring.</li>
     <li><strong>Thoughtful Amenities:</strong> High-speed Wi-Fi, comfortable seating, quality refreshments, and regional character that makes each stop memorable.</li>
   </ul>
 
@@ -1091,13 +1271,6 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
         <td data-label="IONNA">Planned</td>
       </tr>
       <tr>
-        <td>Uptime Guarantee</td>
-        <td data-label="Rangeway">98-99%</td>
-        <td data-label="Tesla">~95%</td>
-        <td data-label="Electrify America">~80-85%</td>
-        <td data-label="IONNA">TBD</td>
-      </tr>
-      <tr>
         <td>Experience Focus</td>
         <td data-label="Rangeway">Hospitality-first</td>
         <td data-label="Tesla">Convenience</td>
@@ -1126,7 +1299,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   <p>Unlike networks that rely on third-party site hosts with minimal investment, Rangeway takes a real estate ownership or long-term lease approach. This gives us complete control over site design, amenity quality, operational standards, and long-term value creation.</p>
 
   <h4>Reliability as a Competitive Moat</h4>
-  <p>Rangeway commits to 98-99% uptime guarantees across all locations, significantly above industry norms. For premium travelers, reliability isn't optional. It's table stakes. Our uptime guarantees give customers confidence to choose Rangeway and plan trips around our network.</p>
+  <p>Rangeway is built around reliability as a non-negotiable. Predictive maintenance, distributed charger architecture, and proactive monitoring keep stations operational ahead of industry norms. For premium travelers, reliability isn't optional. It's table stakes, and it's what gives drivers confidence to plan trips around our network.</p>
 </div>
 
 <!-- Company -->
@@ -1171,7 +1344,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     <h4>Zak Winnick</h4>
     <div class="role">Founder &amp; CEO</div>
     <p>Zak Winnick brings 15+ years in luxury hospitality operations, with deep experience across guest experience, operational systems, and team leadership at premier properties. His systems-thinking approach, combined with passion for electric mobility and sustainable design, drives Rangeway's mission to transform EV charging from a logistics burden into an integral, enjoyable part of the journey.</p>
-    <p>As Community Director of the Bay Area Rivian Club and Technical Advisor for Rivian Clubs of America, Zak maintains direct insight into the evolving needs of EV drivers and the realities of charging infrastructure. He co-founded NorCal EVs, a multi-brand enthusiast community bringing together owners from Tesla, Rivian, Lucid, and other platforms across Northern California, giving him ground-level perspective on charging pain points and driver expectations.</p>
+    <p>As an active leader and advisor across regional and national EV owner communities, Zak maintains direct insight into the evolving needs of EV drivers and the realities of charging infrastructure. His work supporting multi-brand enthusiast communities that bring together owners from Tesla, Rivian, Lucid, and other platforms gives him ground-level perspective on charging pain points and driver expectations.</p>
     <p>Zak's combination of hospitality discipline and ground-level EV community leadership makes Rangeway's positioning at the intersection of premium hospitality and reliable charging infrastructure a natural extension of his career.</p>
   </div>
 
@@ -1325,9 +1498,9 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     <li>Lodging revenue adds a sixth channel on top of standard Rangeway economics</li>
   </ul>
 
-  <h3>Uptime Commitment</h3>
+  <h3>Reliability Commitment</h3>
 
-  <p>Rangeway commits to 98-99% uptime across all locations through:</p>
+  <p>Rangeway treats reliability as a brand promise. We engineer it through:</p>
 
   <ul>
     <li><strong>Predictive maintenance:</strong> WattsUp AI platform identifies issues before they cause downtime</li>
@@ -1338,9 +1511,9 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
 
   <p>We hold ourselves accountable through public reporting:</p>
   <ul>
-    <li>Monthly uptime reporting by location</li>
+    <li>Monthly performance reporting by location</li>
     <li>Public dashboard showing real-time charger status</li>
-    <li>Quarterly uptime transparency reports</li>
+    <li>Quarterly transparency reports on reliability and resolution</li>
     <li>Mean time to repair (MTTR) tracking with continuous improvement goals</li>
   </ul>
 </div>
@@ -1502,7 +1675,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     </div>
     <div class="partner-box">
       <h4>WattsUp</h4>
-      <p>AI-driven predictive maintenance platform that keeps chargers online before drivers arrive. Uses machine learning to detect anomalies, predict component failures, and coordinate repairs, enabling our 98-99% uptime guarantee.</p>
+      <p>AI-driven predictive maintenance platform that keeps chargers online before drivers arrive. Uses machine learning to detect anomalies, predict component failures, and coordinate repairs, supporting Rangeway's reliability commitment.</p>
     </div>
   </div>
 
@@ -1510,17 +1683,6 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     <div class="partner-box">
       <h4>Carbon Core Ventures Fund I</h4>
       <p>Investment vehicle separate from Carbon DC. Acts as limited partner funding the energy infrastructure CAPEX on the Mojave site. Capital structure tailored to specific site economics rather than network-wide deployment.</p>
-    </div>
-    <div class="partner-box">
-      <h4>PowerStation</h4>
-      <p>Operations and maintenance partner on the Mojave site. System sale plus technical SLA structure ensures long-term reliability of the energy infrastructure deployed in Phase I.</p>
-    </div>
-  </div>
-
-  <div class="partner-grid">
-    <div class="partner-box">
-      <h4>Midwest Power Partners</h4>
-      <p>Energy partner on Bowing Tower in St. Louis. Direct power purchase agreement plus battery energy storage structure under evaluation, providing a different deployment model than the Carbon-led structures used on other sites.</p>
     </div>
     <div class="partner-box">
       <h4>Red Canyon Roasting Company</h4>
@@ -1535,7 +1697,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   <ul>
     <li><strong>Regional Tourism Boards:</strong> Co-branded travel guides, featured in road trip itineraries, joint promotional campaigns</li>
     <li><strong>Hospitality Partners:</strong> Hotels, restaurants, and attractions offering Rangeway-branded experiences and partner perks</li>
-    <li><strong>EV Communities:</strong> Bay Area Rivian Club, NorCal EVs, and national EV owner groups for authentic community engagement</li>
+    <li><strong>EV Communities:</strong> Regional and national EV owner communities for authentic community engagement</li>
     <li><strong>Regional Food &amp; Beverage:</strong> Local coffee roasters and artisan producers for Basecamp café programs</li>
   </ul>
 </div>
@@ -1570,8 +1732,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   <p>Demand drivers include Bozeman Yellowstone International Airport handling 2.8 million passengers per year (6.3% year-over-year growth), Belgrade being the fastest-growing city in Montana, and only three public chargers across the entire Belgrade community today. The capital structure is under negotiation, with options including ground lease plus co-development joint venture and build-to-suit lease.</p>
 
   <h3>Bowing Tower, St. Louis, Missouri (Pending)</h3>
-  <p>A planned architectural statement project in St. Louis's North Riverfront corridor, part of a Creative District redevelopment zone. The Bowing Tower concept is a multi-level observation tower built using ReNuTeq's engineered bamboo technology, with a ground-level enclosed lounge and solar canopies over parking using the same bamboo structure. Format and partnership terms are still being defined.</p>
-  <p><strong>Midwest Power Partners</strong> is the energy partner on Bowing Tower under a direct power purchase agreement plus battery energy storage structure currently under evaluation.</p>
+  <p>A planned architectural statement project in St. Louis's North Riverfront corridor, part of a Creative District redevelopment zone. The Bowing Tower concept is a multi-level observation tower built using ReNuTeq's engineered bamboo technology, with a ground-level enclosed lounge and solar canopies over parking using the same bamboo structure. Format, energy partner, and capital structure are still being defined.</p>
 
   <div class="callout">
     <strong>Capital strategy:</strong> Each site is capitalized on its own merits with the partners and instruments appropriate to that location. The phased build at Mojave proves the operational and unit economics on the first site so subsequent sites can deploy faster with less capital risk.
@@ -1600,7 +1761,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
   <h4>Customer Experience</h4>
   <ul>
     <li><strong>Net Promoter Score (NPS):</strong> Target 80+ by end of Year 1</li>
-    <li><strong>Uptime:</strong> 98-99% across all locations</li>
+    <li><strong>Reliability:</strong> Industry-leading session success rate, tracked and reported transparently</li>
   </ul>
 
   <h3>Key Performance Milestones</h3>
@@ -1632,7 +1793,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
     <ul>
       <li>First sites generating revenue</li>
       <li>Additional sites under development</li>
-      <li>98%+ network uptime from day one</li>
+      <li>Reliability commitment in effect from day one</li>
       <li>13 total sites supporting approximately $5.6M in Year 2 revenue</li>
       <li>Digital advertising channels activated</li>
     </ul>
@@ -1784,7 +1945,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, business p
       </ul>
     </div>
     <div class="format-box">
-      <h4>Waystation: $2-3M per site</h4>
+      <h4>Waystation: $3-4M per site</h4>
       <ul>
         <li>Land acquisition or long-term lease</li>
         <li>Building construction (1,200 sq ft)</li>

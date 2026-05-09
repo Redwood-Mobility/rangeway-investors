@@ -313,49 +313,143 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
   /* Mobile */
   @media (max-width: 600px) {
     .page {
-      padding: 1rem;
+      padding: 0.875rem;
+      padding-top: 80px;
     }
 
     .content {
       grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .formats {
       grid-template-columns: 1fr;
+      gap: 10px;
     }
 
     .funding-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
 
     .doc-header {
       flex-direction: column;
-      text-align: center;
+      text-align: left;
+      align-items: flex-start;
+      gap: 12px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .doc-header-right {
-      text-align: center;
-      margin-top: 1rem;
+      text-align: left;
+      margin-top: 0;
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      font-size: 14px;
     }
 
-    .brand h1 {
-      font-size: 32px;
+    .doc-header-right .conf {
+      font-size: 11px;
+    }
+
+    .brand img {
+      height: 44px !important;
+    }
+
+    .brand .tagline {
+      font-size: 15px;
+    }
+
+    .section {
+      margin-bottom: 10px;
     }
 
     .section h2 {
-      font-size: 18px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .section p,
+    .section li {
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+
+    .callout {
+      padding: 12px 14px;
+      font-size: 14.5px;
+      margin: 12px 0;
+    }
+
+    .format-box {
+      padding: 12px;
+    }
+
+    .format-box h4 {
+      font-size: 17px;
+    }
+
+    .format-box p {
+      font-size: 14px;
+    }
+
+    .funding-box {
+      padding: 16px 18px;
     }
 
     .funding-box h2 {
-      font-size: 20px;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .funding-item {
+      padding: 4px 0;
     }
 
     .funding-item .pct {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     .funding-item .label {
       font-size: 12px;
+    }
+
+    .funding-item .label strong {
+      font-size: 13px;
+    }
+
+    .funding-note {
+      font-size: 13.5px;
+      padding-top: 12px;
+    }
+
+    .doc-footer {
+      flex-direction: column;
+      gap: 8px;
+      padding: 14px 0;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .funding-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page {
+      padding: 0.625rem;
+      padding-top: 76px;
+    }
+
+    .funding-item {
+      text-align: left;
+    }
+
+    .funding-item .pct {
+      font-size: 24px;
     }
   }
 
@@ -440,7 +534,7 @@ keywords: "EV charging, electric vehicle infrastructure, hospitality, executive 
 
       <div class="section">
         <h2>Team</h2>
-        <p><strong>Zak Winnick, Founder &amp; CEO:</strong> 15+ years in luxury hospitality operations. Community Director, Bay Area Rivian Club. Co-founder, NorCal EVs.</p>
+        <p><strong>Zak Winnick, Founder &amp; CEO:</strong> 15+ years in luxury hospitality operations. Active leader and advisor across regional and national EV owner communities.</p>
         <p style="margin-top: 8px;"><strong>Advisors:</strong> Jim Regan (Finance), Theo Reichgelt (Marketing), Stephanie McGreevy (Grants/LCFS)</p>
       </div>
     </div>

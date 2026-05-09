@@ -1780,3 +1780,103 @@ body:not(.has-hero) main {
     --ocean-deep: var(--color-sage);
     --sunset-coral: var(--color-warm);
 }
+
+/* ========================================================================
+   Mobile polish — applied on top of element-specific breakpoints to keep
+   phone rendering tight and readable.
+   ======================================================================== */
+
+@media (max-width: 700px) {
+    .container,
+    .container-narrow {
+        padding: 0 var(--space-4);
+    }
+
+    .section {
+        padding: clamp(48px, 12vw, 88px) 0;
+    }
+
+    .listing__header {
+        margin-bottom: var(--space-6);
+        padding: 0 var(--space-4);
+    }
+
+    .listing__header p {
+        font-size: 1.05rem;
+    }
+
+    .page-hero {
+        padding: calc(var(--nav-height) + var(--space-6)) 0 var(--space-7);
+    }
+
+    .page-hero__lede {
+        font-size: 1.05rem;
+    }
+
+    .page-hero .btn,
+    .cta-band .btn-group .btn,
+    .pathway-card .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .page-hero__inner > div[style*="display: flex"] {
+        flex-direction: column;
+        gap: var(--space-3) !important;
+        align-items: stretch;
+    }
+
+    .cta-band {
+        margin: var(--space-7) var(--space-3);
+        padding: var(--space-7) var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .cta-band p {
+        font-size: 1.05rem;
+    }
+
+    .cta-band .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        width: 100%;
+    }
+
+    .pathway-card {
+        padding: var(--space-6) var(--space-5);
+    }
+
+    .timeline-content {
+        padding: var(--space-4);
+    }
+
+    .timeline-content h4 {
+        font-size: 1.05rem;
+    }
+
+    .stat-item h3 {
+        font-size: clamp(2.2rem, 9vw, 2.8rem);
+    }
+
+    .document-card,
+    .thesis-card {
+        padding: var(--space-5);
+    }
+}
+
+@media (max-width: 480px) {
+    .container,
+    .container-narrow {
+        padding: 0 var(--space-3);
+    }
+
+    .cta-band {
+        margin: var(--space-6) 0;
+        border-radius: 0;
+    }
+
+    .timeline {
+        max-width: 100%;
+    }
+}
