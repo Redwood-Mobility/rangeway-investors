@@ -6,247 +6,542 @@ keywords: "Rangeway investment, EV charging investment, clean energy investment,
 og_image: "/assets/images/og-investors.jpg"
 ---
 
-<section class="page-hero">
-    <div class="container">
-        <div class="page-hero__inner">
-            <span class="eyebrow">Investor Hub</span>
-            <h1>Partner in the journey.</h1>
-            <p class="page-hero__lede">Join us in building America's first hospitality-driven premium EV charging network. Access our investor materials and explore partnership opportunities.</p>
-            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4);">
-                <a href="#documents" class="btn btn-primary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    View Documents
-                </a>
-                <a href="mailto:{{ site.investment.email }}" class="btn btn-dark">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
-                    Contact Investor Relations
-                </a>
-            </div>
-        </div>
+<style>
+  /* Page-local styles for the redesigned investor hub */
+
+  .hub-hero {
+    padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-8);
+  }
+
+  .hub-hero__inner {
+    max-width: 880px;
+  }
+
+  .hub-hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    margin-bottom: var(--space-5);
+    letter-spacing: var(--ls-heading);
+  }
+
+  .hub-hero__lede {
+    font-size: var(--fs-body-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+    max-width: 62ch;
+  }
+
+  .hub-hero__cta {
+    margin-top: var(--space-5);
+  }
+
+  .hub-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    margin-top: var(--space-7);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .hub-hero__meta strong {
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* Documents - bigger, more centered */
+  .doc-listing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+
+  @media (max-width: 900px) {
+    .doc-listing {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .doc-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--dur-fast) var(--ease-standard),
+      transform var(--dur-fast) var(--ease-standard),
+      box-shadow var(--dur-fast) var(--ease-standard);
+  }
+
+  .doc-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--color-warm);
+    color: inherit;
+  }
+
+  .doc-card__kicker {
+    font-family: var(--font-body);
+    font-size: var(--fs-eyebrow);
+    font-weight: 700;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-warm-deep);
+  }
+
+  .doc-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .doc-card p {
+    color: var(--color-text-muted);
+    font-size: 0.98rem;
+    margin: 0;
+    flex: 1;
+  }
+
+  .doc-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-warm-deep);
+    margin-top: var(--space-3);
+  }
+
+  .doc-card:hover .doc-card__cta svg {
+    transform: translateX(4px);
+  }
+
+  .doc-card__cta svg {
+    transition: transform var(--dur-fast) var(--ease-standard);
+  }
+
+  /* Pipeline */
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 760px) {
+    .pipeline-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pipeline-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    transition: border-color var(--dur-fast) var(--ease-standard),
+      transform var(--dur-fast) var(--ease-standard),
+      box-shadow var(--dur-fast) var(--ease-standard);
+  }
+
+  .pipeline-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--color-border-strong);
+  }
+
+  .pipeline-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  .pipeline-card__location {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+
+  .pipeline-card__state {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+
+  .pipeline-card__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(244, 168, 85, 0.14);
+    color: var(--color-warm-deep);
+    border: 1px solid rgba(244, 168, 85, 0.28);
+    white-space: nowrap;
+  }
+
+  .pipeline-card__body {
+    color: var(--color-text-muted);
+    font-size: 0.96rem;
+    margin: 0;
+  }
+
+  .pipeline-card__meta {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.86rem;
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+  }
+
+  .pipeline-card__meta strong {
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  /* Contact card - dark, premium, single CTA */
+  .investor-contact {
+    background: var(--bg-dark-gradient);
+    color: var(--color-cream);
+    border-radius: var(--radius-xl);
+    padding: clamp(40px, 7vw, 72px) clamp(24px, 5vw, 56px);
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--space-7);
+  }
+
+  @media (max-width: 760px) {
+    .investor-contact {
+      grid-template-columns: 1fr;
+      text-align: left;
+      padding: 36px 28px;
+    }
+  }
+
+  .investor-contact .eyebrow {
+    color: var(--color-warm);
+    margin-bottom: var(--space-3);
+  }
+
+  .investor-contact h2 {
+    color: var(--fg-on-dark-1);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin: 0 0 var(--space-3);
+  }
+
+  .investor-contact p {
+    color: var(--fg-on-dark-2);
+    margin: 0;
+    max-width: 50ch;
+    font-size: 1.02rem;
+  }
+
+  .investor-contact__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: var(--radius-pill);
+    background: var(--bg-warm-gradient);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform var(--dur-fast) var(--ease-standard);
+    white-space: nowrap;
+  }
+
+  .investor-contact__cta:hover {
+    transform: translateY(-1px);
+    background: var(--bg-warm-gradient-hover);
+    color: var(--color-charcoal);
+  }
+
+  @media (max-width: 760px) {
+    .investor-contact__cta {
+      align-self: flex-start;
+    }
+  }
+</style>
+
+<!-- Hero -->
+<section class="hub-hero">
+  <div class="container">
+    <div class="hub-hero__inner">
+      <span class="eyebrow">Investor Hub</span>
+      <h1>America's first hospitality-driven premium EV charging network.</h1>
+      <p class="hub-hero__lede">Where EV charging becomes part of the journey. We build climate-controlled lounges, staffed cafes, and overnight destinations along high-traffic corridors, and we welcome the partners helping us bring it to life.</p>
+      <div class="hub-hero__cta">
+        <a href="#documents" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          View Investor Materials
+        </a>
+      </div>
+      <div class="hub-hero__meta">
+        <div><strong>$30M</strong> raise</div>
+        <div><strong>4 sites</strong> in active development</div>
+        <div><strong>3 states</strong></div>
+        <div><strong>Q4 2026 / Q1 2027</strong> first sites operational</div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Documents -->
 <section id="documents" class="section section-cream reveal">
-    <div class="container">
-        <div class="listing__header">
-            <span class="eyebrow">Investor Materials</span>
-            <h2>Key documents</h2>
-            <p>Our comprehensive investor materials covering vision, strategy, and the growth opportunity.</p>
-        </div>
-
-        <div class="grid-3">
-            <div class="document-card">
-                <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <h3>Pitch Deck</h3>
-                <p>Our comprehensive investor presentation covering market opportunity, business model, and growth strategy.</p>
-                <a href="/documents/pitch-deck.html" class="arrow-link">
-                    View Presentation
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
-                </a>
-            </div>
-
-            <div class="document-card">
-                <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </div>
-                <h3>Executive Summary</h3>
-                <p>A one-page overview of Rangeway's mission, market position, and investment opportunity.</p>
-                <a href="/documents/executive-summary.html" class="arrow-link">
-                    View Document
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
-                </a>
-            </div>
-
-            <div class="document-card">
-                <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                </div>
-                <h3>Business Plan</h3>
-                <p>Detailed business plan including financial projections, market analysis, and operational strategy.</p>
-                <a href="/documents/business-plan.html" class="arrow-link">
-                    View Document
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
-                </a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="listing__header">
+      <span class="eyebrow">Investor Materials</span>
+      <h2>Read the full story.</h2>
+      <p>Three documents covering the vision, the financials, and the operating plan.</p>
     </div>
+
+    <div class="doc-listing">
+      <a href="/documents/pitch-deck.html" class="doc-card">
+        <span class="doc-card__kicker">Presentation</span>
+        <h3>Pitch Deck</h3>
+        <p>Investor presentation covering market opportunity, business model, and growth strategy.</p>
+        <span class="doc-card__cta">
+          View Deck
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+        </span>
+      </a>
+
+      <a href="/documents/executive-summary.html" class="doc-card">
+        <span class="doc-card__kicker">One-Pager</span>
+        <h3>Executive Summary</h3>
+        <p>The mission, the market position, and the investment opportunity, on a single page.</p>
+        <span class="doc-card__cta">
+          View Summary
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+        </span>
+      </a>
+
+      <a href="/documents/business-plan.html" class="doc-card">
+        <span class="doc-card__kicker">Full Plan</span>
+        <h3>Business Plan</h3>
+        <p>Detailed business plan including financial projections, active pipeline, and operational strategy.</p>
+        <span class="doc-card__cta">
+          View Plan
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- Investment Opportunity -->
-<section id="investment" class="section reveal">
-    <div class="container">
-        <div class="listing__header">
-            <span class="eyebrow">The Opportunity</span>
-            <h2>Redefining EV infrastructure</h2>
-            <p>Rangeway is pioneering a new category in EV charging: hospitality-driven destinations where indoor comfort is guaranteed and the stop becomes part of the journey. We're not simply installing chargers. We're building the places drivers will choose to travel through.</p>
-        </div>
-
-        <div class="pathway-card">
-            <div class="card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 10l9-7 9 7"/><path d="M5 21V10"/><path d="M19 21V10"/><path d="M9 21V13h6v8"/></svg>
-            </div>
-            <h3>Investment Inquiries</h3>
-            <p>For accredited investors and institutional partners seeking strategic partnership opportunities. Contact our investor relations team for detailed financial projections and expansion plans.</p>
-            <a href="mailto:{{ site.investment.email }}" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
-                Contact Investor Relations
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Investment Thesis -->
-<section class="section section-cream reveal">
-    <div class="container">
-        <div class="listing__header">
-            <span class="eyebrow">Investment Thesis</span>
-            <h2>Why Rangeway</h2>
-        </div>
-
-        <div class="thesis-grid">
-            <div class="thesis-card">
-                <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                </div>
-                <h4>Untapped Market Opportunity</h4>
-                <p>DC fast charging is scaling from $1.0B to $26.2B by 2035, with 18,000 new DC ports added in the US in 2025 alone. Rangeway is establishing first-mover advantage in the premium segment, targeting travelers who expect their charging experience to match the vehicles they drive.</p>
-            </div>
-
-            <div class="thesis-card">
-                <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M11 3L8 9l4 12 4-12-3-6"/><path d="M2 9h20"/></svg>
-                </div>
-                <h4>Premium Positioning</h4>
-                <p>Our hospitality-first approach creates destinations, not mere charging stops. Climate-controlled sanctuaries, artisan cafes, and curated local partnerships command premium pricing while cultivating exceptional guest loyalty and repeat visits.</p>
-            </div>
-
-            <div class="thesis-card">
-                <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h4>Defensible Network Strategy</h4>
-                <p>We're strategically securing prime corridor locations before competitors recognize the opportunity. A four-format network (Trailhead, Waystation, Basecamp, Summit) lets us match each site to its market while creating lasting competitive barriers through real estate control.</p>
-            </div>
-
-            <div class="thesis-card">
-                <div class="card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <h4>Mission-Aligned Team</h4>
-                <p>Our team combines deep expertise in energy infrastructure, technology, and hospitality. United by a shared mission to make sustainable travel both accessible and exceptional, we're building for the long term.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Market Stats -->
+<!-- Active Pipeline -->
 <section class="section reveal">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>$26.2B</h3>
-                <p>DC Fast Charging Market by 2035</p>
-            </div>
-            <div class="stat-item">
-                <h3>Q4 2026</h3>
-                <p>First Sites Operational</p>
-            </div>
-            <div class="stat-item">
-                <h3>71%</h3>
-                <p>Of Charging Attempts Succeed First Try (Industry)</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="listing__header">
+      <span class="eyebrow">Active Pipeline</span>
+      <h2>Four sites. Three states. One playbook.</h2>
+      <p>Each site is capitalized on its own merits, with the partnership and capital structure matched to the location's specific opportunity. Full detail under NDA in the business plan.</p>
     </div>
+
+    <div class="pipeline-grid">
+      <div class="pipeline-card">
+        <div class="pipeline-card__head">
+          <div>
+            <div class="pipeline-card__location">Mojave</div>
+            <div class="pipeline-card__state">Rosamond, California</div>
+          </div>
+          <span class="pipeline-card__badge">LOI Signed</span>
+        </div>
+        <p class="pipeline-card__body">Lead site on 48.8 acres at the CA-14 / Antelope Valley Freeway interchange. Phased build: charging-only Phase I targeted Q4 2026 / Q1 2027, Basecamp and Summit to follow.</p>
+        <div class="pipeline-card__meta">
+          <div><strong>Format:</strong> Basecamp + Summit</div>
+          <div><strong>Phase I:</strong> ~$3.95M</div>
+        </div>
+      </div>
+
+      <div class="pipeline-card">
+        <div class="pipeline-card__head">
+          <div>
+            <div class="pipeline-card__location">Iris</div>
+            <div class="pipeline-card__state">St. Louis, Missouri</div>
+          </div>
+          <span class="pipeline-card__badge">In Development</span>
+        </div>
+        <p class="pipeline-card__body">Basecamp adjacent to the $37.4M Iris mixed-use development in the Cortex Innovation District, with frontage on Interstate 64 (~140,000 vehicles per day).</p>
+        <div class="pipeline-card__meta">
+          <div><strong>Format:</strong> Basecamp</div>
+          <div><strong>Lease:</strong> 30-year NNN</div>
+        </div>
+      </div>
+
+      <div class="pipeline-card">
+        <div class="pipeline-card__head">
+          <div>
+            <div class="pipeline-card__location">Bozeman</div>
+            <div class="pipeline-card__state">Belgrade, Montana</div>
+          </div>
+          <span class="pipeline-card__badge">In Negotiation</span>
+        </div>
+        <p class="pipeline-card__body">Basecamp on 4+ acres at I-90 Exit 299, directly adjacent to Bozeman Yellowstone International Airport (2.8M passengers per year, 6.3% YoY growth).</p>
+        <div class="pipeline-card__meta">
+          <div><strong>Format:</strong> Basecamp</div>
+          <div><strong>Anchor:</strong> Yellowstone Airport Plaza</div>
+        </div>
+      </div>
+
+      <div class="pipeline-card">
+        <div class="pipeline-card__head">
+          <div>
+            <div class="pipeline-card__location">Bowing Tower</div>
+            <div class="pipeline-card__state">St. Louis, Missouri</div>
+          </div>
+          <span class="pipeline-card__badge">Pending</span>
+        </div>
+        <p class="pipeline-card__body">Basecamp on the ground floor of a planned multi-level architectural statement piece in the North Riverfront Creative District, built using ReNuTeq engineered bamboo.</p>
+        <div class="pipeline-card__meta">
+          <div><strong>Format:</strong> Basecamp</div>
+          <div><strong>Status:</strong> Format under design</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Expansion Plan -->
+<!-- Why Rangeway -->
 <section class="section section-cream reveal">
-    <div class="container">
-        <div class="listing__header">
-            <span class="eyebrow">Growth Strategy</span>
-            <h2>Our expansion plan</h2>
-            <p>Starting with an active pipeline across multiple states, we're building a network of premium hospitality destinations along America's highest-potential travel corridors.</p>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-marker">Q4 2026 / Q1 2027</div>
-                <div class="timeline-content">
-                    <h4>Close Raise &amp; First Sites Operational</h4>
-                    <p>Close $30M raise and lock site control on the first 3-4 locations. Active pipeline includes sites in California, Missouri, and Montana, with first sites operational.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-marker">2027</div>
-                <div class="timeline-content">
-                    <h4>First Sites Generating Revenue</h4>
-                    <p>First operational locations go live with 98%+ network uptime from day one. Additional sites move into development.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-marker">2028</div>
-                <div class="timeline-content">
-                    <h4>First Basecamp Opens with Full Hospitality</h4>
-                    <p>Network expanding across multiple states. First Basecamp opens with full hospitality experience. Network reaches 13 sites and approximately $5.6M in Year 2 revenue.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-marker">2029</div>
-                <div class="timeline-content">
-                    <h4>Continued Network Expansion</h4>
-                    <p>Summit development underway at flagship site. Network reaches 23 sites and approximately $15.4M in Year 3 revenue.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-marker">2030</div>
-                <div class="timeline-content">
-                    <h4>First Summit Welcoming Overnight Guests</h4>
-                    <p>First Summit opens with modular Lookout guest units and clubhouse. Multi-state network operational, with 33 sites and approximately $27.3M in Year 4 revenue.</p>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="listing__header">
+      <span class="eyebrow">Why Rangeway</span>
+      <h2>Premium hospitality. Reliable infrastructure.</h2>
     </div>
+
+    <div class="thesis-grid">
+      <div class="thesis-card">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h4>Premium Market, Underserved</h4>
+        <p>DC fast charging is scaling fast, but the premium segment is wide open. Rangeway is establishing first-mover advantage with travelers whose vehicles already cost more than the charging experience matches.</p>
+      </div>
+
+      <div class="thesis-card">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M11 3L8 9l4 12 4-12-3-6"/><path d="M2 9h20"/></svg>
+        </div>
+        <h4>Indoor Comfort Guarantee</h4>
+        <p>Climate-controlled driver's lounge at every Waystation and Basecamp. A categorical differentiator competitors cannot match without rebuilding their networks. Inspired by Under Canvas and AutoCamp.</p>
+      </div>
+
+      <div class="thesis-card">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Per-Project Capital Strategy</h4>
+        <p>Each site is capitalized on its own merits with the partners and instruments appropriate to that location. Phased development at Mojave validates the model before scaling.</p>
+      </div>
+
+      <div class="thesis-card">
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Hospitality DNA</h4>
+        <p>We think like hotel operators, not utility companies. Our team and advisors combine deep hospitality experience with EV charging, infrastructure finance, and energy systems expertise.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-band reveal">
-    <div class="container">
-        <h2>Ready to learn more?</h2>
-        <p>Connect with our investor relations team to explore partnership opportunities.</p>
-        <div class="btn-group">
-            <a href="mailto:{{ site.investment.email }}" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
-                Contact Investor Relations
-            </a>
-            <a href="#documents" class="btn btn-ghost">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-                View Documents
-            </a>
-        </div>
+<!-- Roadmap -->
+<section class="section reveal">
+  <div class="container">
+    <div class="listing__header">
+      <span class="eyebrow">Roadmap</span>
+      <h2>The path to a national network.</h2>
     </div>
-</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">Q4 2026 / Q1 2027</div>
+        <div class="timeline-content">
+          <h4>Close Raise &amp; First Sites Operational</h4>
+          <p>Close $30M raise and lock site control on the first 3-4 locations. First sites operational across California, Missouri, and Montana.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2027</div>
+        <div class="timeline-content">
+          <h4>First Sites Generating Revenue</h4>
+          <p>First operational locations live with 98%+ network uptime from day one. Additional sites move into development.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2028</div>
+        <div class="timeline-content">
+          <h4>First Basecamp Opens</h4>
+          <p>Network expanding across multiple states. First Basecamp opens with full hospitality experience. Reaches 13 sites and approximately $5.6M in Year 2 revenue.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2029</div>
+        <div class="timeline-content">
+          <h4>Continued Network Expansion</h4>
+          <p>Summit development underway at flagship site. Network reaches 23 sites and approximately $15.4M in Year 3 revenue.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">2030</div>
+        <div class="timeline-content">
+          <h4>First Summit Welcoming Overnight Guests</h4>
+          <p>Lookout guest units and clubhouse open. Multi-state network operational with 33 sites and approximately $27.3M in Year 4 revenue.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Contact -->
-<section id="contact" class="section reveal">
-    <div class="container">
-        <div class="listing__header">
-            <span class="eyebrow">Contact</span>
-            <h2>Investor relations</h2>
-        </div>
-
-        <div class="contact-info">
-            <p>For investment inquiries, financial information, and partnership discussions:</p>
-            <a href="mailto:{{ site.investment.email }}" class="contact-email">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
-                {{ site.investment.email }}
-            </a>
-        </div>
+<section class="section reveal" id="contact">
+  <div class="container">
+    <div class="investor-contact">
+      <div>
+        <span class="eyebrow">Investor Relations</span>
+        <h2>Let's talk.</h2>
+        <p>For questions on the pipeline, capital structure, or partnership opportunities, reach out directly. We respond personally.</p>
+      </div>
+      <a href="mailto:{{ site.investment.email }}" class="investor-contact__cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
+        {{ site.investment.email }}
+      </a>
     </div>
+  </div>
 </section>
