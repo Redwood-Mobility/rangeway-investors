@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Rangeway Investor Hub - Jekyll-based investor relations portal for Rangeway Energy, Inc. Provides access to pitch deck, executive summary, and business plan. Hosted on GitHub Pages at investors.rangewayev.com.
+Rangeway Investor Hub - Jekyll-based investor relations portal for Rangeway Energy, Inc. Provides access to pitch deck, executive summary, and business plan. Hosted on GitHub Pages at investors.rangeway.co.
 
 ## Build & Development Commands
 

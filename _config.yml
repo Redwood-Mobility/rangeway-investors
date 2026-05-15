@@ -4,16 +4,16 @@
 # Site settings
 title: Rangeway Investor Hub
 description: "Investor resources and documentation for Rangeway Energy, Inc. Access our pitch deck, executive summary, and business plan."
-url: "https://investors.rangewayev.com"
+url: "https://investors.rangeway.co"
 baseurl: ""
 
 # Organization info
 organization:
   name: Rangeway Energy, Inc.
   tagline: "Where EV charging becomes part of your journey."
-  main_site: "https://rangewayev.com"
+  main_site: "https://rangeway.co"
   newsroom_site: "https://newsroom.rangeway.energy"
-  email: investors@rangewayev.com
+  email: investors@rangeway.co
   phone: "(650) 420-6300"
   phone_raw: "6504206300"
   address:
@@ -31,7 +31,7 @@ social:
 
 # Investment links
 investment:
-  email: "investors@rangewayev.com"
+  email: "investors@rangeway.co"
 
 # Page metadata
 pages:

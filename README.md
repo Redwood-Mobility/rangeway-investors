@@ -11,7 +11,7 @@ The Rangeway Investor Hub provides potential investors with access to key compan
 - Investment inquiries contact
 - Password-protected access
 
-**Live URL:** https://investors.rangewayev.com
+**Live URL:** https://investors.rangeway.co
 
 ## Brand Guidelines Implementation
 
@@ -77,7 +77,7 @@ rangeway-investors/
 ## Investment Inquiries
 
 For accredited investors and institutional partners:
-- Contact: investors@rangewayev.com
+- Contact: investors@rangeway.co
 
 ## Local Development
 
@@ -112,7 +112,7 @@ This site is configured for GitHub Pages. Push to the main branch and GitHub wil
 
 ### Custom Domain Setup
 
-1. In repository settings, add `investors.rangewayev.com` as custom domain
+1. In repository settings, add `investors.rangeway.co` as custom domain
 2. Add CNAME record in DNS pointing to your GitHub Pages URL
 3. Enable HTTPS in repository settings
 
@@ -124,12 +124,12 @@ This site is configured for GitHub Pages. Push to the main branch and GitHub wil
 
 ## Related Sites
 
-- **Main Site:** https://rangewayev.com
+- **Main Site:** https://rangeway.co
 - **Newsroom:** https://newsroom.rangeway.energy
 
 ## Contact
 
-For investor inquiries: investors@rangewayev.com
+For investor inquiries: investors@rangeway.co
 
 ---
 
